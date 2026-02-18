@@ -27,7 +27,7 @@ export const translations = {
       accordion1: {
         title: "Background & Education",
         content:
-          "I'm a software development student graduating from Collège Ahuntsic in May 2026, and an incoming Software Engineering student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
+          "I'm a software development student graduating from Collège Ahuntsic in May 2026, and an incoming Computer Science student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
       },
       accordion2: {
         title: "My Journey",
@@ -253,7 +253,7 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "Je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026, et future étudiante en génie logiciel à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
+          "Je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026, et future étudiante en Informatique à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
       },
       accordion2: {
         title: "Mon Parcours",
