@@ -82,8 +82,9 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/arxiv-search-engine",
-          url: "https://arxiv-search-app.streamlit.app",
+          github: "https://github.com/Mercuryy200/ArxivSearchEngine",
+          url: "https://arxivsearchengine.streamlit.app",
+          image: "/images/projects/arxiv-rag.png",
         },
         project3: {
           title: "RCapsule — Smart Closet Manager",
@@ -98,6 +99,7 @@ export const translations = {
             "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://rcapsule.com",
+          image: "/images/projects/rcapsule.png",
         },
         project4: {
           title: "ExpenseFlow — Finance REST API",
@@ -112,6 +114,7 @@ export const translations = {
             "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
+          image: "/images/projects/expenseflow.png",
         },
         project5: {
           title: "Accessible Component Library",
@@ -125,6 +128,7 @@ export const translations = {
           technologies: "React, TypeScript, WCAG 2.1, ARIA, CSS Modules",
           github: "https://github.com/Mercuryy200/accessible-components",
           url: "https://accessible-components-six.vercel.app/",
+          image: "/images/projects/accessible-components.png",
         },
         project6: {
           title: "Fruit Basket Game",
@@ -138,6 +142,7 @@ export const translations = {
           technologies: "Unity, C#, Unity Test Framework, Rigidbody Physics",
           github: "https://github.com/Mercuryy200/FruitBasket",
           url: null,
+          image: "/images/projects/fruit-basket.png",
         },
       },
     },
@@ -289,6 +294,7 @@ export const translations = {
           technologies: "Power BI, Python, DAX",
           github: "https://github.com/Mercuryy200/SupplyChainBI",
           url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+          image: "/images/projects/supply-chain.png",
         },
         project2: {
           title: "Assistant de Recherche ArXiv RAG",
@@ -301,8 +307,9 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/arxiv-search-engine",
-          url: "https://arxiv-search-app.streamlit.app",
+          github: "https://github.com/Mercuryy200/ArxivSearchEngine",
+          url: "https://arxivsearchengine.streamlit.app",
+          image: "/images/projects/arxiv-rag.png",
         },
         project3: {
           title: "RCapsule — Gestionnaire de Garde-robe",
@@ -317,6 +324,7 @@ export const translations = {
             "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://rcapsule.com",
+          image: "/images/projects/rcapsule.png",
         },
         project4: {
           title: "ExpenseFlow — API REST Finance",
@@ -331,6 +339,7 @@ export const translations = {
             "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
+          image: "/images/projects/expenseflow.png",
         },
         project5: {
           title: "Bibliothèque de Composants Accessibles",
@@ -344,6 +353,7 @@ export const translations = {
           technologies: "React, TypeScript, WCAG 2.1, ARIA, Modules CSS",
           github: "https://github.com/Mercuryy200/accessible-components",
           url: "https://accessible-components-six.vercel.app/",
+          image: "/images/projects/accessible-components.png",
         },
         project6: {
           title: "Jeu Panier de Fruits",
@@ -357,6 +367,7 @@ export const translations = {
           technologies: "Unity, C#, Unity Test Framework, Physique Rigidbody",
           github: "https://github.com/Mercuryy200/FruitBasket",
           url: null,
+          image: "/images/projects/fruit-basket.png",
         },
       },
     },
@@ -448,4 +459,6 @@ export type Project = {
   features: string[];
   technologies: string;
   github: string;
+  url: string | null;
+  image?: string;
 };

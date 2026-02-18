@@ -9,13 +9,12 @@ interface Project {
   technologies: string;
   github: string;
   url: string | null;
+  image?: string;
+  type?: "frontend" | "backend";
 }
 
 interface ProjectsProp {
-  t: {
-    title: string;
-    items: Record<string, Project>;
-  };
+  t: { title: string; items: Record<string, Project> };
 }
 
 export default function Projects({ t }: ProjectsProp) {
@@ -23,16 +22,13 @@ export default function Projects({ t }: ProjectsProp) {
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   return (
     <section
       id="projects"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-ivory overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -41,17 +37,17 @@ export default function Projects({ t }: ProjectsProp) {
         viewport={{ once: true }}
         className="mb-16 space-y-4"
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-center">
+        <h2 className="text-5xl md:text-7xl font-serif italic text-center text-espresso">
           {t.title}
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-        <p className="text-center text-coffee/50 text-xs uppercase tracking-[0.3em] font-bold pt-2">
+        <div className="h-px w-24 bg-sand mx-auto" />
+        <p className="text-center text-taupe/60 text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
           {projects.length} selected works
         </p>
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[minmax(320px,auto)]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
