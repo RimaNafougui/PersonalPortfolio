@@ -116,7 +116,7 @@ export const translations = {
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
           image: "/images/projects/expenseflow.png",
-          type: "backend",
+          type: "backend" as const,
         },
         project5: {
           title: "Accessible Component Library",
@@ -342,7 +342,7 @@ export const translations = {
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
           image: "/images/projects/expenseflow.png",
-          type: "backend",
+          type: "backend" as const,
         },
         project5: {
           title: "Bibliothèque de Composants Accessibles",
