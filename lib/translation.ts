@@ -217,7 +217,7 @@ export const translations = {
         {
           status: "future",
           date: "FALL 2026",
-          title: "BEng in Software Engineering",
+          title: "BSc in Computer Science",
           institution: "Concordia University",
           description:
             "Incoming Engineering student. Preparing to deepen theoretical knowledge in software architecture and large-scale system design while continuing to build production projects.",
@@ -443,10 +443,10 @@ export const translations = {
         {
           status: "future",
           date: "AUTOMNE 2026",
-          title: "Baccalauréat en Génie Logiciel",
+          title: "Baccalauréat en Informatique",
           institution: "Université Concordia",
           description:
-            "Future étudiante en génie. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle.",
+            "Future étudiante en Informatique. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle.",
         },
       ],
     },
