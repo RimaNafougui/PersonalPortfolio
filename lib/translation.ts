@@ -83,8 +83,8 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/arxiv-search-engine",
-          url: "https://arxiv-search-app.streamlit.app",
+          github: "https://github.com/Mercuryy200/arxivsearchengine",
+          url: "https://arxivsearchengine.streamlit.app",
           image: "/images/projects/arxiv-rag.png",
         },
         project3: {
@@ -309,8 +309,8 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/arxiv-search-engine",
-          url: "https://arxiv-search-app.streamlit.app",
+          github: "https://github.com/Mercuryy200/arxivsearchengine",
+          url: "https://arxivsearchengine.streamlit.app",
           image: "/images/projects/arxiv-rag.png",
         },
         project3: {
