@@ -70,6 +70,7 @@ export const translations = {
           technologies: "Power BI, Python, DAX",
           github: "https://github.com/Mercuryy200/SupplyChainBI",
           url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+          image: "/images/projects/supply-chain.png",
         },
         project2: {
           title: "ArXiv RAG Research Assistant",
@@ -82,8 +83,8 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/ArxivSearchEngine",
-          url: "https://arxivsearchengine.streamlit.app",
+          github: "https://github.com/Mercuryy200/arxiv-search-engine",
+          url: "https://arxiv-search-app.streamlit.app",
           image: "/images/projects/arxiv-rag.png",
         },
         project3: {
@@ -115,6 +116,7 @@ export const translations = {
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
           image: "/images/projects/expenseflow.png",
+          type: "backend",
         },
         project5: {
           title: "Accessible Component Library",
@@ -307,8 +309,8 @@ export const translations = {
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/Mercuryy200/ArxivSearchEngine",
-          url: "https://arxivsearchengine.streamlit.app",
+          github: "https://github.com/Mercuryy200/arxiv-search-engine",
+          url: "https://arxiv-search-app.streamlit.app",
           image: "/images/projects/arxiv-rag.png",
         },
         project3: {
@@ -340,6 +342,7 @@ export const translations = {
           github: "https://github.com/Mercuryy200/expenseflow",
           url: "https://expenseflow-production.up.railway.app/",
           image: "/images/projects/expenseflow.png",
+          type: "backend",
         },
         project5: {
           title: "Bibliothèque de Composants Accessibles",
@@ -461,4 +464,5 @@ export type Project = {
   github: string;
   url: string | null;
   image?: string;
+  type?: "frontend" | "backend";
 };
