@@ -25,7 +25,7 @@ export default function Projects({ t }: ProjectsProp) {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -45,42 +45,34 @@ export default function Projects({ t }: ProjectsProp) {
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />
+        <p className="text-center text-coffee/50 text-xs uppercase tracking-[0.3em] font-bold pt-2">
+          {projects.length} selected works
+        </p>
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 auto-rows-[minmax(300px,auto)]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {projects.map((project, index) => {
-          const isLarge = index === 0 || index === 1;
-
-          return (
-            <motion.div
-              key={project.github || index}
-              variants={{
-                hidden: { opacity: 0, scale: 0.95 },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.5 },
-                },
-              }}
-              className={`
-                ${
-                  isLarge
-                    ? "md:col-span-3 lg:col-span-6"
-                    : "md:col-span-3 lg:col-span-4"
-                }
-                flex flex-col h-full
-              `}
-            >
-              <ProjectCard {...project} />
-            </motion.div>
-          );
-        })}
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.github || index}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, ease: "easeOut" },
+              },
+            }}
+            className="flex flex-col h-full"
+          >
+            <ProjectCard {...project} />
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

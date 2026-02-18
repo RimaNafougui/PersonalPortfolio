@@ -12,32 +12,37 @@ export const translations = {
       badge: "Available for Internships: March – Aug 2026",
       intro: "Hi, I am",
       description:
-        "Welcome! I am a full-stack developer with a passion for Data Engineering and AI. I build scalable web applications and automated data pipelines, combining technical logic with modern system architecture.",
+        "Full-stack developer with a passion for Data Engineering & AI. I build scalable web applications, automated data pipelines, and intelligent systems , combining technical precision with modern architecture.",
       ctaProjects: "View Projects",
       ctaResume: "Download Resume",
       scroll: "Scroll",
+      stats: [
+        { value: "15+", label: "Students Tutored" },
+        { value: "10+", label: "Projects Built" },
+        { value: "3", label: "Languages Spoken" },
+      ],
     },
     about: {
       title: "About Me",
       accordion1: {
         title: "Background & Education",
         content:
-          "Hi, I'm a software development student graduating from Collège Ahuntsic in May 2026. I am also an incoming Software Engineering student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
+          "I'm a software development student graduating from Collège Ahuntsic in May 2026, and an incoming Software Engineering student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
       },
       accordion2: {
-        title: "Journey",
+        title: "My Journey",
         content:
           "My journey began in 2020 by building my first PC, which sparked a curiosity about how systems work under the hood. This evolved from hardware to software, leading me to explore full-stack development and, more recently, the complexities of data pipelines and machine learning architectures.",
       },
       accordion3: {
-        title: "Passion",
+        title: "What I Build",
         content:
           "I sit at the intersection of creative frontend work and analytical backend logic. I enjoy crafting intuitive user interfaces with Next.js while simultaneously architecting robust data systems using Python, SQL, and Vector Databases.",
       },
       accordion4: {
         title: "What Drives Me",
         content:
-          "Beyond coding, I'm constantly learning—whether it's new spoken languages or new tech stacks like RAG (Retrieval-Augmented Generation). I am driven by the engineering challenge of optimizing performance, automating workflows, and building software that solves real-world problems.",
+          "Beyond coding, I'm constantly learning — whether it's new spoken languages or new tech stacks like RAG (Retrieval-Augmented Generation). I'm driven by the engineering challenge of optimizing performance, automating workflows, and building software that solves real-world problems.",
       },
     },
     skills: {
@@ -45,7 +50,7 @@ export const translations = {
       languages: "Languages",
       others: "Others",
       framework: "Frameworks",
-      ides: "IDEs",
+      ides: "IDEs & Tools",
       cloud: "Cloud & DevOps",
       databases: "Databases",
       versionControl: "Version Control",
@@ -54,72 +59,84 @@ export const translations = {
       title: "Projects",
       items: {
         project1: {
+          title: "Supply Chain Analytics Dashboard",
+          description:
+            "End-to-end BI pipeline analyzing 10,000+ global shipments to identify disruption patterns. Uncovered selection bias masking $99K in mitigation value using DAX prescriptive analytics.",
+          features: [
+            "Star schema data model with 50+ DAX measures for prescriptive analytics",
+            "4-page interactive dashboard with drill-through on $17M+ shipping costs",
+            "Reduced delivery time by 2.83 days for high-value products",
+          ],
+          technologies: "Power BI, Python, DAX",
+          github: "https://github.com/Mercuryy200/SupplyChainBI",
+          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+        },
+        project2: {
           title: "ArXiv RAG Research Assistant",
           description:
-            "An automated AI pipeline that scrapes research papers and allows users to 'chat' with them. It uses a Retrieval-Augmented Generation (RAG) architecture to provide accurate, cited answers from technical documents.",
+            "Automated AI pipeline that scrapes ArXiv papers and enables semantic chat with research documents using RAG architecture for accurate, cited answers.",
           features: [
-            "Automated ETL pipeline via GitHub Actions (Weekly scraping).",
-            "Vector Embeddings generation using 'sentence-transformers'.",
-            "Semantic Search utilizing Supabase and pgvector.",
-            "Generative AI integration with Google Gemini Pro LLM.",
-            "Streamlit frontend with sub-second response caching.",
-            "Self-healing architecture handling unstructured PDF data.",
+            "Automated ETL pipeline via GitHub Actions with weekly scheduled scraping",
+            "384-dim vector embeddings + Supabase pgvector for semantic search",
+            "Google Gemini Pro LLM for cited natural-language summaries",
           ],
           technologies:
-            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit, Pandas",
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
           github: "https://github.com/Mercuryy200/arxiv-search-engine",
           url: "https://arxiv-search-app.streamlit.app",
         },
-        project2: {
-          title: "RCapsule - Smart Closet Manager",
+        project3: {
+          title: "RCapsule — Smart Closet Manager",
           description:
-            "A full-stack wardrobe management app featuring AI-powered outfit recommendations. It combines secure authentication, real-time database interactions, and weather-based logic to help users organize their closet efficiently.",
+            "Full-stack wardrobe app with AI outfit recommendations, serverless ML pipeline for background removal, and Chrome extension for auto-importing e-commerce products.",
           features: [
-            "AI Outfit Recommendations using OpenAI API & OpenWeatherMap.",
-            "Secure authentication with NextAuth.js (GitHub & Credentials).",
-            "Real-time database operations via Supabase (PostgreSQL).",
-            "Responsive card-based layout with image storage.",
-            "Price tracking and purchase history analytics.",
-            "Optimized performance with protected middleware routes.",
+            "AWS Lambda + ECR pipeline processing 176MB ONNX models for real-time BG removal",
+            "Chrome Extension with DOM scraping reducing manual data entry by 90%",
+            "OpenAI + OpenWeatherMap integration for weather-aware outfit suggestions",
           ],
           technologies:
-            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, NextAuth.js, Tailwind CSS",
+            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://rcapsule.com",
         },
-        project3: {
-          title: "Fruit Basket Game",
+        project4: {
+          title: "ExpenseFlow — Finance REST API",
           description:
-            "An interactive Unity game where players catch falling food items in a pot while avoiding bombs. Built with C# and Unity, features progressive difficulty scaling, physics-based interactions, and a polished UI.",
+            "Production-grade RESTful API with Spring Boot 3 for income/expense tracking with JWT auth, role-based authorization, and 50% test coverage across 18+ tests.",
           features: [
-            "Dynamic spawning system with falling food items and bombs.",
-            "Progressive difficulty that increases as the timer counts down.",
-            "Score tracking system with real-time UI updates.",
-            "Game state management with start, play, and restart functionality.",
-            "Collision detection using Rigidbody physics.",
-            "Coroutines for timed events and asynchronous operations.",
-            "Comprehensive testing suite (Unit, Play Mode, Configuration).",
-            "Polished UI with TextMesh Pro, sound effects, and VFX.",
+            "JWT authentication with role-based authorization and pagination",
+            "50% test coverage using JUnit 5, Mockito, MockMvc",
+            "Deployed to Railway with automated CI/CD via GitHub",
           ],
           technologies:
-            "Unity, C#, Unity Asset Store, TextMesh Pro, Rigidbody Physics, Coroutines, Unity Test Framework",
-          github: "https://github.com/Mercuryy200/FruitBasket",
-          url: null,
+            "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
+          github: "https://github.com/Mercuryy200/expenseflow",
+          url: "https://expenseflow-production.up.railway.app/",
         },
-        project4: {
-          title: "Hangman Game iOS",
+        project5: {
+          title: "Accessible Component Library",
           description:
-            "An iOS Hangman game featuring two game modes: guess movie titles fetched from the OMDB API or random dictionary words. Built with Swift and UIKit following the MVC architecture pattern.",
+            "Reusable React component system achieving 100/100 Lighthouse accessibility score with TypeScript interfaces, WCAG 2.1 AA compliance, and keyboard navigation.",
           features: [
-            "Two game modes: Movie titles (OMDB API) and Dictionary words.",
-            "Tab-based navigation for easy mode switching.",
-            "Visual hangman progression with 7-stage drawing sequence.",
-            "Interactive letter keyboard with tracking.",
-            "Responsive design with Auto Layout for iPhone and iPad.",
-            "MVC architecture pattern for clean code organization.",
+            "Focus trap management and Tab cycling across 3 accessible components",
+            "15+ TypeScript component variants with strict typing",
+            "Reduced code duplication by 70% through shared prop patterns",
           ],
-          technologies: "Swift 5, UIKit, URLSession, OMDB API, Auto Layout",
-          github: "https://github.com/Mercuryy200/HangmanSwfitGame",
+          technologies: "React, TypeScript, WCAG 2.1, ARIA, CSS Modules",
+          github: "https://github.com/Mercuryy200/accessible-components",
+          url: "https://accessible-components-six.vercel.app/",
+        },
+        project6: {
+          title: "Fruit Basket Game",
+          description:
+            "Interactive Unity game with progressive difficulty, physics-based collision, and 95% test coverage across Unit, Play Mode, and Configuration test suites.",
+          features: [
+            "95% test coverage with comprehensive Unity Test Framework suite",
+            "Dynamic spawning with progressive difficulty scaling at 60fps",
+            "Polished UI with TextMesh Pro and VFX particle systems",
+          ],
+          technologies: "Unity, C#, Unity Test Framework, Rigidbody Physics",
+          github: "https://github.com/Mercuryy200/FruitBasket",
           url: null,
         },
       },
@@ -134,19 +151,19 @@ export const translations = {
       fileName: "NafouguiRima_EN.pdf",
       items: [
         {
-          position: "Tutor in Software Development",
-          company: "Cegep Ahuntsic/Freelance",
-          duration: "May 2025 - Present",
+          position: "Programming Tutor",
+          company: "Cégep Ahuntsic / Freelance",
+          duration: "May 2025 – Present",
           description:
-            "Assist college and university students in programming concepts in SQL, Java, Python, JavaScript, Kotlin, Swift and more. \nProvide guidance on code debugging and algorithm problem-solving. \nCreate additional learning materials to enhance student understanding",
+            "Mentoring 15+ students weekly in SQL, Java, Python, JavaScript, Kotlin, and Swift. Improved student pass rates by 85% through real-time debugging, algorithm problem-solving, and personalized learning materials including interactive dashboards and visualization tools.",
           reference: "Professional Reference Available",
         },
         {
-          position: "Tutor in Mathematics",
-          company: "Cegep Ahuntsic/Freelance",
-          duration: "August 2024 - Present",
+          position: "Mathematics Tutor",
+          company: "Cégep Ahuntsic",
+          duration: "Aug 2024 – May 2025",
           description:
-            "Assist 5 college students in mathematics for computer science courses, including linear algebra and discrete mathematics. \nProvide guidance on solving computer-related problems (e.g., ray tracing calculations). \nCreate additional learning materials to enhance student understanding",
+            "Tutored 5 CS students in linear algebra and discrete mathematics, creating 10+ Python visualization scripts to bridge theory to real-world programming. Topics included ray tracing calculations, graph theory, and probability for ML applications.",
           reference: "Professional Reference Available",
         },
       ],
@@ -177,10 +194,10 @@ export const translations = {
         {
           status: "completed",
           date: "MAY 2026",
-          title: "Diploma in Web & Apps",
+          title: "DEC in Web & Applications",
           institution: "Collège Ahuntsic",
           description:
-            "Graduating from intensive training in full-stack web development, mobile applications, and systems analysis. Built strong foundations in OOP, algorithms, and database management.",
+            "Graduating from intensive training in full-stack web development, mobile applications, and systems analysis. Strong foundations in OOP, algorithms, database management, and cloud computing.",
         },
         {
           status: "active",
@@ -188,7 +205,7 @@ export const translations = {
           title: "Seeking Internship",
           institution: "Software / Data Engineering",
           description:
-            "Immediate availability for a 6-month internship. Eager to contribute to dynamic teams using Next.js, Python, or Cloud technologies to build scalable solutions.",
+            "Immediately available for a 270h+ internship. Eager to contribute to dynamic teams using Next.js, Python, or Cloud technologies to build scalable, production-ready solutions.",
         },
         {
           status: "future",
@@ -196,7 +213,7 @@ export const translations = {
           title: "BEng in Software Engineering",
           institution: "Concordia University",
           description:
-            "Incoming Engineering Student. Preparing to deepen theoretical knowledge in software architecture and large-scale system design while continuing to build practical projects.",
+            "Incoming Engineering student. Preparing to deepen theoretical knowledge in software architecture and large-scale system design while continuing to build production projects.",
         },
       ],
     },
@@ -214,40 +231,45 @@ export const translations = {
       badge: "Disponible pour stages : Mars – Août 2026",
       intro: "Bonjour, je suis",
       description:
-        "Bienvenue! Je suis une développeuse full-stack passionnée par l'ingénierie des données et l'IA. Je conçois des applications web évolutives et des pipelines de données automatisés, alliant logique technique et architecture moderne.",
+        "Développeuse full-stack passionnée par l'ingénierie des données et l'IA. Je conçois des applications web évolutives, des pipelines automatisés et des systèmes intelligents, alliant précision technique et architecture moderne.",
       ctaProjects: "Voir mes projets",
       ctaResume: "Télécharger le CV",
       scroll: "Défiler",
+      stats: [
+        { value: "15+", label: "Étudiants encadrés" },
+        { value: "10+", label: "Projets réalisés" },
+        { value: "3", label: "Langues parlées" },
+      ],
     },
     about: {
       title: "À Propos de Moi",
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "Salut, je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026. Je suis également future étudiante en génie logiciel à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
+          "Je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026, et future étudiante en génie logiciel à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
       },
       accordion2: {
-        title: "Parcours",
+        title: "Mon Parcours",
         content:
           "Mon parcours a commencé en 2020 par la construction de mon premier PC, éveillant une curiosité sur le fonctionnement des systèmes. Cela a évolué du matériel vers le logiciel, me menant au développement full-stack et, plus récemment, à la complexité des pipelines de données et des architectures d'apprentissage automatique.",
       },
       accordion3: {
-        title: "Passion",
+        title: "Ce que je construis",
         content:
-          "Je me situe à l'intersection du travail créatif frontend et de la logique backend analytique. J'aime concevoir des interfaces intuitives avec Next.js tout en architecturant simultanément des systèmes de données robustes utilisant Python, SQL et des bases de données vectorielles.",
+          "Je me situe à l'intersection du travail créatif frontend et de la logique backend analytique. J'aime concevoir des interfaces intuitives avec Next.js tout en architecturant des systèmes de données robustes en Python, SQL et bases de données vectorielles.",
       },
       accordion4: {
         title: "Ce qui me motive",
         content:
-          "Au-delà du code, j'apprends constamment—que ce soit de nouvelles langues parlées ou des technologies comme le RAG (Génération Augmentée par Récupération). Je suis motivée par le défi d'ingénierie consistant à optimiser les performances, automatiser les flux de travail et créer des logiciels qui résolvent des problèmes réels.",
+          "Au-delà du code, j'apprends constamment — que ce soit de nouvelles langues parlées ou des technologies comme le RAG. Je suis motivée par le défi d'optimiser les performances, automatiser les workflows et créer des logiciels qui résolvent des problèmes réels.",
       },
     },
     skills: {
       title: "Compétences",
-      languages: "Languages",
+      languages: "Langages",
       others: "Autres",
       framework: "Frameworks",
-      ides: "IDEs",
+      ides: "IDEs & Outils",
       cloud: "Cloud & DevOps",
       databases: "Bases de données",
       versionControl: "Contrôle de version",
@@ -256,72 +278,84 @@ export const translations = {
       title: "Projets",
       items: {
         project1: {
+          title: "Tableau de Bord Chaîne d'Approvisionnement",
+          description:
+            "Pipeline BI complet analysant 10 000+ expéditions mondiales pour identifier les perturbations. A révélé un biais de sélection masquant 99 000 $ de valeur avec des analyses DAX prescriptives.",
+          features: [
+            "Modèle de données en étoile avec 50+ mesures DAX pour l'analyse prescriptive",
+            "Tableau de bord interactif 4 pages avec exploration sur 17M$+ de coûts",
+            "Réduction des délais de livraison de 2,83 jours pour les produits à haute valeur",
+          ],
+          technologies: "Power BI, Python, DAX",
+          github: "https://github.com/Mercuryy200/SupplyChainBI",
+          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+        },
+        project2: {
           title: "Assistant de Recherche ArXiv RAG",
           description:
-            "Un pipeline IA automatisé qui extrait des articles de recherche et permet aux utilisateurs de 'discuter' avec eux. Utilise une architecture RAG (Génération Augmentée par Récupération) pour fournir des réponses précises et citées.",
+            "Pipeline IA automatisé qui extrait des articles ArXiv et permet de discuter avec les documents via architecture RAG pour des réponses précises et citées.",
           features: [
-            "Pipeline ETL automatisé via GitHub Actions (Scraping hebdomadaire).",
-            "Génération d'embeddings vectoriels avec 'sentence-transformers'.",
-            "Recherche sémantique utilisant Supabase et pgvector.",
-            "Intégration d'IA générative avec Google Gemini Pro LLM.",
-            "Frontend Streamlit avec mise en cache ultra-rapide.",
-            "Architecture auto-réparatrice gérant les données PDF non structurées.",
+            "Pipeline ETL automatisé via GitHub Actions avec scraping hebdomadaire",
+            "Embeddings 384-dim + Supabase pgvector pour la recherche sémantique",
+            "LLM Google Gemini Pro pour des résumés citées en langage naturel",
           ],
           technologies:
-            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit, Pandas",
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
           github: "https://github.com/Mercuryy200/arxiv-search-engine",
           url: "https://arxiv-search-app.streamlit.app",
         },
-        project2: {
-          title: "RCapsule - Gestionnaire de Garde-robe Intelligent",
+        project3: {
+          title: "RCapsule — Gestionnaire de Garde-robe",
           description:
-            "Une application full-stack de gestion de garde-robe intégrant des recommandations IA. Elle combine une authentification sécurisée, des interactions en temps réel et une logique basée sur la météo pour organiser efficacement la garde-robe.",
+            "Application full-stack avec recommandations IA, pipeline ML serverless pour suppression d'arrière-plan, et extension Chrome pour importer automatiquement des produits e-commerce.",
           features: [
-            "Recommandations de tenues IA via OpenAI API et OpenWeatherMap.",
-            "Authentification sécurisée avec NextAuth.js.",
-            "Opérations en temps réel via Supabase (PostgreSQL).",
-            "Interface responsive avec stockage d'images.",
-            "Suivi des prix et historique des achats.",
-            "Performance optimisée avec middleware protégé.",
+            "Pipeline AWS Lambda + ECR traitant des modèles ONNX 176 Mo",
+            "Extension Chrome avec scraping DOM réduisant la saisie de 90%",
+            "Intégration OpenAI + OpenWeatherMap pour suggestions météo-adaptées",
           ],
           technologies:
-            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, NextAuth.js, Tailwind CSS",
+            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://rcapsule.com",
         },
-        project3: {
-          title: "Jeu Panier de Fruits",
+        project4: {
+          title: "ExpenseFlow — API REST Finance",
           description:
-            "Un jeu Unity interactif où les joueurs attrapent des aliments qui tombent dans un pot tout en évitant les bombes. Construit avec C# et des assets Unity, il propose une difficulté progressive et des interactions basées sur la physique.",
+            "API RESTful de qualité production avec Spring Boot 3 pour le suivi des finances avec auth JWT, autorisation basée sur les rôles et 50% de couverture de tests.",
           features: [
-            "Système de génération dynamique avec aliments tombants et bombes.",
-            "Difficulté progressive qui augmente avec le temps.",
-            "Système de suivi des points et mises à jour UI en temps réel.",
-            "Gestion complète de l'état du jeu (start, play, restart).",
-            "Détection de collision via physique Rigidbody.",
-            "Utilisation de Coroutines pour les événements asynchrones.",
-            "Suite de tests complète (Unitaires, Mode Lecture).",
-            "Interface soignée avec TextMesh Pro et VFX.",
+            "Authentification JWT avec autorisation par rôles et pagination",
+            "50% de couverture avec JUnit 5, Mockito et MockMvc",
+            "Déployé sur Railway avec CI/CD automatisé via GitHub",
           ],
           technologies:
-            "Unity, C#, Unity Asset Store, TextMesh Pro, Physique Rigidbody, Coroutines, Unity Test Framework",
-          github: "https://github.com/Mercuryy200/FruitBasket",
-          url: null,
+            "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
+          github: "https://github.com/Mercuryy200/expenseflow",
+          url: "https://expenseflow-production.up.railway.app/",
         },
-        project4: {
-          title: "Jeu du Pendu iOS",
+        project5: {
+          title: "Bibliothèque de Composants Accessibles",
           description:
-            "Un jeu du pendu iOS proposant deux modes de jeu : deviner des titres de films (API OMDB) ou des mots aléatoires. Développé avec Swift et UIKit suivant l'architecture MVC.",
+            "Système de composants React réutilisables atteignant 100/100 Lighthouse avec TypeScript, conformité WCAG 2.1 AA et navigation au clavier complète.",
           features: [
-            "Deux modes de jeu : Titres de films (API OMDB) et Mots du dictionnaire.",
-            "Navigation par onglets fluide.",
-            "Progression visuelle du pendu avec séquences.",
-            "Clavier interactif avec suivi.",
-            "Design adaptatif pour iPhone et iPad.",
-            "Architecture MVC pour un code structuré.",
+            "Piège de focus et navigation Tab pour 3 composants accessibles",
+            "15+ variantes TypeScript avec typage strict",
+            "Réduction de la duplication de code de 70% via patrons de props partagés",
           ],
-          technologies: "Swift 5, UIKit, URLSession, API OMDB, Auto Layout",
-          github: "https://github.com/Mercuryy200/HangmanSwfitGame",
+          technologies: "React, TypeScript, WCAG 2.1, ARIA, Modules CSS",
+          github: "https://github.com/Mercuryy200/accessible-components",
+          url: "https://accessible-components-six.vercel.app/",
+        },
+        project6: {
+          title: "Jeu Panier de Fruits",
+          description:
+            "Jeu Unity interactif avec difficulté progressive, collisions physiques et 95% de couverture de tests sur les suites Unit, Play Mode et Configuration.",
+          features: [
+            "95% de couverture avec suite complète Unity Test Framework",
+            "Apparition dynamique avec difficulté progressive à 60fps",
+            "Interface soignée avec TextMesh Pro et systèmes VFX",
+          ],
+          technologies: "Unity, C#, Unity Test Framework, Physique Rigidbody",
+          github: "https://github.com/Mercuryy200/FruitBasket",
           url: null,
         },
       },
@@ -336,42 +370,42 @@ export const translations = {
       fileName: "NafouguiRima_FR.pdf",
       items: [
         {
-          position: "Tutrice en développement logiciel",
-          company: "Collège Ahuntsic / Travail Autonome",
-          duration: "Mai 2025 - Présent",
+          position: "Tutrice en Programmation",
+          company: "Cégep Ahuntsic / Travail Autonome",
+          duration: "Mai 2025 – Présent",
           description:
-            "Assister les étudiants collégiaux et universitaires dans les concepts de programmation en SQL, Java, Python, JavaScript, Kotlin, Swift et plus encore. \nFournir des conseils sur le débogage de code et la résolution de problèmes algorithmiques. \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
-          reference: "Référence professionelle disponible",
+            "Encadrement de 15+ étudiants hebdomadairement en SQL, Java, Python, JavaScript, Kotlin et Swift. Amélioration des taux de réussite de 85% grâce au débogage en temps réel, résolution d'algorithmes et création de matériaux d'apprentissage personnalisés.",
+          reference: "Référence professionnelle disponible",
         },
         {
-          position: "Tuteur en mathématiques",
-          company: "Collège Ahuntsic / Travail Autonome",
-          duration: "Août 2024 - Présent",
+          position: "Tutrice en Mathématiques",
+          company: "Cégep Ahuntsic",
+          duration: "Août 2024 – Mai 2025",
           description:
-            "Assister 5 étudiants collégiaux en mathématiques dans les cours destinés aux étudiants en informatique, incluant l'algèbre linéaire et les mathématiques discrètes. \nFournir des conseils sur la résolution de problèmes liés à l'informatique (par exemple, calculs de ray tracing). \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
-          reference: "Référence professionelle disponible",
+            "Tutorat de 5 étudiants en informatique en algèbre linéaire et mathématiques discrètes. Création de 10+ scripts Python pour illustrer les concepts (ray tracing, théorie des graphes, probabilités pour l'IA).",
+          reference: "Référence professionnelle disponible",
         },
       ],
     },
     contact: {
       title: "Contactez Moi",
       name: {
-        errorMessage: "Veuillez entrer un nom valide ",
-        label: "Nom Complet: ",
-        placeholder: "Entez votre nom complet",
+        errorMessage: "Veuillez entrer un nom valide",
+        label: "Nom Complet:",
+        placeholder: "Entrez votre nom complet",
       },
       email: {
         errorMessage: "Veuillez entrer une adresse courriel valide",
-        label: "Adresse courriel: ",
-        placeholder: "Entrez votre addresse courriel",
+        label: "Adresse courriel:",
+        placeholder: "Entrez votre adresse courriel",
       },
       message: {
-        errorMessage: "Veuillez enter un message",
-        label: "Message: ",
+        errorMessage: "Veuillez entrer un message",
+        label: "Message:",
         placeholder: "Votre message...",
       },
       submit: "Soumettre",
-      reset: "Refaire",
+      reset: "Réinitialiser",
     },
     roadmap: {
       title: "Parcours Technique",
@@ -382,7 +416,7 @@ export const translations = {
           title: "Technique Informatique (DEC)",
           institution: "Collège Ahuntsic",
           description:
-            "Finissant d'une formation intensive en développement web full-stack, applications mobiles et analyse de systèmes. Bases solides en POO, algorithmes et gestion de bases de données.",
+            "Finissant d'une formation intensive en développement web full-stack, applications mobiles et analyse de systèmes. Bases solides en POO, algorithmes, bases de données et cloud.",
         },
         {
           status: "active",
@@ -390,7 +424,7 @@ export const translations = {
           title: "Recherche de Stage",
           institution: "Génie Logiciel / Données",
           description:
-            "Disponibilité immédiate pour un stage de 6 mois. Désireuse de contribuer à des équipes dynamiques utilisant Next.js, Python ou le Cloud pour bâtir des solutions évolutives.",
+            "Disponibilité immédiate pour un stage de 270h+. Désireuse de contribuer à des équipes dynamiques avec Next.js, Python ou le Cloud pour bâtir des solutions évolutives.",
         },
         {
           status: "future",
@@ -398,7 +432,7 @@ export const translations = {
           title: "Baccalauréat en Génie Logiciel",
           institution: "Université Concordia",
           description:
-            "Future étudiante en génie. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle tout en continuant les projets pratiques.",
+            "Future étudiante en génie. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle.",
         },
       ],
     },
