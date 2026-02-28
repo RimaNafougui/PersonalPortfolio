@@ -21,6 +21,7 @@ export default function Header({ t, language, setLanguage }: Props) {
     { name: t.nav.about, href: "#about" },
     { name: t.nav.roadmap, href: "#roadmap" },
     { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.blog, href: "/blog" },
   ];
 
   const handleLinkClick = () => {

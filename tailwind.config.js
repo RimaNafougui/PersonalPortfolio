@@ -10,10 +10,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        cartier: "#A02021",
-        coffee: "#3C2A21",
-        almond: "#F5F2ED",
-        gold: "#D4C3A3",
+        cartier: "#f5f5f4",
+        coffee: "#d6d3d1",
+        almond: "#0c0a09",
+        gold: "#44403c",
+      },
+      fontFamily: {
+        sans: ["var(--font-josefin)", "sans-serif"],
+        serif: ["var(--font-josefin)", "sans-serif"],
       },
     },
   },
@@ -23,10 +27,10 @@ export default {
       themes: {
         light: {
           colors: {
-            primary: "#A02021",
-            background: "#F5F2ED",
-            foreground: "#3C2A21",
-            focus: "#A02021",
+            primary: "#f5f5f4",
+            background: "#0c0a09",
+            foreground: "#d6d3d1",
+            focus: "#f5f5f4",
           },
         },
       },

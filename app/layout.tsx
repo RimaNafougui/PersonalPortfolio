@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
@@ -23,8 +23,10 @@ export const metadata: Metadata = {
   ],
 };
 
-const montserrat = Montserrat({
+const josefinSans = Josefin_Sans({
   subsets: ["latin"],
+  weight: ["100", "300", "400", "600", "700"],
+  variable: "--font-josefin",
 });
 
 export default function RootLayout({
@@ -33,18 +35,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="en" className={`${josefinSans.variable} ${josefinSans.className}`}>
       <body>
         {children}{" "}
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#F5F2ED",
-              color: "#3C2A21",
-              border: "1px solid #D4C3A3",
+              background: "#1c1917",
+              color: "#d6d3d1",
+              border: "1px solid #44403c",
               borderRadius: "0px",
-              fontFamily: "var(--font-montserrat), sans-serif",
+              fontFamily: "var(--font-josefin), sans-serif",
             },
           }}
         />

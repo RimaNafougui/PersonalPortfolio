@@ -7,6 +7,7 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
       roadmap: "Roadmap",
+      blog: "Blog",
     },
     hero: {
       badge: "Available for Internships: March – Aug 2026",
@@ -233,6 +234,7 @@ export const translations = {
       projects: "Projets",
       contact: "Contactez-moi",
       roadmap: "Parcours",
+      blog: "Blog",
     },
     hero: {
       badge: "Disponible pour stages : Mars – Août 2026",
