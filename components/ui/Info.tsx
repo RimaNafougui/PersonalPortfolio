@@ -32,7 +32,7 @@ export default function Info({ items }: InfoProps) {
 
           <div className="md:col-span-9 space-y-4">
             <div className="space-y-1">
-              <h3 className="text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
+              <h3 className="text-2xl md:text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
                 {item.position}
               </h3>
               <p className="text-xs font-bold text-cartier uppercase tracking-widest">

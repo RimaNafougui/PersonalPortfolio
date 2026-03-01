@@ -19,7 +19,7 @@ export default function BlogPage() {
       <main className="pt-24 min-h-screen">
         <section className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-16 space-y-4">
-            <h1 className="text-5xl md:text-7xl font-serif italic text-coffee">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
               Notes
             </h1>
             <div className="h-px w-24 bg-gold" />
@@ -54,7 +54,7 @@ export default function BlogPage() {
                           day: "numeric",
                         })}
                       </time>
-                      <p className="text-2xl md:text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-300 leading-snug">
+                      <p className="text-xl sm:text-2xl md:text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-300 leading-snug">
                         {post.title}
                       </p>
                       <p className="text-sm text-coffee/60 leading-relaxed">

@@ -37,7 +37,7 @@ export default function Projects({ t }: ProjectsProp) {
         viewport={{ once: true }}
         className="mb-16 space-y-4"
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-center text-espresso">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center text-espresso">
           {t.title}
         </h2>
         <div className="h-px w-24 bg-sand mx-auto" />
@@ -47,7 +47,7 @@ export default function Projects({ t }: ProjectsProp) {
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[minmax(320px,auto)]"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto md:auto-rows-[minmax(320px,auto)]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

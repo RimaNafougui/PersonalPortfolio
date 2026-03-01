@@ -35,7 +35,7 @@ export default function Roadmap({ t }: RoadmapProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-coffee">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />
@@ -50,7 +50,7 @@ export default function Roadmap({ t }: RoadmapProps) {
           viewport={{ once: true }}
         />
 
-        <div className="space-y-16 relative">
+        <div className="space-y-10 md:space-y-16 relative">
           {t.milestones.map((item, index) => {
             const Icon = icons[item.status];
             const isEven = index % 2 === 0;
@@ -93,13 +93,13 @@ export default function Roadmap({ t }: RoadmapProps) {
                 </div>
 
                 <div
-                  className={`ml-20 md:ml-0 md:w-1/2 ${
+                  className={`ml-16 md:ml-0 md:w-1/2 ${
                     isEven ? "md:pr-16 md:text-right" : "md:pl-16"
                   }`}
                 >
                   <div
                     className={`
-                    p-8  border border-gold/20 rounded-none transition-all duration-500 relative
+                    p-5 md:p-8 border border-gold/20 rounded-none transition-all duration-500 relative
                     ${
                       isActive
                         ? "border-cartier/40 shadow-lg"
@@ -119,7 +119,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     >
                       {item.date}
                     </span>
-                    <h3 className="text-2xl font-serif italic text-coffee mb-1">
+                    <h3 className="text-xl md:text-2xl font-serif italic text-coffee mb-1">
                       {item.title}
                     </h3>
                     <p className="text-sm font-bold text-coffee/60 uppercase tracking-wider mb-4">

@@ -25,22 +25,22 @@ export default function About({ t }: AboutProps) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-center">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-start">
         {/* Profile photo — left column on desktop */}
         <motion.div
-          className="lg:col-span-2 flex flex-col items-center lg:items-start gap-6"
+          className="md:col-span-2 flex flex-col items-center md:items-start gap-6"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <div className="relative w-64 lg:w-full max-w-xs">
+          <div className="relative w-full max-w-[260px] sm:max-w-xs md:max-w-none">
             {/* Decorative offset border */}
             <div className="absolute -bottom-3 -right-3 w-full h-full border border-cartier/30 pointer-events-none" />
             <div className="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-gold/60 pointer-events-none" />
@@ -83,7 +83,7 @@ export default function About({ t }: AboutProps) {
 
         {/* Accordion — right column on desktop */}
         <motion.div
-          className="lg:col-span-3"
+          className="md:col-span-3"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}

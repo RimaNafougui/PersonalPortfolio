@@ -40,9 +40,9 @@ export default function Hero({ t, language }: HeroProps) {
   return (
     <div
       id="hero"
-      className="relative flex flex-col justify-center min-h-screen items-center p-6 lg:p-20 overflow-hidden"
+      className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] bg-coffeBean/10 rounded-full blur-[100px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] sm:w-[60vw] sm:h-[60vw] md:w-[40vw] md:h-[40vw] bg-coffeBean/10 rounded-full blur-[100px] -z-10" />
 
       <motion.div
         className="flex flex-col items-center text-center max-w-4xl"
@@ -52,7 +52,7 @@ export default function Hero({ t, language }: HeroProps) {
       >
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
           {t.intro}{" "}
           <span className="text-cartier font-bold font-serif italic block mt-2">
@@ -62,7 +62,7 @@ export default function Hero({ t, language }: HeroProps) {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl mt-8 max-w-2xl leading-relaxed text-coffeBean/80 font-medium"
+          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-coffeBean/80 font-medium"
         >
           {t.description}
         </motion.p>
@@ -73,7 +73,7 @@ export default function Hero({ t, language }: HeroProps) {
         >
           <Link
             href="#projects"
-            className="flex items-center gap-2 bg-cartier text-gold px-8 py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95"
+            className="flex items-center gap-2 bg-cartier text-gold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base"
           >
             {t.ctaProjects}
             <ArrowRight size={20} />

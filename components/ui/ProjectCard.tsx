@@ -59,7 +59,7 @@ const TERMINAL_LINES = [
 
 function BackendHoverPanel() {
   return (
-    <div className="absolute inset-0 bg-coffee flex flex-col justify-center px-5 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-75 font-mono">
+    <div className="absolute inset-0 bg-coffee flex flex-col justify-center px-5 py-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-400 delay-75 font-mono">
       {/* macOS-style window chrome */}
       <div className="flex items-center gap-1.5 mb-4">
         <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
@@ -123,7 +123,7 @@ export default function ProjectCard({
       }}
     >
       {/* ── Hover reveal panel ── */}
-      <div className="relative overflow-hidden h-0 group-hover:h-44 transition-all duration-500 ease-in-out">
+      <div className="relative overflow-hidden h-44 md:h-0 md:group-hover:h-44 transition-all duration-500 ease-in-out">
         <div className="absolute inset-0">
           {isBackend ? (
             <BackendHoverPanel />
@@ -133,14 +133,14 @@ export default function ProjectCard({
                 src={image}
                 alt={`${title} screenshot`}
                 fill
-                className="object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 scale-[1.02] group-hover:scale-100 bg-gold/10"
+                className="object-cover object-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 md:delay-100 md:scale-[1.02] md:group-hover:scale-100 bg-gold/10"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-almond/80 to-transparent pointer-events-none" />
             </>
           ) : (
             /* Frontend — image not yet added */
-            <div className="absolute inset-0 bg-gold/10 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+            <div className="absolute inset-0 bg-gold/10 flex flex-col items-center justify-center gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 md:delay-100">
               <div
                 className="w-full h-full"
                 style={{

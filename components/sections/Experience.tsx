@@ -28,7 +28,7 @@ export default function Experience({ t, language }: ExperienceProp) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-center">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />

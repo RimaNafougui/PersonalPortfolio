@@ -79,7 +79,7 @@ export default function Skills({ t }: SkillsProp) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl text-center font-serif italic">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl text-center font-serif italic">
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />

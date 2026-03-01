@@ -81,7 +81,7 @@ export default function Contact({ t }: any) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-coffee">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
           {t.title}
         </h2>
         <div className="h-1 w-24 bg-cartier mx-auto" />
@@ -96,9 +96,9 @@ export default function Contact({ t }: any) {
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-almond/30 border border-gold/30 p-10 md:p-16 space-y-16"
+          className="bg-almond/30 border border-gold/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
             <div className="relative group">
               <label htmlFor="name" className={labelStyle}>
                 {t.name.label}
@@ -154,11 +154,11 @@ export default function Contact({ t }: any) {
             )}
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center pt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 md:pt-8">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-16 py-5 bg-cartier text-gold rounded-full font-bold text-lg  transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-cartier text-gold rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50"
             >
               {isSubmitting ? "..." : t.submit}
             </button>
@@ -166,7 +166,7 @@ export default function Contact({ t }: any) {
             <button
               type="button"
               onClick={() => reset()}
-              className="px-16 py-5 border border-coffee/20 text-coffee rounded-full font-bold text-lg hover:bg-coffee/5 transition-all duration-500"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-coffee/20 text-coffee rounded-full font-bold text-base md:text-lg hover:bg-coffee/5 transition-all duration-500"
             >
               {t.reset}
             </button>

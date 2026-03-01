@@ -60,7 +60,7 @@ export default async function BlogPostPage({ params }: Props) {
                   day: "numeric",
                 })}
               </time>
-              <h1 className="text-4xl md:text-5xl font-serif italic text-coffee leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-coffee leading-tight">
                 {post.title}
               </h1>
               <p className="text-base text-coffee/60 leading-relaxed border-l-2 border-cartier/30 pl-4 italic">
