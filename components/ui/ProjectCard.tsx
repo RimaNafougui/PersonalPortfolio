@@ -7,6 +7,7 @@ import {
   Button,
   Divider,
   Chip,
+  Tooltip,
 } from "@heroui/react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -204,13 +205,29 @@ export default function ProjectCard({
             </Chip>
           ))}
           {techList.length > 4 && (
-            <Chip
-              size="sm"
-              variant="flat"
-              className="bg-gold/10 text-coffee/50 border border-gold/20 text-[9px] px-2 py-0 font-bold uppercase tracking-wider rounded-full h-5"
+            <Tooltip
+              content={
+                <div className="flex flex-col gap-1 py-1">
+                  {techList.slice(4).map((tech) => (
+                    <span key={tech} className="text-[10px] font-bold uppercase tracking-wider">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              }
+              placement="bottom"
+              classNames={{
+                content: "bg-coffee text-almond border border-gold/20 px-3 py-2 rounded-lg shadow-lg",
+              }}
             >
-              +{techList.length - 4}
-            </Chip>
+              <Chip
+                size="sm"
+                variant="flat"
+                className="bg-gold/10 text-coffee/50 border border-gold/20 text-[9px] px-2 py-0 font-bold uppercase tracking-wider rounded-full h-5 cursor-default"
+              >
+                +{techList.length - 4}
+              </Chip>
+            </Tooltip>
           )}
         </div>
       </CardHeader>

@@ -147,6 +147,21 @@ export const translations = {
           url: null,
           image: "/images/projects/fruit-basket.png",
         },
+        project7: {
+          title: "To Do App — Android Task Manager",
+          description:
+            "Production-grade Android task manager with MVVM architecture, Hilt DI, and a reactive 5-stream StateFlow pipeline merging Room data, search, filters, and DataStore preferences into a single state.",
+          features: [
+            "Sealed TaskUiState (Loading | Success | Error) powered by a combine() pipeline merging 5 flows — Room data, text search, priority filter, completed-task toggle, and DataStore sort order — into one WhileSubscribed(5000) StateFlow",
+            "WorkManager OneTimeWorkRequest reminders per task triggered 1h before deadline, auto-rescheduled on edit and cancelled on delete via a custom HiltWorkerFactory",
+            "GitHub Actions CI/CD running unit tests (Turbine + MockK) and uploading a debug APK artifact on every push and pull request to main",
+          ],
+          technologies:
+            "Kotlin, Jetpack Compose, Hilt, Room, WorkManager, DataStore, Coroutines + Flow, Material 3",
+          github: "https://github.com/Mercuryy200/Androidtodo",
+          url: null,
+          image: "/images/projects/Todo.png",
+        },
       },
     },
     footer: {
@@ -373,6 +388,21 @@ export const translations = {
           github: "https://github.com/Mercuryy200/FruitBasket",
           url: null,
           image: "/images/projects/fruit-basket.png",
+        },
+        project7: {
+          title: "To Do App — Gestionnaire de Tâches Android",
+          description:
+            "Application Android MVVM de qualité production avec Hilt, Room et un pipeline StateFlow à 5 flux fusionnant données, recherche, filtres et préférences DataStore en un seul état réactif.",
+          features: [
+            "Classe scellée TaskUiState alimentée par un pipeline combine() à 5 flux (Room, recherche textuelle, filtre priorité, masquage des tâches complètes, tri DataStore) dans un StateFlow WhileSubscribed(5000)",
+            "WorkManager pour rappels OneTimeWorkRequest par tâche déclenchés 1h avant l'échéance, replanifiés à la modification et annulés à la suppression via HiltWorkerFactory",
+            "Pipeline CI GitHub Actions exécutant les tests unitaires (Turbine + MockK) et téléversant un APK de débogage comme artefact à chaque push et pull request sur main",
+          ],
+          technologies:
+            "Kotlin, Jetpack Compose, Hilt, Room, WorkManager, DataStore, Coroutines + Flow, Material 3",
+          github: "https://github.com/Mercuryy200/AndroidTodo",
+          url: null,
+          image: "/images/projects/Todo.png",
         },
       },
     },
