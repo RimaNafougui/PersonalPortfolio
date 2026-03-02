@@ -6,7 +6,7 @@ tags: ["RAG", "pgvector", "PostgreSQL", "Google Gemini", "AI", "Python"]
 draft: false
 ---
 
-ArXiv publishes hundreds of new papers every day. Searching it is keyword-based by default — you type terms, you get titles, you skim abstracts. But what if you could ask *"What are the trade-offs between RLHF and DPO for LLM alignment?"* and get a cited, synthesised answer drawn from the actual papers?
+ArXiv publishes hundreds of new papers every day. Searching it is keyword-based by default — you type terms, you get titles, you skim abstracts. But what if you could ask _"What are the trade-offs between RLHF and DPO for LLM alignment?"_ and get a cited, synthesised answer drawn from the actual papers?
 
 That's the problem I set out to solve with the [ArXiv RAG Research Assistant](https://arxivsearchengine.streamlit.app). This post is a detailed walkthrough of every architectural decision: how the data flows in, how vectors are stored and queried, and how Gemini turns retrieved chunks into coherent answers.
 
@@ -207,8 +207,8 @@ name: Weekly ArXiv Ingestion
 
 on:
   schedule:
-    - cron: "0 3 * * 1"   # every Monday at 03:00 UTC
-  workflow_dispatch:       # also triggerable manually from the Actions tab
+    - cron: "0 3 * * 1" # every Monday at 03:00 UTC
+  workflow_dispatch: # also triggerable manually from the Actions tab
 
 jobs:
   ingest:
@@ -247,7 +247,7 @@ The ingestion script itself queries the ArXiv API for papers published in the la
 
 ## What I'd Do Differently
 
-**Hybrid search (BM25 + vector).** Pure vector search struggles with exact keyword lookups — if a user searches for a specific model name like "Mistral-7B", cosine similarity might surface papers that discuss the same *concept* without mentioning that name. Combining vector similarity with full-text BM25 ranking (Supabase supports this via `to_tsvector` / `ts_rank`) would handle both cases more robustly.
+**Hybrid search (BM25 + vector).** Pure vector search struggles with exact keyword lookups — if a user searches for a specific model name like "Mistral-7B", cosine similarity might surface papers that discuss the same _concept_ without mentioning that name. Combining vector similarity with full-text BM25 ranking (Supabase supports this via `to_tsvector` / `ts_rank`) would handle both cases more robustly.
 
 **Cross-encoder re-ranking.** The bi-encoder setup (embed once, compare with cosine distance) is fast but not always precise. A second-pass cross-encoder that jointly scores `(query, candidate)` pairs from the top-20 results before final top-5 selection would meaningfully improve answer relevance — at the cost of an extra model call per query.
 
@@ -255,6 +255,6 @@ The ingestion script itself queries the ArXiv API for papers published in the la
 
 ---
 
-The full source code is on [GitHub](https://github.com/Mercuryy200/arxivsearchengine) and the live demo runs at [arxivsearchengine.streamlit.app](https://arxivsearchengine.streamlit.app).
+The full source code is on [GitHub](https://github.com/RimaNafougui/arxivsearchengine) and the live demo runs at [arxivsearchengine.streamlit.app](https://arxivsearchengine.streamlit.app).
 
-*— Rima*
+_— Rima_

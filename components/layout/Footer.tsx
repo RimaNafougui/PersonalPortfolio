@@ -35,7 +35,7 @@ export default function Footer({ t }: FooterProps) {
           {[
             {
               icon: faGithub,
-              href: "https://github.com/Mercuryy200",
+              href: "https://github.com/RimaNafougui",
               label: "GitHub",
             },
             {
