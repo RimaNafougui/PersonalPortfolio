@@ -11,7 +11,6 @@ import { Divider } from "@heroui/react";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
 import { HeroUIProvider } from "@heroui/react";
-import SnowfallWrapper from "@/components/ui/SnowFallWrapper";
 import "./globals.css";
 import Roadmap, { Milestone } from "@/components/sections/Roadmap";
 
@@ -22,8 +21,7 @@ export default function Home() {
   return (
     <>
       <HeroUIProvider>
-        <SnowfallWrapper />
-        <Header t={t} language={language} setLanguage={setLanguage} />
+<Header t={t} language={language} setLanguage={setLanguage} />
         <Hero t={t.hero} language={language} />
         <Divider />
         <Projects t={t.projects} />
