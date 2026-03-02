@@ -42,9 +42,9 @@ export default function RootLayout({
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#1c1917",
-              color: "#d6d3d1",
-              border: "1px solid #44403c",
+              background: "#ffffff",
+              color: "#1a1a1a",
+              border: "1px solid #d4d4d4",
               borderRadius: "0px",
               fontFamily: "var(--font-josefin), sans-serif",
             },

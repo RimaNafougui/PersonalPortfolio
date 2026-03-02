@@ -73,7 +73,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-almond transition-all duration-500
                     ${
                       isActive
-                        ? "border-cartier shadow-[0_0_20px_rgba(160,32,33,0.3)] scale-110"
+                        ? "border-cartier shadow-[0_0_20px_rgba(58,58,58,0.2)] scale-110"
                         : "border-gold group-hover:border-coffee"
                     }
                   `}

@@ -15,7 +15,7 @@ export default function SnowfallWrapper() {
       }}
     >
       <Snowfall
-        color="#d4c3a3"
+        color="#aaaaaa"
         snowflakeCount={120}
         radius={[0.5, 1.5]}
         speed={[0.2, 0.8]}

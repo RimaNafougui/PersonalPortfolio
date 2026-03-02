@@ -29,15 +29,15 @@ export default function Contact({ t }: any) {
   const onSubmit = async (values: ContactFormData) => {
     try {
       const mailHtml = `
-        <div style="font-family: serif; max-width: 600px; color: #3C2A21;">
-          <h2 style="color: #A02021; border-bottom: 1px solid #D4C3A3; padding-bottom: 10px;">
+        <div style="font-family: serif; max-width: 600px; color: #1a1a1a;">
+          <h2 style="color: #3a3a3a; border-bottom: 1px solid #d4d4d4; padding-bottom: 10px;">
             New Portfolio Inquiry
           </h2>
           <p><strong>From:</strong> ${values.name} (${values.email})</p>
-          <div style="background-color: #F5F2ED; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #A02021;">
+          <div style="background-color: #f5f5f5; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #3a3a3a;">
             <p style="margin: 0; font-style: italic;">"${values.message}"</p>
           </div>
-          <p style="font-size: 10px; color: #D4C3A3; margin-top: 20px; text-transform: uppercase; tracking: 0.1em;">
+          <p style="font-size: 10px; color: #8a8a8a; margin-top: 20px; text-transform: uppercase; tracking: 0.1em;">
             Sent from rimanafougui.vercel.app
           </p>
         </div>

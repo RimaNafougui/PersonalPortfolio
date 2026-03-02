@@ -117,7 +117,7 @@ export default function ProjectCard({
 
   return (
     <Card
-      className="bg-almond/60 h-full border border-gold/30 shadow-none hover:border-cartier/50 hover:shadow-[0_8px_40px_rgba(160,32,33,0.08)] transition-all duration-500 group rounded-none overflow-hidden"
+      className="bg-almond/60 h-full border border-gold/30 shadow-none hover:border-cartier/50 hover:shadow-[0_8px_40px_rgba(58,58,58,0.1)] transition-all duration-500 group rounded-none overflow-hidden"
       isPressable={!!url}
       onPress={() => {
         if (url) window.open(url, "_blank");
@@ -146,8 +146,8 @@ export default function ProjectCard({
                 className="w-full h-full"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(160,32,33,0.06) 19px,rgba(160,32,33,0.06) 20px)," +
-                    "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(160,32,33,0.06) 19px,rgba(160,32,33,0.06) 20px)",
+                    "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(58,58,58,0.05) 19px,rgba(58,58,58,0.05) 20px)," +
+                    "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(58,58,58,0.05) 19px,rgba(58,58,58,0.05) 20px)",
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
@@ -156,7 +156,7 @@ export default function ProjectCard({
                   height="26"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#A02021"
+                  stroke="#3a3a3a"
                   strokeWidth="1.2"
                   strokeOpacity="0.4"
                 >
