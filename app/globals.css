@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-almond: #0c0a09;
-  --color-coffee: #d6d3d1;
-  --color-cartier: #f5f5f4;
-  --color-gold: #44403c;
+  --color-almond: #f5f5f5;
+  --color-coffee: #1a1a1a;
+  --color-cartier: #3a3a3a;
+  --color-gold: #d4d4d4;
 }
 
 :root {
@@ -25,12 +25,12 @@ body {
 
 h2,
 h3 {
-  color: #f5f5f4;
+  color: #1a1a1a;
 }
 
 ::selection {
-  background-color: #f5f5f4;
-  color: #0c0a09;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
 }
 
 .navLink :hover {
@@ -39,11 +39,11 @@ h3 {
 }
 
 .glassBackground {
-  background: rgba(28, 25, 23, 0.4);
+  background: rgba(245, 245, 245, 0.85);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(68, 64, 60, 0.5);
+  border: 1px solid rgba(212, 212, 212, 0.8);
 }
 
 input:focus {
@@ -65,13 +65,13 @@ input:focus {
 
 /* ─── Blog prose styles ───────────────────────────────────────────────────── */
 .blog-prose {
-  color: #d6d3d1;
+  color: #3a3a3a;
   line-height: 1.8;
   font-size: 1rem;
 }
 
 .blog-prose h2 {
-  color: #f5f5f4;
+  color: #1a1a1a;
   font-family: var(--font-josefin), sans-serif;
   font-style: italic;
   font-size: 1.75rem;
@@ -81,7 +81,7 @@ input:focus {
 }
 
 .blog-prose h3 {
-  color: #f5f5f4;
+  color: #1a1a1a;
   font-family: var(--font-josefin), sans-serif;
   font-style: italic;
   font-size: 1.3rem;
@@ -91,7 +91,7 @@ input:focus {
 }
 
 .blog-prose h4 {
-  color: #e7e5e4;
+  color: #1a1a1a;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -102,29 +102,29 @@ input:focus {
 
 .blog-prose p {
   margin-bottom: 1.4rem;
-  color: rgba(214, 211, 209, 0.85);
+  color: rgba(58, 58, 58, 0.9);
 }
 
 .blog-prose a {
-  color: #f5f5f4;
+  color: #1a1a1a;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(245, 245, 244, 0.3);
+  text-decoration-color: rgba(26, 26, 26, 0.3);
   transition: text-decoration-color 0.2s;
 }
 
 .blog-prose a:hover {
-  text-decoration-color: #f5f5f4;
+  text-decoration-color: #1a1a1a;
 }
 
 .blog-prose strong {
-  color: #f5f5f4;
+  color: #1a1a1a;
   font-weight: 700;
 }
 
 .blog-prose em {
   font-style: italic;
-  color: rgba(214, 211, 209, 0.8);
+  color: rgba(58, 58, 58, 0.8);
 }
 
 .blog-prose ul,
@@ -142,14 +142,14 @@ input:focus {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
-  color: rgba(214, 211, 209, 0.85);
+  color: rgba(58, 58, 58, 0.9);
 }
 
 .blog-prose ul li::before {
   content: "–";
   position: absolute;
   left: 0;
-  color: #a8a29e;
+  color: #8a8a8a;
   font-weight: 700;
 }
 
@@ -160,39 +160,39 @@ input:focus {
 
 .blog-prose ol li {
   margin-bottom: 0.5rem;
-  color: rgba(214, 211, 209, 0.85);
+  color: rgba(58, 58, 58, 0.9);
   padding-left: 0.25rem;
 }
 
 .blog-prose blockquote {
-  border-left: 2px solid #78716c;
+  border-left: 2px solid #d4d4d4;
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  color: rgba(214, 211, 209, 0.6);
+  color: rgba(58, 58, 58, 0.6);
   font-style: italic;
 }
 
 .blog-prose hr {
   border: none;
-  border-top: 1px solid #44403c;
+  border-top: 1px solid #d4d4d4;
   margin: 2.5rem 0;
 }
 
 .blog-prose code:not(pre code) {
-  background: #1c1917;
-  color: #e7e5e4;
+  background: #efefef;
+  color: #1a1a1a;
   font-size: 0.875em;
   padding: 0.1em 0.35em;
   border-radius: 2px;
   font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  border: 1px solid #44403c;
+  border: 1px solid #d4d4d4;
 }
 
 .blog-prose pre {
   margin: 1.75rem 0;
   border-radius: 2px;
   overflow: hidden;
-  border: 1px solid #292524;
+  border: 1px solid #d4d4d4;
 }
 
 .blog-prose pre code {
@@ -212,7 +212,7 @@ input:focus {
 }
 
 .blog-prose thead {
-  border-bottom: 1px solid #44403c;
+  border-bottom: 1px solid #d4d4d4;
 }
 
 .blog-prose th {
@@ -222,26 +222,26 @@ input:focus {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #a8a29e;
+  color: #8a8a8a;
 }
 
 .blog-prose td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid #292524;
-  color: rgba(214, 211, 209, 0.8);
+  border-bottom: 1px solid #e8e8e8;
+  color: rgba(58, 58, 58, 0.85);
 }
 
-/* ─── Syntax highlighting — stone dark theme ─────────────────────────────── */
+/* ─── Syntax highlighting — dark code blocks on light page ───────────────── */
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #1c1917;
-  color: #d6d3d1;
+  background: #1a1a1a;
+  color: #e0e0e0;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #78716c;
+  color: #666666;
   font-style: italic;
 }
 
@@ -250,7 +250,7 @@ input:focus {
 .hljs-built_in,
 .hljs-name,
 .hljs-tag {
-  color: #e7e5e4;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -262,50 +262,50 @@ input:focus {
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: #a8a29e;
+  color: #a8a8a8;
 }
 
 .hljs-number,
 .hljs-symbol,
 .hljs-bullet {
-  color: #d6d3d1;
+  color: #c0c0c0;
 }
 
 .hljs-variable,
 .hljs-params {
-  color: #e7e5e4;
+  color: #e0e0e0;
 }
 
 .hljs-function,
 .hljs-title.function_,
 .hljs-attr {
-  color: #f5f5f4;
+  color: #f0f0f0;
 }
 
 .hljs-class .hljs-title,
 .hljs-type {
-  color: #e7e5e4;
+  color: #e0e0e0;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #a8a29e;
+  color: #a8a8a8;
 }
 
 .hljs-deletion {
-  color: #a8a29e;
-  background: rgba(68, 64, 60, 0.4);
+  color: #a8a8a8;
+  background: rgba(58, 58, 58, 0.3);
 }
 
 .hljs-addition {
-  color: #d6d3d1;
-  background: rgba(68, 64, 60, 0.3);
+  color: #e0e0e0;
+  background: rgba(58, 58, 58, 0.2);
 }
 
 .hljs-meta,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #78716c;
+  color: #888888;
 }
 
 .hljs-emphasis {
