@@ -17,16 +17,16 @@ export default function Footer({ t }: FooterProps) {
     <footer className="w-full text-coffee py-12 px-6 md:px-24 border-t border-gold/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start space-y-2">
-          <p className="font-serif italic text-2xl tracking-tight">
+          <p className="font-display font-extrabold text-2xl tracking-tight">
             Rima Nafougui
           </p>
-          <p className="text-[10px] uppercase tracking-[0.2em] opacity-60">
+          <p className="text-[10px] uppercase tracking-[0.2em] opacity-40">
             {t.rights} &copy; {currentYear}
           </p>
         </div>
 
-        <div className="flex items-center gap-3 px-5 py-2 border border-gold/30 rounded-full bg-cartier">
-          <span className="text-[11px] font-bold uppercase text-gold tracking-widest">
+        <div className="flex items-center gap-3 px-5 py-2 border border-gold rounded-full bg-stone-100">
+          <span className="text-[11px] font-bold uppercase text-stone-500 tracking-widest">
             {t.badge}
           </span>
         </div>
@@ -43,13 +43,13 @@ export default function Footer({ t }: FooterProps) {
               href: "https://www.linkedin.com/in/rima-nafougui/",
               label: "LinkedIn",
             },
-          ].map((social, i) => (
+          ].map((social) => (
             <Link
-              key={i}
+              key={social.label}
               href={social.href}
               target="_blank"
               aria-label={social.label}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-coffee/20 hover:text-cartier hover:border-cartier transition-all duration-500"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-coffee/50 hover:text-cartier hover:border-cartier transition-all duration-500"
             >
               <FontAwesomeIcon icon={social.icon} />
             </Link>

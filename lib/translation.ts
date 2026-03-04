@@ -63,10 +63,17 @@ export const translations = {
           title: "Supply Chain Analytics Dashboard",
           description:
             "End-to-end BI pipeline analyzing 10,000+ global shipments to identify disruption patterns. Uncovered selection bias masking $99K in mitigation value using DAX prescriptive analytics.",
+          problem:
+            "Shipping disruptions are invisible in standard reports because data aggregation hides the selection bias that distorts cost and delay estimates.",
           features: [
             "Star schema data model with 50+ DAX measures for prescriptive analytics",
             "4-page interactive dashboard with drill-through on $17M+ shipping costs",
             "Reduced delivery time by 2.83 days for high-value products",
+          ],
+          keyDecisions: [
+            "Chose a star schema over a flat model to support complex DAX relationships without query fan-traps across 50+ measures.",
+            "Surfaced the selection bias explicitly in the report rather than silently correcting it — decision-makers need to see the distortion to trust the analysis.",
+            "Used what-if parameters for prescriptive analytics instead of stopping at descriptive — the goal was to support decisions, not just describe past data.",
           ],
           technologies: "Power BI, Python, DAX",
           github: "https://github.com/RimaNafougui/SupplyChainBI",
@@ -77,10 +84,17 @@ export const translations = {
           title: "ArXiv RAG Research Assistant",
           description:
             "Automated AI pipeline that scrapes ArXiv papers and enables semantic chat with research documents using RAG architecture for accurate, cited answers.",
+          problem:
+            "Reading full papers to find relevant insights is hours of manual work that a well-designed retrieval system can reduce to seconds.",
           features: [
             "Automated ETL pipeline via GitHub Actions with weekly scheduled scraping",
             "384-dim vector embeddings + Supabase pgvector for semantic search",
             "Google Gemini Pro LLM for cited natural-language summaries",
+          ],
+          keyDecisions: [
+            "Used pgvector on Supabase rather than a standalone vector DB — it kept the stack at one host and avoided the operational overhead of a separate service for what was essentially an index.",
+            "Chose 384-dim sentence-transformers over larger models because the speed-quality tradeoff is optimal for academic abstracts, and latency matters more than marginal embedding precision.",
+            "Scheduled weekly GitHub Actions scraping instead of real-time ingestion — ArXiv relevance doesn't decay in hours, so weekly freshness avoids rate-limit complexity for no practical gain.",
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
@@ -92,10 +106,17 @@ export const translations = {
           title: "RCapsule — Smart Closet Manager",
           description:
             "Full-stack wardrobe app with AI outfit recommendations, serverless ML pipeline for background removal, and Chrome extension for auto-importing e-commerce products.",
+          problem:
+            "Managing a wardrobe across dozens of e-commerce tabs and choosing outfits without inventory visibility leads to repeat purchases and underused clothing.",
           features: [
             "AWS Lambda + ECR pipeline processing 176MB ONNX models for real-time BG removal",
             "Chrome Extension with DOM scraping reducing manual data entry by 90%",
             "OpenAI + OpenWeatherMap integration for weather-aware outfit suggestions",
+          ],
+          keyDecisions: [
+            "Used AWS Lambda with a containerized ONNX model for background removal rather than a third-party API to avoid per-image fees at scale and control the model version.",
+            "Built a Chrome Extension for auto-import rather than requiring manual uploads — reducing input friction was the most important retention factor surfaced in early user testing.",
+            "Chose NextAuth.js with Supabase over custom auth to shrink the security surface area and ship the core product logic faster.",
           ],
           technologies:
             "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
@@ -107,10 +128,17 @@ export const translations = {
           title: "ExpenseFlow — Finance REST API",
           description:
             "Production-grade RESTful API with Spring Boot 3 for income/expense tracking with JWT auth, role-based authorization, and 50% test coverage across 18+ tests.",
+          problem:
+            "Finance APIs commonly become untestable as role and rule complexity grows, causing production bugs that are expensive to trace back to a specific layer.",
           features: [
             "JWT authentication with role-based authorization and pagination",
             "50% test coverage using JUnit 5, Mockito, MockMvc",
             "Deployed to Railway with automated CI/CD via GitHub",
+          ],
+          keyDecisions: [
+            "Used JWT over session-based auth to keep the API stateless and horizontally scalable — no shared session store means simpler deployment without sticky sessions.",
+            "Enforced a JaCoCo 50% coverage floor in CI rather than treating coverage as aspirational — a build gate creates accountability that a goal does not.",
+            "Applied strict domain layering (controller / service / repository) from the start so adding new expense categories never requires cross-layer rewrites.",
           ],
           technologies:
             "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
@@ -123,10 +151,17 @@ export const translations = {
           title: "Accessible Component Library",
           description:
             "Reusable React component system achieving 100/100 Lighthouse accessibility score with TypeScript interfaces, WCAG 2.1 AA compliance, and keyboard navigation.",
+          problem:
+            "Most component libraries achieve visual polish while treating keyboard navigation and screen reader support as an afterthought, forcing teams to retrofit compliance after shipping.",
           features: [
             "Focus trap management and Tab cycling across 3 accessible components",
             "15+ TypeScript component variants with strict typing",
             "Reduced code duplication by 70% through shared prop patterns",
+          ],
+          keyDecisions: [
+            "Implemented focus trap management from scratch rather than using a library so I could fully understand and document the exact behavior required per component type.",
+            "Used CSS Modules over utility classes to keep styles co-located with component logic and avoid purge-related class stripping in consumer build systems.",
+            "Validated with VoiceOver and NVDA alongside axe-core — automated tools catch roughly 40% of WCAG failures, so manual testing is non-negotiable for a real accessibility guarantee.",
           ],
           technologies: "React, TypeScript, WCAG 2.1, ARIA, CSS Modules",
           github: "https://github.com/RimaNafougui/accessible-components",
@@ -137,10 +172,17 @@ export const translations = {
           title: "Fruit Basket Game",
           description:
             "Interactive Unity game with progressive difficulty, physics-based collision, and 95% test coverage across Unit, Play Mode, and Configuration test suites.",
+          problem:
+            "Game prototypes typically skip automated testing, making difficulty tuning brittle and regression-prone each time progression parameters are adjusted.",
           features: [
             "95% test coverage with comprehensive Unity Test Framework suite",
             "Dynamic spawning with progressive difficulty scaling at 60fps",
             "Polished UI with TextMesh Pro and VFX particle systems",
+          ],
+          keyDecisions: [
+            "Used Rigidbody physics for collision instead of manual bounds-checking to get physically accurate bounce behavior for free and eliminate a class of edge-case bugs.",
+            "Separated difficulty state from spawn logic so designers could tune progression parameters without touching spawner code.",
+            "Covered all three Unity test levels (Unit, Play Mode, Configuration) because the physics engine requires play-mode verification that unit tests cannot exercise.",
           ],
           technologies: "Unity, C#, Unity Test Framework, Rigidbody Physics",
           github: "https://github.com/RimaNafougui/foodbasket",
@@ -151,10 +193,17 @@ export const translations = {
           title: "To Do App — Android Task Manager",
           description:
             "Production-grade Android task manager with MVVM architecture, Hilt DI, and a reactive 5-stream StateFlow pipeline merging Room data, search, filters, and DataStore preferences into a single state.",
+          problem:
+            "Most Android task apps manage search, filters, and persistence as separate states, causing UI flicker and stale reads whenever any one of them changes.",
           features: [
             "Sealed TaskUiState (Loading | Success | Error) powered by a combine() pipeline merging 5 flows — Room data, text search, priority filter, completed-task toggle, and DataStore sort order — into one WhileSubscribed(5000) StateFlow",
             "WorkManager OneTimeWorkRequest reminders per task triggered 1h before deadline, auto-rescheduled on edit and cancelled on delete via a custom HiltWorkerFactory",
             "GitHub Actions CI/CD running unit tests (Turbine + MockK) and uploading a debug APK artifact on every push and pull request to main",
+          ],
+          keyDecisions: [
+            "Combined five independent flows (Room data, search, priority filter, completed toggle, DataStore sort) into one StateFlow using combine() so the UI always derives from a single consistent snapshot.",
+            "Used Hilt over manual DI because its compile-time verification catches missing bindings before runtime — critical for a WorkManager component that must survive process death.",
+            "Chose WorkManager over AlarmManager for reminders because it handles Doze mode, device reboots, and cancellation automatically — AlarmManager requires custom broadcast receivers for each of those edge cases.",
           ],
           technologies:
             "Kotlin, Jetpack Compose, Hilt, Room, WorkManager, DataStore, Coroutines + Flow, Material 3",
@@ -305,10 +354,17 @@ export const translations = {
           title: "Tableau de Bord Chaîne d'Approvisionnement",
           description:
             "Pipeline BI complet analysant 10 000+ expéditions mondiales pour identifier les perturbations. A révélé un biais de sélection masquant 99 000 $ de valeur avec des analyses DAX prescriptives.",
+          problem:
+            "Les perturbations de la chaîne d'approvisionnement sont invisibles dans les rapports standards car l'agrégation masque le biais de sélection qui fausse les estimations de coût et de délai.",
           features: [
             "Modèle de données en étoile avec 50+ mesures DAX pour l'analyse prescriptive",
             "Tableau de bord interactif 4 pages avec exploration sur 17M$+ de coûts",
             "Réduction des délais de livraison de 2,83 jours pour les produits à haute valeur",
+          ],
+          keyDecisions: [
+            "Choix d'un schéma en étoile plutôt qu'un modèle plat pour supporter des relations DAX complexes sans fan-trap sur 50+ mesures.",
+            "Exposition explicite du biais de sélection dans le rapport plutôt que correction silencieuse — les décideurs doivent voir la distorsion pour faire confiance à l'analyse.",
+            "Utilisation de paramètres de simulation pour l'analyse prescriptive plutôt que de s'arrêter au descriptif — l'objectif était d'appuyer les décisions, pas seulement de décrire le passé.",
           ],
           technologies: "Power BI, Python, DAX",
           github: "https://github.com/RimaNafougui/SupplyChainBI",
@@ -319,10 +375,17 @@ export const translations = {
           title: "Assistant de Recherche ArXiv RAG",
           description:
             "Pipeline IA automatisé qui extrait des articles ArXiv et permet de discuter avec les documents via architecture RAG pour des réponses précises et citées.",
+          problem:
+            "Lire des articles entiers pour trouver des informations pertinentes représente des heures de travail manuel qu'un système de récupération bien conçu réduit à quelques secondes.",
           features: [
             "Pipeline ETL automatisé via GitHub Actions avec scraping hebdomadaire",
             "Embeddings 384-dim + Supabase pgvector pour la recherche sémantique",
             "LLM Google Gemini Pro pour des résumés citées en langage naturel",
+          ],
+          keyDecisions: [
+            "Utilisation de pgvector sur Supabase plutôt qu'une base vectorielle dédiée — un seul hôte, sans surcharge opérationnelle pour ce qui était essentiellement un index.",
+            "Choix de sentence-transformers 384-dim plutôt que des modèles plus grands car le compromis vitesse-qualité est optimal pour les résumés académiques, et la latence compte plus que la précision marginale.",
+            "Scraping hebdomadaire via GitHub Actions plutôt qu'une ingestion en temps réel — la pertinence ArXiv ne se dégrade pas en quelques heures, donc la fraîcheur hebdomadaire évite la complexité de limitation de taux sans gain pratique.",
           ],
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
@@ -334,10 +397,17 @@ export const translations = {
           title: "RCapsule — Gestionnaire de Garde-robe",
           description:
             "Application full-stack avec recommandations IA, pipeline ML serverless pour suppression d'arrière-plan, et extension Chrome pour importer automatiquement des produits e-commerce.",
+          problem:
+            "Gérer une garde-robe répartie sur des dizaines d'onglets e-commerce et choisir des tenues sans visibilité sur ses possessions entraîne des achats répétés et des vêtements sous-utilisés.",
           features: [
             "Pipeline AWS Lambda + ECR traitant des modèles ONNX 176 Mo",
             "Extension Chrome avec scraping DOM réduisant la saisie de 90%",
             "Intégration OpenAI + OpenWeatherMap pour suggestions météo-adaptées",
+          ],
+          keyDecisions: [
+            "Utilisation d'AWS Lambda avec un modèle ONNX conteneurisé pour la suppression d'arrière-plan plutôt qu'une API tierce — évite les frais par image à l'échelle et contrôle la version du modèle.",
+            "Construction d'une extension Chrome pour l'import automatique plutôt qu'uploads manuels — réduire la friction de saisie était le facteur de rétention principal identifié lors des tests utilisateurs.",
+            "Choix de NextAuth.js avec Supabase plutôt qu'une auth personnalisée pour réduire la surface de sécurité et livrer la logique produit principale plus rapidement.",
           ],
           technologies:
             "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, AWS Lambda, NextAuth.js",
@@ -349,10 +419,17 @@ export const translations = {
           title: "ExpenseFlow — API REST Finance",
           description:
             "API RESTful de qualité production avec Spring Boot 3 pour le suivi des finances avec auth JWT, autorisation basée sur les rôles et 50% de couverture de tests.",
+          problem:
+            "Les API financières deviennent couramment non-testables à mesure que la complexité des rôles augmente, causant des bugs en production difficiles à remonter à une couche précise.",
           features: [
             "Authentification JWT avec autorisation par rôles et pagination",
             "50% de couverture avec JUnit 5, Mockito et MockMvc",
             "Déployé sur Railway avec CI/CD automatisé via GitHub",
+          ],
+          keyDecisions: [
+            "JWT plutôt qu'une auth par session pour garder l'API sans état et horizontalement scalable — pas de session partagée, déploiement simplifié sans sessions collantes.",
+            "Seuil de couverture JaCoCo de 50% imposé en CI plutôt que traité comme aspirationnel — une gate de build crée une responsabilité qu'un objectif seul ne crée pas.",
+            "Découpage strict en couches (contrôleur / service / référentiel) dès le départ pour que l'ajout de nouvelles catégories de dépenses ne nécessite jamais de réécritures inter-couches.",
           ],
           technologies:
             "Spring Boot 3, Java 21, PostgreSQL, JWT, Maven, JaCoCo",
@@ -365,10 +442,17 @@ export const translations = {
           title: "Bibliothèque de Composants Accessibles",
           description:
             "Système de composants React réutilisables atteignant 100/100 Lighthouse avec TypeScript, conformité WCAG 2.1 AA et navigation au clavier complète.",
+          problem:
+            "La plupart des bibliothèques de composants sacrifient la navigation au clavier et le support des lecteurs d'écran au profit de l'aspect visuel, forçant les équipes à corriger la conformité après la livraison.",
           features: [
             "Piège de focus et navigation Tab pour 3 composants accessibles",
             "15+ variantes TypeScript avec typage strict",
             "Réduction de la duplication de code de 70% via patrons de props partagés",
+          ],
+          keyDecisions: [
+            "Implémentation de la gestion du piège de focus depuis zéro plutôt qu'une bibliothèque — pour comprendre et documenter le comportement exact requis par type de composant.",
+            "CSS Modules plutôt que des classes utilitaires pour garder les styles co-localisés avec la logique des composants et éviter la suppression de classes dans les builds consommateurs.",
+            "Validation avec VoiceOver et NVDA en plus d'axe-core — les outils automatisés détectent environ 40% des défaillances WCAG, donc les tests manuels sont incontournables.",
           ],
           technologies: "React, TypeScript, WCAG 2.1, ARIA, Modules CSS",
           github: "https://github.com/RimaNafougui/accessible-components",
@@ -379,10 +463,17 @@ export const translations = {
           title: "Jeu Panier de Fruits",
           description:
             "Jeu Unity interactif avec difficulté progressive, collisions physiques et 95% de couverture de tests sur les suites Unit, Play Mode et Configuration.",
+          problem:
+            "Les prototypes de jeux omettent généralement les tests automatisés, rendant le réglage de la difficulté fragile et sujet à des régressions à chaque modification des paramètres de progression.",
           features: [
             "95% de couverture avec suite complète Unity Test Framework",
             "Apparition dynamique avec difficulté progressive à 60fps",
             "Interface soignée avec TextMesh Pro et systèmes VFX",
+          ],
+          keyDecisions: [
+            "Physique Rigidbody pour les collisions plutôt que vérifications manuelles de limites — comportement de rebond physiquement précis et élimination d'une classe de bugs aux cas limites.",
+            "Séparation de l'état de difficulté et de la logique de spawn — les designers ajustent les paramètres de progression sans toucher au code du spawner.",
+            "Couverture des trois niveaux de test Unity (Unit, Play Mode, Configuration) car le moteur physique nécessite une vérification en mode play que les tests unitaires ne couvrent pas.",
           ],
           technologies: "Unity, C#, Unity Test Framework, Physique Rigidbody",
           github: "https://github.com/RimaNafougui/foodbasket",
@@ -393,10 +484,17 @@ export const translations = {
           title: "To Do App — Gestionnaire de Tâches Android",
           description:
             "Application Android MVVM de qualité production avec Hilt, Room et un pipeline StateFlow à 5 flux fusionnant données, recherche, filtres et préférences DataStore en un seul état réactif.",
+          problem:
+            "La plupart des applications Android gèrent recherche, filtres et persistance comme des états séparés, causant des scintillements d'interface et des lectures obsolètes lors d'un changement.",
           features: [
             "Classe scellée TaskUiState alimentée par un pipeline combine() à 5 flux (Room, recherche textuelle, filtre priorité, masquage des tâches complètes, tri DataStore) dans un StateFlow WhileSubscribed(5000)",
             "WorkManager pour rappels OneTimeWorkRequest par tâche déclenchés 1h avant l'échéance, replanifiés à la modification et annulés à la suppression via HiltWorkerFactory",
             "Pipeline CI GitHub Actions exécutant les tests unitaires (Turbine + MockK) et téléversant un APK de débogage comme artefact à chaque push et pull request sur main",
+          ],
+          keyDecisions: [
+            "Combinaison de cinq flux indépendants (Room, recherche, filtre priorité, toggle tâches complètes, tri DataStore) en un seul StateFlow via combine() — l'UI dérive toujours d'un état cohérent.",
+            "Hilt plutôt que DI manuelle car sa vérification à la compilation détecte les liaisons manquantes avant l'exécution — essentiel pour un WorkManager qui doit survivre à la mort du processus.",
+            "WorkManager plutôt qu'AlarmManager pour les rappels car il gère automatiquement le mode Doze, les redémarrages et l'annulation — AlarmManager nécessiterait des broadcast receivers personnalisés pour chacun de ces cas.",
           ],
           technologies:
             "Kotlin, Jetpack Compose, Hilt, Room, WorkManager, DataStore, Coroutines + Flow, Material 3",

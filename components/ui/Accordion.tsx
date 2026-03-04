@@ -1,6 +1,6 @@
 "use client";
-import { Accordion, AccordionItem } from "@heroui/react";
-import { ChevronRight } from "lucide-react"; // Refined minimalist indicator
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { ChevronRight } from "lucide-react";
 
 interface AccordionProps {
   t: {
@@ -11,93 +11,48 @@ interface AccordionProps {
   };
 }
 
-export default function AboutMeAccordion({ t }: AccordionProps) {
-  // Designer choice: Minimalist item classes to match the "Quiet Luxury" aesthetic
-  const itemClasses = {
-    base: "py-2 w-full border-b border-gold/30 last:border-none",
-    title:
-      "font-serif italic text-xl md:text-2xl text-coffee group-data-[open=true]:text-cartier transition-colors duration-300",
-    trigger:
-      "px-4 py-6 data-[hover=true]:bg-cartier/5 rounded-none h-auto flex items-center transition-all duration-300",
-    indicator: "text-cartier transition-transform duration-500",
-    content:
-      "text-base leading-relaxed text-coffee/80 px-4 pb-6 pt-2 font-medium",
-  };
+const items = (t: AccordionProps["t"]) => [
+  t.accordion1,
+  t.accordion2,
+  t.accordion3,
+  t.accordion4,
+];
 
+export default function AboutMeAccordion({ t }: AccordionProps) {
   return (
     <div className="w-full bg-almond/30 border-t border-gold/30">
-      <Accordion
-        variant="light"
-        selectionMode="single"
-        itemClasses={itemClasses}
-        showDivider={false}
-        // Custom indicator animation
-        selectionBehavior="replace"
-      >
-        <AccordionItem
-          key="1"
-          aria-label={t.accordion1.title}
-          title={t.accordion1.title}
-          indicator={({ isOpen }) => (
-            <ChevronRight
-              size={20}
-              className={`transform transition-transform duration-500 ${
-                isOpen ? "rotate-90" : "rotate-0"
-              }`}
-            />
-          )}
-        >
-          {t.accordion1.content}
-        </AccordionItem>
-
-        <AccordionItem
-          key="2"
-          aria-label={t.accordion2.title}
-          title={t.accordion2.title}
-          indicator={({ isOpen }) => (
-            <ChevronRight
-              size={20}
-              className={`transform transition-transform duration-500 ${
-                isOpen ? "rotate-90" : "rotate-0"
-              }`}
-            />
-          )}
-        >
-          {t.accordion2.content}
-        </AccordionItem>
-
-        <AccordionItem
-          key="3"
-          aria-label={t.accordion3.title}
-          title={t.accordion3.title}
-          indicator={({ isOpen }) => (
-            <ChevronRight
-              size={20}
-              className={`transform transition-transform duration-500 ${
-                isOpen ? "rotate-90" : "rotate-0"
-              }`}
-            />
-          )}
-        >
-          {t.accordion3.content}
-        </AccordionItem>
-
-        <AccordionItem
-          key="4"
-          aria-label={t.accordion4.title}
-          title={t.accordion4.title}
-          indicator={({ isOpen }) => (
-            <ChevronRight
-              size={20}
-              className={`transform transition-transform duration-500 ${
-                isOpen ? "rotate-90" : "rotate-0"
-              }`}
-            />
-          )}
-        >
-          {t.accordion4.content}
-        </AccordionItem>
-      </Accordion>
+      <AccordionPrimitive.Root type="single" collapsible>
+        {items(t).map((item, i) => (
+          <AccordionPrimitive.Item
+            key={i}
+            value={String(i)}
+            className="border-b border-gold/30 last:border-none"
+          >
+            <AccordionPrimitive.Header>
+              <AccordionPrimitive.Trigger
+                className="
+                  flex w-full items-center justify-between px-4 py-6 text-left
+                  font-sans font-bold text-xl md:text-2xl text-coffee
+                  hover:bg-cartier/5 transition-all duration-300
+                  data-[state=open]:text-cartier
+                  [&[data-state=open]>svg]:rotate-90
+                "
+              >
+                {item.title}
+                <ChevronRight
+                  size={20}
+                  className="text-cartier shrink-0 transition-transform duration-500"
+                />
+              </AccordionPrimitive.Trigger>
+            </AccordionPrimitive.Header>
+            <AccordionPrimitive.Content className="overflow-hidden data-[state=open]:animate-none data-[state=closed]:animate-none">
+              <p className="text-base leading-relaxed text-coffee/70 px-4 pb-6 pt-2 font-medium">
+                {item.content}
+              </p>
+            </AccordionPrimitive.Content>
+          </AccordionPrimitive.Item>
+        ))}
+      </AccordionPrimitive.Root>
     </div>
   );
 }

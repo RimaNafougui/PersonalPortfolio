@@ -7,10 +7,10 @@ import Footer from "@/components/layout/Footer";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
-import { Divider } from "@heroui/react";
+import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
-import { HeroUIProvider } from "@heroui/react";
+//import { HeroUIProvider } from "@heroui/react";
 import "./globals.css";
 import Roadmap, { Milestone } from "@/components/sections/Roadmap";
 
@@ -20,29 +20,27 @@ export default function Home() {
 
   return (
     <>
-      <HeroUIProvider>
-<Header t={t} language={language} setLanguage={setLanguage} />
-        <Hero t={t.hero} language={language} />
-        <Divider />
-        <Projects t={t.projects} />
-        <Divider />
-        <Skills t={t.skills} />
-        <Divider />
-        <Experience t={t.experience} language={language} />
-        <Divider />
-        <About t={t.about} />
-        <Divider />
-        <Roadmap
-          t={{
-            title: t.roadmap.title,
-            milestones: t.roadmap.milestones as unknown as Milestone[],
-          }}
-        />{" "}
-        <Divider />
-        <Contact t={t.contact} />
-        <Divider />
-        <Footer t={t.footer} />
-      </HeroUIProvider>
+      <Header t={t} language={language} setLanguage={setLanguage} />
+      <Hero t={t.hero} language={language} />
+      <Separator />
+      <Projects t={t.projects} />
+      <Separator />
+      <Skills t={t.skills} />
+      <Separator />
+      <Experience t={t.experience} language={language} />
+      <Separator />
+      <About t={t.about} />
+      <Separator />
+      <Roadmap
+        t={{
+          title: t.roadmap.title,
+          milestones: t.roadmap.milestones as unknown as Milestone[],
+        }}
+      />{" "}
+      <Separator />
+      <Contact t={t.contact} />
+      <Separator />
+      <Footer t={t.footer} />
     </>
   );
 }

@@ -1,17 +1,79 @@
 @import "tailwindcss";
 
+/* ─── Design Tokens — single source of truth ─────────────────────────────── */
 @theme {
-  --color-almond: #f5f5f5;
-  --color-coffee: #1a1a1a;
-  --color-cartier: #3a3a3a;
-  --color-gold: #d4d4d4;
+  /* ── Brand palette (semantic names kept for backward compat) ─────── */
+  /* almond  → stone-50   light background                              */
+  /* coffee  → stone-900  dark primary text                             */
+  /* cartier → stone-700  warm dark accent                              */
+  /* gold    → stone-200  warm light borders                            */
+  --color-almond:  #fafaf9;   /* stone-50  */
+  --color-coffee:  #1c1917;   /* stone-900 */
+  --color-cartier: #44403c;   /* stone-700 */
+  --color-gold:    #e7e5e4;   /* stone-200 */
+
+  /* ── Full stone scale ────────────────────────────────────────────── */
+  --color-stone-50:  #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  --color-stone-950: #0c0a09;
+
+  /* ── Typography ──────────────────────────────────────────────────── */
+  --font-sans:    "Cabinet Grotesk", system-ui, sans-serif;
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+  /* ── Font size scale ─────────────────────────────────────────────── */
+  --text-2xs:  0.625rem;
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+  --text-7xl:  4.5rem;
+
+  /* ── Font weight scale ───────────────────────────────────────────── */
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+
+  /* ── Border radius ───────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-sm:   0.125rem;
+  --radius:      0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-full: 9999px;
 }
 
+/* ─── Semantic CSS vars (consumed by components) ─────────────────────────── */
 :root {
-  --background: var(--color-almond);
-  --foreground: var(--color-coffee);
+  --background:   var(--color-almond);
+  --foreground:   var(--color-coffee);
+  --border:       var(--color-gold);
+  --accent:       var(--color-cartier);
+  --surface:      var(--color-stone-100);
+  --surface-high: var(--color-stone-200);
+  --muted:        var(--color-stone-100);
+  --muted-fg:     var(--color-stone-500);
+  --ring:         var(--color-cartier);
 }
 
+/* ─── Base styles ────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
@@ -19,39 +81,39 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
   box-sizing: border-box;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2,
 h3 {
-  color: #1a1a1a;
+  color: var(--foreground);
 }
 
 ::selection {
-  background-color: #1a1a1a;
-  color: #f5f5f5;
-}
-
-.navLink :hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.glassBackground {
-  background: rgba(245, 245, 245, 0.85);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(212, 212, 212, 0.8);
+  background-color: var(--color-cartier);
+  color: var(--color-almond);
 }
 
 input:focus {
   outline: none;
 }
 
+/* ─── Glass surface ──────────────────────────────────────────────────────── */
+.glassBackground {
+  background: rgba(250, 250, 249, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(231, 229, 228, 0.8);
+}
+
+/* ─── Toast styles ───────────────────────────────────────────────────────── */
 .cartier-toast [data-title] {
-  font-family: var(--font-josefin), sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
 }
 
@@ -63,17 +125,17 @@ input:focus {
   opacity: 0.8;
 }
 
-/* ─── Blog prose styles ───────────────────────────────────────────────────── */
+/* ─── Blog prose styles ──────────────────────────────────────────────────── */
 .blog-prose {
-  color: #3a3a3a;
+  color: var(--color-stone-700);
   line-height: 1.8;
   font-size: 1rem;
 }
 
 .blog-prose h2 {
-  color: #1a1a1a;
-  font-family: var(--font-josefin), sans-serif;
-  font-style: italic;
+  color: var(--color-stone-900);
+  font-family: var(--font-sans);
+  font-weight: 800;
   font-size: 1.75rem;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
@@ -81,9 +143,9 @@ input:focus {
 }
 
 .blog-prose h3 {
-  color: #1a1a1a;
-  font-family: var(--font-josefin), sans-serif;
-  font-style: italic;
+  color: var(--color-stone-900);
+  font-family: var(--font-sans);
+  font-weight: 700;
   font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -91,7 +153,7 @@ input:focus {
 }
 
 .blog-prose h4 {
-  color: #1a1a1a;
+  color: var(--color-stone-900);
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -102,29 +164,29 @@ input:focus {
 
 .blog-prose p {
   margin-bottom: 1.4rem;
-  color: rgba(58, 58, 58, 0.9);
+  color: var(--color-stone-700);
 }
 
 .blog-prose a {
-  color: #1a1a1a;
+  color: var(--color-stone-700);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(26, 26, 26, 0.3);
+  text-decoration-color: rgba(68, 64, 60, 0.3);
   transition: text-decoration-color 0.2s;
 }
 
 .blog-prose a:hover {
-  text-decoration-color: #1a1a1a;
+  text-decoration-color: var(--color-stone-700);
 }
 
 .blog-prose strong {
-  color: #1a1a1a;
+  color: var(--color-stone-900);
   font-weight: 700;
 }
 
 .blog-prose em {
   font-style: italic;
-  color: rgba(58, 58, 58, 0.8);
+  color: var(--color-stone-500);
 }
 
 .blog-prose ul,
@@ -142,57 +204,56 @@ input:focus {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
-  color: rgba(58, 58, 58, 0.9);
+  color: var(--color-stone-700);
 }
 
 .blog-prose ul li::before {
   content: "–";
   position: absolute;
   left: 0;
-  color: #8a8a8a;
+  color: var(--color-stone-400);
   font-weight: 700;
 }
 
 .blog-prose ol {
   list-style-type: decimal;
-  counter-reset: none;
 }
 
 .blog-prose ol li {
   margin-bottom: 0.5rem;
-  color: rgba(58, 58, 58, 0.9);
+  color: var(--color-stone-700);
   padding-left: 0.25rem;
 }
 
 .blog-prose blockquote {
-  border-left: 2px solid #d4d4d4;
+  border-left: 2px solid var(--color-stone-300);
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  color: rgba(58, 58, 58, 0.6);
+  color: var(--color-stone-500);
   font-style: italic;
 }
 
 .blog-prose hr {
   border: none;
-  border-top: 1px solid #d4d4d4;
+  border-top: 1px solid var(--color-stone-200);
   margin: 2.5rem 0;
 }
 
 .blog-prose code:not(pre code) {
-  background: #efefef;
-  color: #1a1a1a;
+  background: var(--color-stone-100);
+  color: var(--color-stone-800);
   font-size: 0.875em;
   padding: 0.1em 0.35em;
-  border-radius: 2px;
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
-  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  border: 1px solid var(--color-stone-200);
 }
 
 .blog-prose pre {
   margin: 1.75rem 0;
-  border-radius: 2px;
+  border-radius: 4px;
   overflow: hidden;
-  border: 1px solid #d4d4d4;
+  border: 1px solid var(--color-stone-200);
 }
 
 .blog-prose pre code {
@@ -201,7 +262,7 @@ input:focus {
   padding: 1.5rem;
   font-size: 0.85rem;
   line-height: 1.7;
-  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-family: var(--font-mono);
 }
 
 .blog-prose table {
@@ -212,7 +273,7 @@ input:focus {
 }
 
 .blog-prose thead {
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid var(--color-stone-200);
 }
 
 .blog-prose th {
@@ -222,26 +283,26 @@ input:focus {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #8a8a8a;
+  color: var(--color-stone-500);
 }
 
 .blog-prose td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid #e8e8e8;
-  color: rgba(58, 58, 58, 0.85);
+  border-bottom: 1px solid var(--color-stone-100);
+  color: var(--color-stone-700);
 }
 
 /* ─── Syntax highlighting — dark code blocks on light page ───────────────── */
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #1a1a1a;
-  color: #e0e0e0;
+  background: var(--color-stone-900);
+  color: var(--color-stone-200);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #666666;
+  color: var(--color-stone-500);
   font-style: italic;
 }
 
@@ -250,7 +311,7 @@ input:focus {
 .hljs-built_in,
 .hljs-name,
 .hljs-tag {
-  color: #ffffff;
+  color: var(--color-stone-50);
   font-weight: 600;
 }
 
@@ -262,50 +323,45 @@ input:focus {
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: #a8a8a8;
+  color: var(--color-stone-300);
 }
 
 .hljs-number,
 .hljs-symbol,
 .hljs-bullet {
-  color: #c0c0c0;
+  color: var(--color-stone-200);
 }
 
 .hljs-variable,
 .hljs-params {
-  color: #e0e0e0;
+  color: var(--color-stone-200);
 }
 
 .hljs-function,
 .hljs-title.function_,
 .hljs-attr {
-  color: #f0f0f0;
+  color: var(--color-stone-100);
 }
 
 .hljs-class .hljs-title,
 .hljs-type {
-  color: #e0e0e0;
+  color: var(--color-stone-200);
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #a8a8a8;
+  color: var(--color-stone-300);
 }
 
 .hljs-deletion {
-  color: #a8a8a8;
-  background: rgba(58, 58, 58, 0.3);
-}
-
-.hljs-addition {
-  color: #e0e0e0;
-  background: rgba(58, 58, 58, 0.2);
+  color: var(--color-stone-400);
+  background: rgba(68, 64, 60, 0.2);
 }
 
 .hljs-meta,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #888888;
+  color: var(--color-stone-500);
 }
 
 .hljs-emphasis {

@@ -1,5 +1,5 @@
 "use client";
-import { Chip } from "@heroui/react";
+import { Badge } from "@/components/ui/badge";
 import { motion, Variants } from "framer-motion";
 import { languages, frameworks, databases, IDEs } from "@/lib/data";
 import {
@@ -121,13 +121,9 @@ export default function Skills({ t }: SkillsProp) {
               <div className="flex flex-wrap gap-2">
                 {category.data.map((skill) => (
                   <motion.div key={skill} variants={itemVariants}>
-                    <Chip
-                      size="sm"
-                      variant="flat"
-                      className="bg-cartier/5 p-3 text-cartier border border-cartier/10 text-[10px] font-bold uppercase tracking-wider rounded-full hover:bg-cartier hover:text-almond hover:border-cartier cursor-default transition-all duration-200"
-                    >
+                    <Badge size="sm" className="cursor-default transition-all duration-200">
                       {skill}
-                    </Chip>
+                    </Badge>
                   </motion.div>
                 ))}
               </div>

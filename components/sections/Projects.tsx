@@ -5,7 +5,9 @@ import ProjectCard from "../ui/ProjectCard";
 interface Project {
   title: string;
   description: string;
+  problem: string;
   features: string[];
+  keyDecisions: string[];
   technologies: string;
   github: string;
   url: string | null;
