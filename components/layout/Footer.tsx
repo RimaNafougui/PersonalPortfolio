@@ -49,7 +49,7 @@ export default function Footer({ t }: FooterProps) {
               href={social.href}
               target="_blank"
               aria-label={social.label}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-coffee/50 hover:text-cartier hover:border-cartier transition-all duration-500"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-stone-500 hover:text-cartier hover:border-cartier hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
             >
               <FontAwesomeIcon icon={social.icon} />
             </Link>

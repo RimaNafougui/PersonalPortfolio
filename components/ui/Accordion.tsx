@@ -33,9 +33,10 @@ export default function AboutMeAccordion({ t }: AccordionProps) {
                 className="
                   flex w-full items-center justify-between px-4 py-6 text-left
                   font-sans font-bold text-xl md:text-2xl text-coffee
-                  hover:bg-cartier/5 transition-all duration-300
+                  hover:bg-cartier/5 hover:text-cartier transition-all duration-300
                   data-[state=open]:text-cartier
                   [&[data-state=open]>svg]:rotate-90
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cartier
                 "
               >
                 {item.title}

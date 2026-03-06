@@ -27,7 +27,7 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
         <button
           key={lang}
           onClick={() => setLanguage(lang)}
-          className={`relative z-10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-300 w-12
+          className={`relative z-10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-300 w-12 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-1 focus-visible:ring-offset-almond
             ${
               language === lang
                 ? "text-almond"

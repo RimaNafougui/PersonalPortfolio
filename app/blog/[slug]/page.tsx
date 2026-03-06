@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mb-12 space-y-6">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-stone-500 hover:text-cartier transition-colors font-bold"
+              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-stone-500 hover:text-cartier transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               All posts

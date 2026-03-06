@@ -1,4 +1,5 @@
 "use client";
+import { useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +7,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { ArrowRight } from "lucide-react";
 import { Language } from "@/lib/translation";
 import ResumeDownload from "@/components/ui/ResumeDownload";
+import CursorFollower from "@/components/ui/CursorFollower";
 
 interface HeroProps {
   t: {
@@ -17,9 +19,12 @@ interface HeroProps {
     scroll: string;
   };
   language: Language;
+  ready?: boolean;
 }
 
-export default function Hero({ t, language }: HeroProps) {
+export default function Hero({ t, language, ready = true }: HeroProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,10 +44,13 @@ export default function Hero({ t, language }: HeroProps) {
 
   return (
     <section
+      ref={sectionRef}
       id="main-content"
       aria-label="Introduction"
       className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
+      <CursorFollower containerRef={sectionRef} />
+
       {/* Decorative background glow — hidden from assistive tech */}
       <div
         aria-hidden="true"
@@ -53,7 +61,7 @@ export default function Hero({ t, language }: HeroProps) {
         className="flex flex-col items-center text-center max-w-4xl"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={ready ? "visible" : "hidden"}
       >
         <motion.h1
           variants={itemVariants}
@@ -78,7 +86,7 @@ export default function Hero({ t, language }: HeroProps) {
         >
           <Link
             href="#projects"
-            className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base"
+            className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
           >
             {t.ctaProjects}
             <ArrowRight size={20} aria-hidden="true" />
@@ -108,7 +116,7 @@ export default function Hero({ t, language }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex items-center justify-center w-14 h-14 rounded-full border border-stone-300 text-stone-600 hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 transition-all duration-300 shadow-sm"
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-stone-300 text-stone-600 hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
             >
               <FontAwesomeIcon icon={social.icon} size="lg" aria-hidden="true" />
             </Link>
@@ -120,7 +128,7 @@ export default function Hero({ t, language }: HeroProps) {
       <motion.div
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: ready ? 1 : 0 }}
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40 pointer-events-none"
       >

@@ -87,15 +87,22 @@ export default function Header({ t, language, setLanguage }: Props) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300",
+                    "group relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
                     isActive ? "text-cartier" : "text-stone-600 hover:text-coffee"
                   )}
                 >
                   {item.name}
+                  {/* Hover underline — slides in from left, hidden when active */}
+                  <span
+                    className={cn(
+                      "absolute -bottom-px left-0 h-px w-full bg-current origin-left transition-transform duration-300",
+                      isActive ? "scale-x-0" : "scale-x-0 group-hover:scale-x-100"
+                    )}
+                  />
                   {/* Active indicator dot */}
                   <span
                     className={cn(
-                      "absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-cartier transition-all duration-300",
+                      "absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-cartier transition-all duration-300",
                       isActive ? "opacity-100 scale-100" : "opacity-0 scale-0"
                     )}
                   />
@@ -112,7 +119,7 @@ export default function Header({ t, language, setLanguage }: Props) {
             <LanguageSwitcher language={language} setLanguage={setLanguage} />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-coffee hover:text-cartier transition-colors"
+              className="p-2 text-coffee hover:text-cartier transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
               aria-expanded={isMenuOpen}
               aria-label="Toggle menu"
             >

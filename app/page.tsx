@@ -10,18 +10,23 @@ import Contact from "@/components/sections/Contact";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
-//import { HeroUIProvider } from "@heroui/react";
 import "./globals.css";
 import Roadmap, { Milestone } from "@/components/sections/Roadmap";
+import PageLoader from "@/components/ui/PageLoader";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
+  const [loading, setLoading] = useState(true);
   const t = translations[language];
 
   return (
     <>
+      <AnimatePresence>
+        {loading && <PageLoader onDone={() => setLoading(false)} />}
+      </AnimatePresence>
       <Header t={t} language={language} setLanguage={setLanguage} />
-      <Hero t={t.hero} language={language} />
+      <Hero t={t.hero} language={language} ready={!loading} />
       <Separator />
       <Projects t={t.projects} />
       <Separator />

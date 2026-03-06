@@ -99,7 +99,7 @@ export default function Contact({ t }: any) {
           className="bg-almond/30 border border-gold/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
-            <div className="relative group">
+            <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
               <label htmlFor="name" className={labelStyle}>
                 {t.name.label}
               </label>
@@ -120,7 +120,7 @@ export default function Contact({ t }: any) {
               )}
             </div>
 
-            <div className="relative group">
+            <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
               <label htmlFor="email" className={labelStyle}>
                 {t.email.label}
               </label>
@@ -142,7 +142,7 @@ export default function Contact({ t }: any) {
             </div>
           </div>
 
-          <div className="relative group">
+          <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
             <label htmlFor="message" className={labelStyle}>
               {t.message.label}
             </label>
