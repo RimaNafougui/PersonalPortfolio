@@ -60,6 +60,7 @@ export default function Header({ t, language, setLanguage }: Props) {
 
   return (
     <nav
+      aria-label="Main navigation"
       className={cn(
         "fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10 transition-shadow duration-300",
         scrolled && "shadow-[0_1px_16px_rgba(28,25,23,0.08)]"
@@ -87,7 +88,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                   href={item.href}
                   className={cn(
                     "relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300",
-                    isActive ? "text-cartier" : "text-coffee/50 hover:text-coffee"
+                    isActive ? "text-cartier" : "text-stone-600 hover:text-coffee"
                   )}
                 >
                   {item.name}
@@ -142,7 +143,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
                   "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors",
-                  isActive ? "text-cartier" : "text-coffee/60 hover:text-coffee"
+                  isActive ? "text-cartier" : "text-stone-600 hover:text-coffee"
                 )}
               >
                 {item.name}

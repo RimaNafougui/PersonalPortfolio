@@ -106,12 +106,15 @@ export default function Contact({ t }: any) {
               <input
                 id="name"
                 type="text"
+                autoComplete="name"
                 placeholder={t.name.placeholder}
+                aria-describedby={errors.name ? "name-error" : undefined}
+                aria-invalid={!!errors.name}
                 {...register("name")}
                 className={inputStyle}
               />
               {errors.name && (
-                <span className="text-cartier text-xs mt-2 block">
+                <span id="name-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.name.message}
                 </span>
               )}
@@ -124,12 +127,15 @@ export default function Contact({ t }: any) {
               <input
                 id="email"
                 type="email"
+                autoComplete="email"
                 placeholder={t.email.placeholder}
+                aria-describedby={errors.email ? "email-error" : undefined}
+                aria-invalid={!!errors.email}
                 {...register("email")}
                 className={inputStyle}
               />
               {errors.email && (
-                <span className="text-cartier text-xs mt-2 block">
+                <span id="email-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.email.message}
                 </span>
               )}
@@ -144,11 +150,13 @@ export default function Contact({ t }: any) {
               id="message"
               rows={4}
               placeholder={t.message.placeholder}
+              aria-describedby={errors.message ? "message-error" : undefined}
+              aria-invalid={!!errors.message}
               {...register("message")}
               className={`${inputStyle} resize-none`}
             />
             {errors.message && (
-              <span className="text-cartier text-xs mt-2 block">
+              <span id="message-error" role="alert" className="text-red-600 text-xs mt-2 block">
                 {errors.message.message}
               </span>
             )}
@@ -158,15 +166,17 @@ export default function Contact({ t }: any) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-cartier text-gold rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50"
+              aria-busy={isSubmitting}
+              aria-live="polite"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-cartier text-almond rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
             >
-              {isSubmitting ? "..." : t.submit}
+              {isSubmitting ? "Sending…" : t.submit}
             </button>
 
             <button
               type="button"
               onClick={() => reset()}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-coffee/20 text-coffee rounded-full font-bold text-base md:text-lg hover:bg-coffee/5 transition-all duration-500"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-stone-300 text-coffee rounded-full font-bold text-base md:text-lg hover:bg-stone-100 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
             >
               {t.reset}
             </button>

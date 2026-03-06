@@ -41,19 +41,19 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <BlogHeader />
-      <main className="pt-24 min-h-screen">
+      <main id="main-content" className="pt-24 min-h-screen">
         <article className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-12 space-y-6">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-coffee/50 hover:text-cartier transition-colors font-bold"
+              className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-stone-500 hover:text-cartier transition-colors font-bold"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               All posts
             </Link>
 
             <div className="space-y-4 pt-2">
-              <time className="block text-[10px] uppercase tracking-[0.3em] text-coffee/40 font-bold">
+              <time className="block text-[10px] uppercase tracking-[0.3em] text-stone-500 font-bold">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-coffee leading-tight">
                 {post.title}
               </h1>
-              <p className="text-base text-coffee/60 leading-relaxed border-l-2 border-cartier/30 pl-4 italic">
+              <p className="text-base text-stone-600 leading-relaxed border-l-2 border-cartier/30 pl-4 italic">
                 {post.summary}
               </p>
               {post.tags && post.tags.length > 0 && (

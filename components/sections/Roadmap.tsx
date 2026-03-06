@@ -42,7 +42,9 @@ export default function Roadmap({ t }: RoadmapProps) {
       </motion.div>
 
       <div className="max-w-4xl mx-auto relative">
+        {/* Timeline spine — decorative */}
         <motion.div
+          aria-hidden="true"
           className="absolute left-8 md:left-1/2 top-0 h-full w-px bg-gold/50 md:-translate-x-1/2"
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
@@ -50,14 +52,14 @@ export default function Roadmap({ t }: RoadmapProps) {
           viewport={{ once: true }}
         />
 
-        <div className="space-y-10 md:space-y-16 relative">
+        <ol aria-label="Career milestones" className="space-y-10 md:space-y-16 relative list-none">
           {t.milestones.map((item, index) => {
             const Icon = icons[item.status];
             const isEven = index % 2 === 0;
             const isActive = item.status === "active";
 
             return (
-              <motion.div
+              <motion.li
                 key={index}
                 className={`flex flex-col md:flex-row items-start ${
                   isEven ? "md:flex-row-reverse" : ""
@@ -67,26 +69,30 @@ export default function Roadmap({ t }: RoadmapProps) {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center">
+                {/* Timeline node icon — decorative */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center"
+                >
                   <div
                     className={`
                     relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-almond transition-all duration-500
                     ${
                       isActive
-                        ? "border-cartier shadow-[0_0_20px_rgba(58,58,58,0.2)] scale-110"
+                        ? "border-cartier shadow-[0_0_20px_rgba(68,64,60,0.15)] scale-110"
                         : "border-gold group-hover:border-coffee"
                     }
                   `}
                   >
                     {isActive && (
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-cartier opacity-20 animate-ping"></span>
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-cartier opacity-20 animate-ping" />
                     )}
                     <Icon
                       size={24}
                       className={`${
                         isActive
                           ? "text-cartier"
-                          : "text-gold group-hover:text-coffee"
+                          : "text-stone-400 group-hover:text-coffee"
                       } transition-colors duration-500`}
                     />
                   </div>
@@ -103,7 +109,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     ${
                       isActive
                         ? "border-cartier/40 shadow-lg"
-                        : "hover:border-coffee/30 hover:shadow-md"
+                        : "hover:border-stone-400/40 hover:shadow-md"
                     }
                     before:absolute before:top-8 ${
                       isEven
@@ -112,28 +118,29 @@ export default function Roadmap({ t }: RoadmapProps) {
                     } before:border-b-transparent before:border-t-transparent before:border-[8px] md:before:content-['']
                   `}
                   >
+                    {/* Fixed: was "blocktext-[10px]" (typo), and was "text-gold" (1.2:1 contrast) */}
                     <span
-                      className={`blocktext-[10px] font-black uppercase tracking-[0.3em] mb-2 ${
-                        isActive ? "text-cartier" : "text-gold"
+                      className={`block text-[10px] font-black uppercase tracking-[0.3em] mb-2 ${
+                        isActive ? "text-cartier" : "text-stone-500"
                       }`}
                     >
                       {item.date}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-serif italic text-coffee mb-1">
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-coffee mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm font-bold text-coffee/60 uppercase tracking-wider mb-4">
+                    <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">
                       {item.institution}
                     </p>
-                    <p className="text-coffee/80 leading-relaxed font-medium">
+                    <p className="text-stone-600 leading-relaxed font-medium">
                       {item.description}
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </section>
   );

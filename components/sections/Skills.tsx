@@ -109,11 +109,11 @@ export default function Skills({ t }: SkillsProp) {
                       className="text-coffee/50 group-hover:text-cartier transition-colors duration-300"
                     />
                   </div>
-                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-coffee/60 group-hover:text-coffee/80 transition-colors duration-300">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-600 group-hover:text-coffee transition-colors duration-300">
                     {category.title}
                   </h3>
                 </div>
-                <span className="text-[10px] font-bold text-gold/60 tabular-nums">
+                <span className="text-[10px] font-bold text-stone-500 tabular-nums">
                   {category.count}
                 </span>
               </div>

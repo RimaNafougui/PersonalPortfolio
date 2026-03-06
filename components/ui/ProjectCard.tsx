@@ -186,7 +186,7 @@ export default function ProjectCard({
           {/* Features */}
           <ul className="space-y-1.5">
             {features.slice(0, 2).map((feature, i) => (
-              <li key={i} className="flex items-start gap-2.5 text-xs text-coffee/50 leading-relaxed">
+              <li key={i} className="flex items-start gap-2.5 text-xs text-stone-600 leading-relaxed">
                 <span className="text-cartier mt-0.5 flex-shrink-0 leading-none">→</span>
                 {feature}
               </li>
@@ -203,7 +203,7 @@ export default function ProjectCard({
           </p>
           <div className="space-y-2.5">
             {keyDecisions.map((decision, i) => (
-              <p key={i} className="text-xs text-coffee/55 leading-relaxed">
+              <p key={i} className="text-xs text-stone-600 leading-relaxed">
                 {decision}
               </p>
             ))}
@@ -214,7 +214,7 @@ export default function ProjectCard({
 
         {/* ── Footer ────────────────────────────────────────────────────── */}
         <div className="px-6 py-4 flex justify-between items-center">
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-stone-300">
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-stone-500">
             Source Code
           </span>
           <Button

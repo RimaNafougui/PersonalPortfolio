@@ -16,7 +16,7 @@ export default function BlogPage() {
   return (
     <>
       <BlogHeader />
-      <main className="pt-24 min-h-screen">
+      <main id="main-content" className="pt-24 min-h-screen">
         <section className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-16 space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">

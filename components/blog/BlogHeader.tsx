@@ -3,11 +3,11 @@ import { ArrowLeft } from "lucide-react";
 
 export default function BlogHeader() {
   return (
-    <nav className="fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10">
+    <nav aria-label="Blog navigation" className="fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex h-24 items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3">
-            <span className="text-4xl lg:text-5xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" aria-label="Back to portfolio home" className="group flex items-center gap-3">
+            <span className="text-4xl lg:text-5xl font-display font-extrabold text-coffee group-hover:text-cartier transition-colors duration-500">
               R.
             </span>
             <div className="hidden md:block h-px w-0 group-hover:w-12 bg-cartier transition-all duration-700" />

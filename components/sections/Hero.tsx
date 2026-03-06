@@ -38,11 +38,16 @@ export default function Hero({ t, language }: HeroProps) {
   };
 
   return (
-    <div
-      id="hero"
+    <section
+      id="main-content"
+      aria-label="Introduction"
       className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] sm:w-[60vw] sm:h-[60vw] md:w-[40vw] md:h-[40vw] bg-coffeBean/10 rounded-full blur-[100px] -z-10" />
+      {/* Decorative background glow — hidden from assistive tech */}
+      <div
+        aria-hidden="true"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] sm:w-[60vw] sm:h-[60vw] md:w-[40vw] md:h-[40vw] bg-coffee/5 rounded-full blur-[100px] -z-10"
+      />
 
       <motion.div
         className="flex flex-col items-center text-center max-w-4xl"
@@ -55,14 +60,14 @@ export default function Hero({ t, language }: HeroProps) {
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
           {t.intro}{" "}
-          <span className="text-cartier font-bold font-serif italic block mt-2">
+          <span className="text-cartier font-bold font-display block mt-2">
             Rima Nafougui
           </span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-coffeBean/80 font-medium"
+          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-stone-600 font-medium"
         >
           {t.description}
         </motion.p>
@@ -73,10 +78,10 @@ export default function Hero({ t, language }: HeroProps) {
         >
           <Link
             href="#projects"
-            className="flex items-center gap-2 bg-cartier text-gold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base"
+            className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base"
           >
             {t.ctaProjects}
-            <ArrowRight size={20} />
+            <ArrowRight size={20} aria-hidden="true" />
           </Link>
           <ResumeDownload language={language} />
         </motion.div>
@@ -89,32 +94,35 @@ export default function Hero({ t, language }: HeroProps) {
             {
               icon: faGithub,
               href: "https://github.com/RimaNafougui",
-              label: "GitHub",
+              label: "GitHub profile (opens in new tab)",
             },
             {
               icon: faLinkedin,
               href: "https://www.linkedin.com/in/rima-nafougui/",
-              label: "LinkedIn",
+              label: "LinkedIn profile (opens in new tab)",
             },
-          ].map((social, i) => (
+          ].map((social) => (
             <Link
-              key={i}
+              key={social.label}
               href={social.href}
               target="_blank"
+              rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex items-center justify-center w-14 h-14 rounded-full border border-coffeBean/20 text-coffeBean hover:bg-coffeBean hover:text-cartier hover:scale-110 transition-all duration-300 shadow-sm"
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-stone-300 text-stone-600 hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 transition-all duration-300 shadow-sm"
             >
-              <FontAwesomeIcon icon={social.icon} size="lg" />
+              <FontAwesomeIcon icon={social.icon} size="lg" aria-hidden="true" />
             </Link>
           ))}
         </motion.div>
       </motion.div>
 
+      {/* Scroll indicator — purely decorative, hidden from screen readers */}
       <motion.div
+        aria-hidden="true"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40 pointer-events-none"
       >
         <span className="text-[10px] uppercase tracking-[0.2em] font-black text-cartier">
           {t.scroll}
@@ -123,10 +131,10 @@ export default function Hero({ t, language }: HeroProps) {
           <motion.div
             animate={{ y: [0, 48, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 w-full h-1/2 bg-coffeBean"
+            className="absolute top-0 w-full h-1/2 bg-coffee"
           />
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }
