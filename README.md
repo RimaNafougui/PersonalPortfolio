@@ -68,7 +68,7 @@ npm start
 
 ## Deployment
 
-Deployed on Vercel: https://rimanafougui.vercel.app
+Deployed on Vercel: https://rimanafougui.com
 
 ## Future Improvements
 
