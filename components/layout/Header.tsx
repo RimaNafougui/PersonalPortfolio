@@ -88,7 +88,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                   href={item.href}
                   className={cn(
                     "group relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
-                    isActive ? "text-cartier" : "text-[#7D6B5E] hover:text-coffee"
+                    isActive ? "text-cartier" : "text-[#6B7A8D] hover:text-coffee"
                   )}
                 >
                   {item.name}
@@ -150,7 +150,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
                   "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors",
-                  isActive ? "text-cartier" : "text-[#7D6B5E] hover:text-coffee"
+                  isActive ? "text-cartier" : "text-[#6B7A8D] hover:text-coffee"
                 )}
               >
                 {item.name}
