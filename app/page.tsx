@@ -1,5 +1,6 @@
 "use client";
 import Hero from "@/components/sections/Hero";
+import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Header from "@/components/layout/Header";
@@ -27,7 +28,7 @@ export default function Home() {
       </AnimatePresence>
       <Header t={t} language={language} setLanguage={setLanguage} />
       <Hero t={t.hero} language={language} ready={!loading} />
-      <Separator />
+      <Stats stats={t.hero.stats} />
       <About t={t.about} />
       <Separator />
       <Experience t={t.experience} language={language} />

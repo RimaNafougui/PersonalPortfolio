@@ -50,7 +50,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
       ref={sectionRef}
       id="main-content"
       aria-label="Introduction"
-      className="relative flex flex-col justify-center min-h-screen items-center px-6 pt-20 pb-36 md:px-12 lg:px-20 overflow-hidden"
+      className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
       <CursorFollower containerRef={sectionRef} />
 
@@ -137,18 +137,6 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           ))}
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center justify-center gap-8 mt-12 pt-8 border-t border-gold/20 w-full"
-        >
-          {t.stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-extrabold text-coffee tabular-nums">{stat.value}</span>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-[#6C6D74] font-bold">{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Scroll indicator — purely decorative, hidden from screen readers */}
