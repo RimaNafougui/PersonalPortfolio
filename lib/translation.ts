@@ -11,7 +11,7 @@ export const translations = {
     },
     hero: {
       badge: "",
-      intro: "Hi, I am",
+      intro: "",
       description:
         "I build things the way I approach everything else: with full commitment and a need to understand how it works. Software developer, Director of Technology at Careforall.org, and someone who has yet to find a problem worth walking away from.",
       ctaProjects: "View Projects",
@@ -28,12 +28,12 @@ export const translations = {
       accordion1: {
         title: "Background & Education",
         content:
-          "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I was raised to become a doctor, engineer, or lawyer. I picked engineer, then decided to build the software instead. Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026).",
+          "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I chose tech for the freedom to build things on my own terms. Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026).",
       },
       accordion2: {
         title: "My Journey",
         content:
-          "I wanted the freedom to build things on my own terms. Curiosity about how systems work evolved into a drive to build them. Full-stack led me to data engineering, which led me to AI pipelines. I also happen to love fashion — my first production app was a fashion platform that still runs today. Each layer reveals a deeper problem worth solving.",
+          "I wanted the freedom to build things on my own terms. Curiosity about how systems work evolved into a drive to build them. Full-stack led me to data engineering, which led me to AI pipelines. I also happen to love fashion. My first production app was a fashion platform that still runs today. Each layer reveals a deeper problem worth solving.",
       },
       accordion3: {
         title: "How I Work",
@@ -43,7 +43,7 @@ export const translations = {
       accordion4: {
         title: "Where I Am Going",
         content:
-          "I am working toward building something of my own — a company or research that solves a real problem for real people. I want to work alongside people who are as driven as I am, who treat good enough as a starting point, not a destination.",
+          "I am working toward building something of my own: a company or research that solves a real problem for real people. I want to work alongside people who are as driven as I am, who treat good enough as a starting point, not a destination.",
       },
     },
     skills: {
@@ -297,7 +297,7 @@ export const translations = {
     },
     hero: {
       badge: "",
-      intro: "Bonjour, je suis",
+      intro: "",
       description:
         "Je construis les choses comme j'aborde tout le reste : avec un engagement total et le besoin de comprendre comment ca fonctionne. Développeuse, Directrice Technologie chez Careforall.org, et quelqu'un qui n'a pas encore trouvé de problème qui vaille la peine d'abandonner.",
       ctaProjects: "Voir mes projets",
@@ -314,12 +314,12 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai été élevée pour devenir médecin, ingénieure ou avocate. J'ai choisi ingénieure, puis décidé de construire le logiciel à la place. Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en informatique à l'Université Concordia (automne 2026).",
+          "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai choisi la tech pour la liberté de construire des choses selon mes propres termes. Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en informatique à l'Université Concordia (automne 2026).",
       },
       accordion2: {
         title: "Mon Parcours",
         content:
-          "Je voulais la liberté de construire des choses selon mes propres termes. La curiosité sur le fonctionnement des systèmes s'est transformée en envie de les construire. Le full-stack m'a menée à l'ingénierie des données, puis aux pipelines IA. J'aime aussi la mode — ma première application en production était une plateforme de mode qui fonctionne encore aujourd'hui. Chaque couche révèle un problème plus profond à résoudre.",
+          "Je voulais la liberté de construire des choses selon mes propres termes. La curiosité sur le fonctionnement des systèmes s'est transformée en envie de les construire. Le full-stack m'a menée à l'ingénierie des données, puis aux pipelines IA. J'aime aussi la mode. Ma première application en production était une plateforme de mode qui fonctionne encore aujourd'hui. Chaque couche révèle un problème plus profond à résoudre.",
       },
       accordion3: {
         title: "Comment je travaille",
@@ -329,7 +329,7 @@ export const translations = {
       accordion4: {
         title: "Où je vais",
         content:
-          "Je travaille à construire quelque chose de mien — une entreprise ou une recherche qui résout un vrai problème pour de vraies personnes. Je veux travailler avec des gens aussi ambitieux que moi, qui considèrent le suffisant comme un point de départ, pas une destination.",
+          "Je travaille à construire quelque chose de mien : une entreprise ou une recherche qui résout un vrai problème pour de vraies personnes. Je veux travailler avec des gens aussi ambitieux que moi, qui considèrent le suffisant comme un point de départ, pas une destination.",
       },
     },
     skills: {

@@ -50,7 +50,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
       ref={sectionRef}
       id="main-content"
       aria-label="Introduction"
-      className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
+      className="relative flex flex-col justify-center min-h-screen items-center px-6 pt-20 pb-36 md:px-12 lg:px-20 overflow-hidden"
     >
       <CursorFollower containerRef={sectionRef} />
 
@@ -78,8 +78,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
-          {t.intro}{" "}
-          <span className="text-cartier font-extrabold font-display block mt-2 tracking-[-0.02em] min-h-[1em]">
+          <span className="text-cartier font-extrabold font-display block tracking-[-0.02em] min-h-[1em]">
             <TypingText text="Rima Nafougui" ready={ready} delay={900} speed={75} />
           </span>
         </motion.h1>
