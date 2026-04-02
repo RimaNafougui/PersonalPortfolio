@@ -21,6 +21,7 @@ export default function OGImage() {
       {/* Outer border frame */}
       <div
         style={{
+          display: "flex",
           position: "absolute",
           inset: "40px",
           border: "1px solid #262E36",
@@ -30,6 +31,7 @@ export default function OGImage() {
       {/* Top-right: domain */}
       <div
         style={{
+          display: "flex",
           position: "absolute",
           top: "56px",
           right: "72px",
@@ -48,13 +50,13 @@ export default function OGImage() {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "0px",
           maxWidth: "700px",
         }}
       >
         {/* Eyebrow */}
         <div
           style={{
+            display: "flex",
             fontSize: "11px",
             letterSpacing: "0.35em",
             textTransform: "uppercase",
@@ -69,6 +71,7 @@ export default function OGImage() {
         {/* Name */}
         <div
           style={{
+            display: "flex",
             fontSize: "84px",
             fontWeight: 800,
             color: "#D3D1CE",
@@ -80,6 +83,7 @@ export default function OGImage() {
         </div>
         <div
           style={{
+            display: "flex",
             fontSize: "84px",
             fontWeight: 800,
             color: "#D3D1CE",
@@ -94,6 +98,7 @@ export default function OGImage() {
         {/* Accent rule */}
         <div
           style={{
+            display: "flex",
             width: "72px",
             height: "3px",
             background: "#B3B7BA",
@@ -104,6 +109,7 @@ export default function OGImage() {
         {/* Specialties */}
         <div
           style={{
+            display: "flex",
             fontSize: "20px",
             fontWeight: 500,
             color: "#6C6D74",
@@ -126,6 +132,7 @@ export default function OGImage() {
             <div
               key={tag}
               style={{
+                display: "flex",
                 fontSize: "10px",
                 fontWeight: 800,
                 letterSpacing: "0.2em",
@@ -142,26 +149,22 @@ export default function OGImage() {
         </div>
       </div>
 
-      {/* Right side decorative element */}
+      {/* Right side decorative R. */}
       <div
         style={{
+          display: "flex",
           position: "absolute",
           right: "100px",
           top: "50%",
-          transform: "translateY(-50%)",
+          fontSize: "180px",
+          fontWeight: 800,
+          color: "#262E36",
+          lineHeight: 1,
+          letterSpacing: "-0.04em",
+          marginTop: "-90px",
         }}
       >
-        <div
-          style={{
-            fontSize: "180px",
-            fontWeight: 800,
-            color: "#262E36",
-            lineHeight: 1,
-            letterSpacing: "-0.04em",
-          }}
-        >
-          R.
-        </div>
+        R.
       </div>
     </div>,
     {
