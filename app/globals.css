@@ -7,10 +7,10 @@
   /* coffee  → stone-900  dark primary text                             */
   /* cartier → stone-700  warm dark accent                              */
   /* gold    → stone-200  warm light borders                            */
-  --color-almond:  #0C1628;   /* espresso          */
-  --color-coffee:  #EDE8DC;   /* warm ivory        */
-  --color-cartier: #A87B52;   /* terracotta        */
-  --color-gold:    #1A2840;   /* warm brown border */
+  --color-almond:  #1E2B36;   /* deep slate        */
+  --color-coffee:  #BDDDFC;   /* pale periwinkle   */
+  --color-cartier: #88BDF2;   /* sky blue accent   */
+  --color-gold:    #384959;   /* stormy border     */
 
   /* ── Full stone scale ────────────────────────────────────────────── */
   --color-stone-50:  #fafaf9;
@@ -104,11 +104,11 @@ input:focus {
 
 /* ─── Glass surface ──────────────────────────────────────────────────────── */
 .glassBackground {
-  background: rgba(12, 22, 40, 0.85);
+  background: rgba(30, 43, 54, 0.85);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(26, 40, 64, 0.8);
+  border: 1px solid rgba(56, 73, 89, 0.8);
 }
 
 /* ─── Toast styles ───────────────────────────────────────────────────────── */

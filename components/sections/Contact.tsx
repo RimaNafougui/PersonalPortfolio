@@ -181,7 +181,7 @@ export default function Contact({ t }: any) {
             <button
               type="button"
               onClick={() => reset()}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-[#1A2840] text-coffee rounded-full font-bold text-base md:text-lg hover:bg-[#111F35] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-[#384959] text-coffee rounded-full font-bold text-base md:text-lg hover:bg-[#253444] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
             >
               {t.reset}
             </button>

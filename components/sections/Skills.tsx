@@ -44,7 +44,7 @@ export default function Skills({ t }: SkillsProp) {
       data: languages,
       icon: Code2,
       count: languages.length,
-      accent: "group-hover:bg-[#EDE8DC]/5 group-hover:border-[#8E9BAA]/30",
+      accent: "group-hover:bg-[#BDDDFC]/5 group-hover:border-[#8AAFC4]/30",
     },
     {
       title: t.framework,
@@ -58,14 +58,14 @@ export default function Skills({ t }: SkillsProp) {
       data: databases,
       icon: Database,
       count: databases.length,
-      accent: "group-hover:bg-[#6B7A8D]/5 group-hover:border-[#6B7A8D]/30",
+      accent: "group-hover:bg-[#6A89A7]/5 group-hover:border-[#6A89A7]/30",
     },
     {
       title: t.versionControl,
       data: ["GitHub", "Git"],
       icon: GitBranch,
       count: 2,
-      accent: "group-hover:bg-[#EDE8DC]/5 group-hover:border-[#8E9BAA]/30",
+      accent: "group-hover:bg-[#BDDDFC]/5 group-hover:border-[#8AAFC4]/30",
     },
     { title: t.ides, data: IDEs, icon: Terminal, count: IDEs.length, accent: "group-hover:bg-cartier/[0.04] group-hover:border-cartier/30" },
     {
@@ -73,7 +73,7 @@ export default function Skills({ t }: SkillsProp) {
       data: ["AWS", "Vercel", "Docker", "GitHub Actions"],
       icon: Cloud,
       count: 4,
-      accent: "group-hover:bg-[#6B7A8D]/5 group-hover:border-[#6B7A8D]/30",
+      accent: "group-hover:bg-[#6A89A7]/5 group-hover:border-[#6A89A7]/30",
     },
   ];
 
@@ -116,11 +116,11 @@ export default function Skills({ t }: SkillsProp) {
                       className="text-coffee/50 group-hover:text-cartier transition-colors duration-300"
                     />
                   </div>
-                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8E9BAA] group-hover:text-coffee transition-colors duration-300">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8AAFC4] group-hover:text-coffee transition-colors duration-300">
                     {category.title}
                   </h3>
                 </div>
-                <span className="text-[10px] font-bold text-[#6B7A8D] tabular-nums">
+                <span className="text-[10px] font-bold text-[#6A89A7] tabular-nums">
                   {category.count}
                 </span>
               </div>

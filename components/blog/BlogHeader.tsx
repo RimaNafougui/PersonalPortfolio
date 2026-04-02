@@ -20,7 +20,7 @@ export default function BlogHeader() {
           <div className="flex items-center gap-8">
             <Link
               href="/blog"
-              className="group relative text-[10px] font-black uppercase tracking-[0.3em] text-[#6B7A8D] hover:text-cartier transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
+              className="group relative text-[10px] font-black uppercase tracking-[0.3em] text-[#6A89A7] hover:text-cartier transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
             >
               Blog
               <span className="absolute -bottom-px left-0 h-px w-full bg-cartier origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
@@ -28,7 +28,7 @@ export default function BlogHeader() {
             <div className="h-4 w-px bg-gold/30" />
             <Link
               href="/"
-              className="group relative inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#6B7A8D] hover:text-cartier transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
+              className="group relative inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#6A89A7] hover:text-cartier transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               Portfolio
