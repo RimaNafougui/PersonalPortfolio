@@ -10,17 +10,16 @@ export const translations = {
       blog: "Blog",
     },
     hero: {
-      badge: "Available for Internships: March – Aug 2026",
+      badge: "",
       intro: "Hi, I am",
       description:
-        "Full-stack developer with a passion for Data Engineering & AI. I build scalable web applications, automated data pipelines, and intelligent systems , combining technical precision with modern architecture.",
+        "Full-stack developer and Director of Technology at Careforall.org. I build RAG pipelines, BI systems that surfaced $99K in hidden value, and serverless ML backends using Next.js, Python, and AWS.",
       ctaProjects: "View Projects",
       ctaResume: "Download Resume",
       scroll: "Scroll",
       stats: [
         { value: "15+", label: "Students Tutored" },
         { value: "10+", label: "Projects Built" },
-        { value: "3", label: "Languages Spoken" },
       ],
     },
     about: {
@@ -28,12 +27,12 @@ export const translations = {
       accordion1: {
         title: "Background & Education",
         content:
-          "I'm a software development student graduating from Collège Ahuntsic in May 2026, and an incoming Computer Science student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
+          "Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026). I pair formal technical training with self-driven depth in AI and Data Engineering.",
       },
       accordion2: {
         title: "My Journey",
         content:
-          "My journey began in 2020 by building my first PC, which sparked a curiosity about how systems work under the hood. This evolved from hardware to software, leading me to explore full-stack development and, more recently, the complexities of data pipelines and machine learning architectures.",
+          "Curiosity about how systems work evolved into a drive to build them. Full-stack led me to data engineering, which led me to AI pipelines. Each layer revealed a deeper problem worth solving.",
       },
       accordion3: {
         title: "What I Build",
@@ -169,27 +168,6 @@ export const translations = {
           image: "/images/projects/accessible-components.png",
         },
         project6: {
-          title: "Fruit Basket Game",
-          description:
-            "Interactive Unity game with progressive difficulty, physics-based collision, and 95% test coverage across Unit, Play Mode, and Configuration test suites.",
-          problem:
-            "Game prototypes typically skip automated testing, making difficulty tuning brittle and regression-prone each time progression parameters are adjusted.",
-          features: [
-            "95% test coverage with comprehensive Unity Test Framework suite",
-            "Dynamic spawning with progressive difficulty scaling at 60fps",
-            "Polished UI with TextMesh Pro and VFX particle systems",
-          ],
-          keyDecisions: [
-            "Used Rigidbody physics for collision instead of manual bounds-checking to get physically accurate bounce behavior for free and eliminate a class of edge-case bugs.",
-            "Separated difficulty state from spawn logic so designers could tune progression parameters without touching spawner code.",
-            "Covered all three Unity test levels (Unit, Play Mode, Configuration) because the physics engine requires play-mode verification that unit tests cannot exercise.",
-          ],
-          technologies: "Unity, C#, Unity Test Framework, Rigidbody Physics",
-          github: "https://github.com/RimaNafougui/foodbasket",
-          url: null,
-          image: "/images/projects/fruit-basket.png",
-        },
-        project7: {
           title: "To Do App — Android Task Manager",
           description:
             "Production-grade Android task manager with MVVM architecture, Hilt DI, and a reactive 5-stream StateFlow pipeline merging Room data, search, filters, and DataStore preferences into a single state.",
@@ -215,13 +193,21 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved",
-      badge: "Available for Internships: March – Aug 2026",
+      badge: "",
     },
     experience: {
       title: "Experience",
       viewMore: "Download Resume",
       fileName: "NafouguiRima_EN.pdf",
       items: [
+        {
+          position: "Director of Technology",
+          company: "Careforall.org",
+          duration: "March 2026 – Present",
+          description:
+            "Managing website infrastructure maintenance, security, and email delivery systems for a non-profit platform. Leading SEO optimization, performance improvements, and compliance efforts to ensure a reliable and accessible experience for users.",
+          reference: "",
+        },
         {
           position: "Programming Tutor",
           company: "Cégep Ahuntsic / Freelance",
@@ -264,7 +250,7 @@ export const translations = {
       title: "Technical Journey",
       milestones: [
         {
-          status: "completed",
+          status: "active",
           date: "MAY 2026",
           title: "DEC in Web & Applications",
           institution: "Collège Ahuntsic",
@@ -273,11 +259,11 @@ export const translations = {
         },
         {
           status: "active",
-          date: "MARCH – AUGUST 2026",
-          title: "Seeking Internship",
-          institution: "Software / Data Engineering",
+          date: "MARCH 2026 – PRESENT",
+          title: "Director of Technology",
+          institution: "Careforall.org",
           description:
-            "Immediately available for a 270h+ internship. Eager to contribute to dynamic teams using Next.js, Python, or Cloud technologies to build scalable, production-ready solutions.",
+            "Managing website infrastructure maintenance, security, and email delivery systems. Driving SEO optimization, performance improvements, and compliance for the non-profit platform.",
         },
         {
           status: "future",
@@ -301,17 +287,16 @@ export const translations = {
       blog: "Blog",
     },
     hero: {
-      badge: "Disponible pour stages : Mars – Août 2026",
+      badge: "",
       intro: "Bonjour, je suis",
       description:
-        "Développeuse full-stack passionnée par l'ingénierie des données et l'IA. Je conçois des applications web évolutives, des pipelines automatisés et des systèmes intelligents, alliant précision technique et architecture moderne.",
+        "Développeuse full-stack et Directrice Technologie chez Careforall.org. Je conçois des pipelines RAG, des analyses BI ayant révélé 99 000 $ de valeur cachée, et des backends ML serverless avec Next.js, Python et AWS.",
       ctaProjects: "Voir mes projets",
       ctaResume: "Télécharger le CV",
       scroll: "Défiler",
       stats: [
         { value: "15+", label: "Étudiants encadrés" },
         { value: "10+", label: "Projets réalisés" },
-        { value: "3", label: "Langues parlées" },
       ],
     },
     about: {
@@ -319,12 +304,12 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "Je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026, et future étudiante en Informatique à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
+          "Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en Informatique à l'Université Concordia (Automne 2026). J'associe une formation technique rigoureuse à un apprentissage autodidacte en IA et en ingénierie des données.",
       },
       accordion2: {
         title: "Mon Parcours",
         content:
-          "Mon parcours a commencé en 2020 par la construction de mon premier PC, éveillant une curiosité sur le fonctionnement des systèmes. Cela a évolué du matériel vers le logiciel, me menant au développement full-stack et, plus récemment, à la complexité des pipelines de données et des architectures d'apprentissage automatique.",
+          "La curiosité sur le fonctionnement des systèmes s'est transformée en envie de les construire. Le full-stack m'a menée à l'ingénierie des données, puis aux pipelines IA. Chaque couche a révélé des problèmes plus profonds à résoudre.",
       },
       accordion3: {
         title: "Ce que je construis",
@@ -460,27 +445,6 @@ export const translations = {
           image: "/images/projects/accessible-components.png",
         },
         project6: {
-          title: "Jeu Panier de Fruits",
-          description:
-            "Jeu Unity interactif avec difficulté progressive, collisions physiques et 95% de couverture de tests sur les suites Unit, Play Mode et Configuration.",
-          problem:
-            "Les prototypes de jeux omettent généralement les tests automatisés, rendant le réglage de la difficulté fragile et sujet à des régressions à chaque modification des paramètres de progression.",
-          features: [
-            "95% de couverture avec suite complète Unity Test Framework",
-            "Apparition dynamique avec difficulté progressive à 60fps",
-            "Interface soignée avec TextMesh Pro et systèmes VFX",
-          ],
-          keyDecisions: [
-            "Physique Rigidbody pour les collisions plutôt que vérifications manuelles de limites — comportement de rebond physiquement précis et élimination d'une classe de bugs aux cas limites.",
-            "Séparation de l'état de difficulté et de la logique de spawn — les designers ajustent les paramètres de progression sans toucher au code du spawner.",
-            "Couverture des trois niveaux de test Unity (Unit, Play Mode, Configuration) car le moteur physique nécessite une vérification en mode play que les tests unitaires ne couvrent pas.",
-          ],
-          technologies: "Unity, C#, Unity Test Framework, Physique Rigidbody",
-          github: "https://github.com/RimaNafougui/foodbasket",
-          url: null,
-          image: "/images/projects/fruit-basket.png",
-        },
-        project7: {
           title: "To Do App — Gestionnaire de Tâches Android",
           description:
             "Application Android MVVM de qualité production avec Hilt, Room et un pipeline StateFlow à 5 flux fusionnant données, recherche, filtres et préférences DataStore en un seul état réactif.",
@@ -506,13 +470,21 @@ export const translations = {
     },
     footer: {
       rights: "Tous droits réservés",
-      badge: "Disponible pour stages : Mars – Août 2026",
+      badge: "",
     },
     experience: {
       title: "Expériences",
       viewMore: "Télécharger le CV",
       fileName: "NafouguiRima_FR.pdf",
       items: [
+        {
+          position: "Directrice Technologie",
+          company: "Careforall.org",
+          duration: "Mars 2026 – Présent",
+          description:
+            "Gestion de la maintenance de l'infrastructure web, de la sécurité et des systèmes d'envoi de courriels pour une plateforme à but non lucratif. Pilotage de l'optimisation SEO, des performances et de la conformité afin d'assurer une expérience fiable et accessible.",
+          reference: "",
+        },
         {
           position: "Tutrice en Programmation",
           company: "Cégep Ahuntsic / Travail Autonome",
@@ -555,7 +527,7 @@ export const translations = {
       title: "Parcours Technique",
       milestones: [
         {
-          status: "completed",
+          status: "active",
           date: "MAI 2026",
           title: "Technique Informatique (DEC)",
           institution: "Collège Ahuntsic",
@@ -564,11 +536,11 @@ export const translations = {
         },
         {
           status: "active",
-          date: "MARS – AOÛT 2026",
-          title: "Recherche de Stage",
-          institution: "Génie Logiciel / Données",
+          date: "MARS 2026 – PRÉSENT",
+          title: "Directrice Technologie",
+          institution: "Careforall.org",
           description:
-            "Disponibilité immédiate pour un stage de 270h+. Désireuse de contribuer à des équipes dynamiques avec Next.js, Python ou le Cloud pour bâtir des solutions évolutives.",
+            "Gestion de la maintenance de l'infrastructure web, de la sécurité et des systèmes d'envoi de courriels. Optimisation du référencement, des performances et de la conformité pour la plateforme à but non lucratif.",
         },
         {
           status: "future",
