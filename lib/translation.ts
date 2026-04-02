@@ -13,13 +13,14 @@ export const translations = {
       badge: "",
       intro: "Hi, I am",
       description:
-        "Full-stack developer and Director of Technology at Careforall.org. I build RAG pipelines, BI systems that surfaced $99K in hidden value, and serverless ML backends using Next.js, Python, and AWS.",
+        "I build things the way I approach everything else: with full commitment and a need to understand how it works. Software developer, Director of Technology at Careforall.org, and someone who has yet to find a problem worth walking away from.",
       ctaProjects: "View Projects",
       ctaResume: "Download Resume",
       scroll: "Scroll",
       stats: [
         { value: "15+", label: "Students Tutored" },
         { value: "10+", label: "Projects Built" },
+        { value: "4", label: "Languages Spoken" },
       ],
     },
     about: {
@@ -27,22 +28,22 @@ export const translations = {
       accordion1: {
         title: "Background & Education",
         content:
-          "Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026). I pair formal technical training with self-driven depth in AI and Data Engineering.",
+          "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I was raised to become a doctor, engineer, or lawyer. I picked engineer, then decided to build the software instead. Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026).",
       },
       accordion2: {
         title: "My Journey",
         content:
-          "Curiosity about how systems work evolved into a drive to build them. Full-stack led me to data engineering, which led me to AI pipelines. Each layer revealed a deeper problem worth solving.",
+          "I wanted the freedom to build things on my own terms. Curiosity about how systems work evolved into a drive to build them. Full-stack led me to data engineering, which led me to AI pipelines. I also happen to love fashion — my first production app was a fashion platform that still runs today. Each layer reveals a deeper problem worth solving.",
       },
       accordion3: {
-        title: "What I Build",
+        title: "How I Work",
         content:
-          "I sit at the intersection of creative frontend work and analytical backend logic. I enjoy crafting intuitive user interfaces with Next.js while simultaneously architecting robust data systems using Python, SQL, and Vector Databases.",
+          "I don't jump to solutions. I map the problem, consider multiple approaches, then build the one worth maintaining. I optimize for correctness first, performance second. Whether it is a RAG pipeline, a BI dashboard, or a non-profit's infrastructure, the standard is the same.",
       },
       accordion4: {
-        title: "What Drives Me",
+        title: "Where I Am Going",
         content:
-          "Beyond coding, I'm constantly learning — whether it's new spoken languages or new tech stacks like RAG (Retrieval-Augmented Generation). I'm driven by the engineering challenge of optimizing performance, automating workflows, and building software that solves real-world problems.",
+          "I am working toward building something of my own — a company or research that solves a real problem for real people. I want to work alongside people who are as driven as I am, who treat good enough as a starting point, not a destination.",
       },
     },
     skills: {
@@ -106,7 +107,7 @@ export const translations = {
           description:
             "Full-stack wardrobe app with AI outfit recommendations, serverless ML pipeline for background removal, and Chrome extension for auto-importing e-commerce products.",
           problem:
-            "Managing a wardrobe across dozens of e-commerce tabs and choosing outfits without inventory visibility leads to repeat purchases and underused clothing.",
+            "My first production-level application, built around something I genuinely care about: fashion as a design problem. Managing a wardrobe across dozens of e-commerce tabs with no inventory visibility leads to repeat purchases and underused clothing.",
           features: [
             "AWS Lambda + ECR pipeline processing 176MB ONNX models for real-time BG removal",
             "Chrome Extension with DOM scraping reducing manual data entry by 90%",
@@ -271,7 +272,15 @@ export const translations = {
           title: "BSc in Computer Science",
           institution: "Concordia University",
           description:
-            "Incoming Engineering student. Preparing to deepen theoretical knowledge in software architecture and large-scale system design while continuing to build production projects.",
+            "Incoming CS student. Deepening theoretical foundations in software architecture and large-scale systems while continuing to ship production projects.",
+        },
+        {
+          status: "future",
+          date: "2027+",
+          title: "Build Something of My Own",
+          institution: "To Be Written",
+          description:
+            "Working toward founding a company or research initiative that solves a real problem for real people. The next chapter is still being decided — but the direction is clear.",
         },
       ],
     },
@@ -290,13 +299,14 @@ export const translations = {
       badge: "",
       intro: "Bonjour, je suis",
       description:
-        "Développeuse full-stack et Directrice Technologie chez Careforall.org. Je conçois des pipelines RAG, des analyses BI ayant révélé 99 000 $ de valeur cachée, et des backends ML serverless avec Next.js, Python et AWS.",
+        "Je construis les choses comme j'aborde tout le reste : avec un engagement total et le besoin de comprendre comment ca fonctionne. Développeuse, Directrice Technologie chez Careforall.org, et quelqu'un qui n'a pas encore trouvé de problème qui vaille la peine d'abandonner.",
       ctaProjects: "Voir mes projets",
       ctaResume: "Télécharger le CV",
       scroll: "Défiler",
       stats: [
         { value: "15+", label: "Étudiants encadrés" },
         { value: "10+", label: "Projets réalisés" },
+        { value: "4", label: "Langues parlées" },
       ],
     },
     about: {
@@ -304,22 +314,22 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en Informatique à l'Université Concordia (Automne 2026). J'associe une formation technique rigoureuse à un apprentissage autodidacte en IA et en ingénierie des données.",
+          "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai été élevée pour devenir médecin, ingénieure ou avocate. J'ai choisi ingénieure, puis décidé de construire le logiciel à la place. Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en informatique à l'Université Concordia (automne 2026).",
       },
       accordion2: {
         title: "Mon Parcours",
         content:
-          "La curiosité sur le fonctionnement des systèmes s'est transformée en envie de les construire. Le full-stack m'a menée à l'ingénierie des données, puis aux pipelines IA. Chaque couche a révélé des problèmes plus profonds à résoudre.",
+          "Je voulais la liberté de construire des choses selon mes propres termes. La curiosité sur le fonctionnement des systèmes s'est transformée en envie de les construire. Le full-stack m'a menée à l'ingénierie des données, puis aux pipelines IA. J'aime aussi la mode — ma première application en production était une plateforme de mode qui fonctionne encore aujourd'hui. Chaque couche révèle un problème plus profond à résoudre.",
       },
       accordion3: {
-        title: "Ce que je construis",
+        title: "Comment je travaille",
         content:
-          "Je me situe à l'intersection du travail créatif frontend et de la logique backend analytique. J'aime concevoir des interfaces intuitives avec Next.js tout en architecturant des systèmes de données robustes en Python, SQL et bases de données vectorielles.",
+          "Je ne saute pas aux solutions. Je cartographie le problème, considère plusieurs approches, puis construis celle qui vaut la peine d'être maintenue. J'optimise d'abord pour l'exactitude, ensuite pour la performance. Que ce soit un pipeline RAG, un tableau de bord BI ou l'infrastructure d'un organisme à but non lucratif, le standard est le même.",
       },
       accordion4: {
-        title: "Ce qui me motive",
+        title: "Où je vais",
         content:
-          "Au-delà du code, j'apprends constamment — que ce soit de nouvelles langues parlées ou des technologies comme le RAG. Je suis motivée par le défi d'optimiser les performances, automatiser les workflows et créer des logiciels qui résolvent des problèmes réels.",
+          "Je travaille à construire quelque chose de mien — une entreprise ou une recherche qui résout un vrai problème pour de vraies personnes. Je veux travailler avec des gens aussi ambitieux que moi, qui considèrent le suffisant comme un point de départ, pas une destination.",
       },
     },
     skills: {
@@ -383,7 +393,7 @@ export const translations = {
           description:
             "Application full-stack avec recommandations IA, pipeline ML serverless pour suppression d'arrière-plan, et extension Chrome pour importer automatiquement des produits e-commerce.",
           problem:
-            "Gérer une garde-robe répartie sur des dizaines d'onglets e-commerce et choisir des tenues sans visibilité sur ses possessions entraîne des achats répétés et des vêtements sous-utilisés.",
+            "Ma première application en production, construite autour de quelque chose qui me tient vraiment à coeur : la mode comme problème de design. Gérer une garde-robe sur des dizaines d'onglets sans visibilité sur son inventaire mène à des achats répétés et des vêtements sous-utilisés.",
           features: [
             "Pipeline AWS Lambda + ECR traitant des modèles ONNX 176 Mo",
             "Extension Chrome avec scraping DOM réduisant la saisie de 90%",
@@ -548,7 +558,15 @@ export const translations = {
           title: "Baccalauréat en Informatique",
           institution: "Université Concordia",
           description:
-            "Future étudiante en Informatique. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle.",
+            "Future étudiante en informatique. Approfondissement des fondements théoriques en architecture logicielle et systèmes à grande échelle, tout en continuant à livrer des projets en production.",
+        },
+        {
+          status: "future",
+          date: "2027+",
+          title: "Construire quelque chose de mien",
+          institution: "À écrire",
+          description:
+            "Travailler vers la création d'une entreprise ou d'une initiative de recherche qui résout un vrai problème pour de vraies personnes. Le prochain chapitre se décide — mais la direction est claire.",
         },
       ],
     },

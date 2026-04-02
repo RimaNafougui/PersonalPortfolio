@@ -28,20 +28,20 @@ export default function Home() {
       <Header t={t} language={language} setLanguage={setLanguage} />
       <Hero t={t.hero} language={language} ready={!loading} />
       <Separator />
-      <Projects t={t.projects} />
-      <Separator />
-      <Skills t={t.skills} />
+      <About t={t.about} />
       <Separator />
       <Experience t={t.experience} language={language} />
       <Separator />
-      <About t={t.about} />
+      <Projects t={t.projects} />
+      <Separator />
+      <Skills t={t.skills} />
       <Separator />
       <Roadmap
         t={{
           title: t.roadmap.title,
           milestones: t.roadmap.milestones as unknown as Milestone[],
         }}
-      />{" "}
+      />
       <Separator />
       <Contact t={t.contact} />
       <Separator />

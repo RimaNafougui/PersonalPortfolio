@@ -69,7 +69,7 @@ export default function About({ t }: AboutProps) {
                 Rima Nafougui
               </p>
               <p className="text-[10px] uppercase tracking-wider text-cartier font-black mt-0.5">
-                Director of Technology
+                Builder. Optimist. Polyglot.
               </p>
             </div>
           </div>

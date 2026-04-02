@@ -12,7 +12,7 @@ interface Props {
   setLanguage: (lang: Language) => void;
 }
 
-const SECTION_IDS = ["projects", "skills", "experience", "about", "roadmap", "contact"];
+const SECTION_IDS = ["about", "experience", "projects", "skills", "roadmap", "contact"];
 
 export default function Header({ t, language, setLanguage }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,10 +49,10 @@ export default function Header({ t, language, setLanguage }: Props) {
   }, []);
 
   const navigation = [
+    { name: t.nav.about,      href: "#about",      id: "about"      },
+    { name: t.nav.experience, href: "#experience", id: "experience" },
     { name: t.nav.projects,   href: "#projects",   id: "projects"   },
     { name: t.nav.skills,     href: "#skills",     id: "skills"     },
-    { name: t.nav.experience, href: "#experience", id: "experience" },
-    { name: t.nav.about,      href: "#about",      id: "about"      },
     { name: t.nav.roadmap,    href: "#roadmap",    id: "roadmap"    },
     { name: t.nav.contact,    href: "#contact",    id: "contact"    },
     { name: t.nav.blog,       href: "/blog",       id: ""           },

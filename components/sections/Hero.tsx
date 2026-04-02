@@ -19,6 +19,7 @@ interface HeroProps {
     ctaProjects: string;
     ctaResume: string;
     scroll: string;
+    stats: Array<{ value: string; label: string }>;
   };
   language: Language;
   ready?: boolean;
@@ -134,6 +135,19 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
             >
               <FontAwesomeIcon icon={social.icon} size="lg" aria-hidden="true" />
             </Link>
+          ))}
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center justify-center gap-8 mt-12 pt-8 border-t border-gold/20 w-full"
+        >
+          {t.stats.map((stat, i) => (
+            <div key={i} className="flex flex-col items-center gap-1">
+              <span className="text-2xl font-extrabold text-coffee tabular-nums">{stat.value}</span>
+              <span className="text-[9px] uppercase tracking-[0.25em] text-[#6C6D74] font-bold">{stat.label}</span>
+            </div>
           ))}
         </motion.div>
       </motion.div>
