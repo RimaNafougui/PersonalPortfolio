@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import ProjectCard from "../ui/ProjectCard";
+import WordReveal from "@/components/ui/WordReveal";
 
 interface Project {
   title: string;
@@ -30,23 +31,23 @@ export default function Projects({ t }: ProjectsProp) {
   return (
     <section
       id="projects"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-ivory overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-[#111820] overflow-hidden"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-16 space-y-4"
-      >
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center text-espresso">
-          {t.title}
+      <div className="mb-16 space-y-4">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center text-coffee">
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-px w-24 bg-sand mx-auto" />
-        <p className="text-center text-taupe/60 text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+        <p className="text-center text-coffee/50 text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
           {projects.length} selected works
         </p>
-      </motion.div>
+      </div>
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto md:auto-rows-[minmax(320px,auto)]"

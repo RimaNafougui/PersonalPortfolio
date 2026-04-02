@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Info from "@/components/ui/Info";
+import WordReveal from "@/components/ui/WordReveal";
 import ResumeDownload from "@/components/ui/ResumeDownload";
 import { Language } from "@/lib/translation";
 
@@ -22,17 +23,18 @@ interface ExperienceProp {
 export default function Experience({ t, language }: ExperienceProp) {
   return (
     <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 bg-almond">
-      <motion.div
-        className="mb-16 text-center space-y-4"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="mb-16 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
-          {t.title}
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-      </motion.div>
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
 
       <motion.div
         className="flex flex-col items-center space-y-12"

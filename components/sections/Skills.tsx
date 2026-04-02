@@ -1,6 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { motion, Variants } from "framer-motion";
+import WordReveal from "@/components/ui/WordReveal";
 import { languages, frameworks, databases, IDEs } from "@/lib/data";
 import {
   Code2,
@@ -43,47 +44,53 @@ export default function Skills({ t }: SkillsProp) {
       data: languages,
       icon: Code2,
       count: languages.length,
+      accent: "group-hover:bg-[#D3D1CE]/5 group-hover:border-[#8a9ab0]/30",
     },
     {
       title: t.framework,
       data: frameworks,
       icon: Layers,
       count: frameworks.length,
+      accent: "group-hover:bg-cartier/[0.04] group-hover:border-cartier/30",
     },
     {
       title: t.databases,
       data: databases,
       icon: Database,
       count: databases.length,
+      accent: "group-hover:bg-[#6C6D74]/5 group-hover:border-[#6C6D74]/30",
     },
     {
       title: t.versionControl,
       data: ["GitHub", "Git"],
       icon: GitBranch,
       count: 2,
+      accent: "group-hover:bg-[#D3D1CE]/5 group-hover:border-[#8a9ab0]/30",
     },
-    { title: t.ides, data: IDEs, icon: Terminal, count: IDEs.length },
+    { title: t.ides, data: IDEs, icon: Terminal, count: IDEs.length, accent: "group-hover:bg-cartier/[0.04] group-hover:border-cartier/30" },
     {
       title: t.cloud,
       data: ["AWS", "Vercel", "Docker", "GitHub Actions"],
       icon: Cloud,
       count: 4,
+      accent: "group-hover:bg-[#6C6D74]/5 group-hover:border-[#6C6D74]/30",
     },
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 bg-almond">
-      <motion.div
-        className="mb-16 space-y-4"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-      >
+    <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 bg-almond border-t border-gold/20">
+      <div className="mb-16 space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl text-center font-serif italic">
-          {t.title}
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-      </motion.div>
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((category, idx) => {
@@ -91,14 +98,14 @@ export default function Skills({ t }: SkillsProp) {
           return (
             <motion.div
               key={idx}
-              className="flex flex-col bg-almond/40 p-7 border border-gold/30 hover:border-cartier/40 transition-all duration-500 group relative overflow-hidden"
+              className={`flex flex-col bg-almond p-7 border border-gold/30 transition-all duration-500 group relative overflow-hidden ${category.accent}`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={containerVariants}
             >
-              {/* Subtle hover background effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cartier/0 to-cartier/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Hover background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-coffee/[0.025] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               {/* Category header */}
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-gold/20">
@@ -109,11 +116,11 @@ export default function Skills({ t }: SkillsProp) {
                       className="text-coffee/50 group-hover:text-cartier transition-colors duration-300"
                     />
                   </div>
-                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-600 group-hover:text-coffee transition-colors duration-300">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8a9ab0] group-hover:text-coffee transition-colors duration-300">
                     {category.title}
                   </h3>
                 </div>
-                <span className="text-[10px] font-bold text-stone-500 tabular-nums">
+                <span className="text-[10px] font-bold text-[#6C6D74] tabular-nums">
                   {category.count}
                 </span>
               </div>

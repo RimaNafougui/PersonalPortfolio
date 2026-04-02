@@ -1,6 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import WordReveal from "@/components/ui/WordReveal";
 import { sendMail } from "@/lib/send-mail";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -73,19 +74,20 @@ export default function Contact({ t }: any) {
   return (
     <section
       id="contact"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almond min-h-screen flex flex-col items-center"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almond min-h-screen flex flex-col items-center border-t border-gold/20"
     >
-      <motion.div
-        className="mb-20 text-center space-y-4"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="mb-20 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
-          {t.title}
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-      </motion.div>
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
 
       <motion.div
         className="w-full max-w-3xl"
@@ -99,7 +101,7 @@ export default function Contact({ t }: any) {
           className="bg-almond/30 border border-gold/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
-            <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
+            <div className="relative group border-b border-gold/40 transition-colors duration-300">
               <label htmlFor="name" className={labelStyle}>
                 {t.name.label}
               </label>
@@ -113,6 +115,7 @@ export default function Contact({ t }: any) {
                 {...register("name")}
                 className={inputStyle}
               />
+              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
               {errors.name && (
                 <span id="name-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.name.message}
@@ -120,7 +123,7 @@ export default function Contact({ t }: any) {
               )}
             </div>
 
-            <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
+            <div className="relative group border-b border-gold/40 transition-colors duration-300">
               <label htmlFor="email" className={labelStyle}>
                 {t.email.label}
               </label>
@@ -134,6 +137,7 @@ export default function Contact({ t }: any) {
                 {...register("email")}
                 className={inputStyle}
               />
+              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
               {errors.email && (
                 <span id="email-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.email.message}
@@ -142,7 +146,7 @@ export default function Contact({ t }: any) {
             </div>
           </div>
 
-          <div className="relative group border-b border-gold/40 focus-within:border-cartier transition-colors duration-300">
+          <div className="relative group border-b border-gold/40 transition-colors duration-300">
             <label htmlFor="message" className={labelStyle}>
               {t.message.label}
             </label>
@@ -155,6 +159,7 @@ export default function Contact({ t }: any) {
               {...register("message")}
               className={`${inputStyle} resize-none`}
             />
+            <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
             {errors.message && (
               <span id="message-error" role="alert" className="text-red-600 text-xs mt-2 block">
                 {errors.message.message}
@@ -176,7 +181,7 @@ export default function Contact({ t }: any) {
             <button
               type="button"
               onClick={() => reset()}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-stone-300 text-coffee rounded-full font-bold text-base md:text-lg hover:bg-stone-100 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-[#262E36] text-coffee rounded-full font-bold text-base md:text-lg hover:bg-[#111820] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
             >
               {t.reset}
             </button>

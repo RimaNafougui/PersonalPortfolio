@@ -7,7 +7,7 @@ export default function OGImage() {
   return new ImageResponse(
     <div
       style={{
-        background: "#fafaf9",
+        background: "#090F15",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -23,7 +23,7 @@ export default function OGImage() {
         style={{
           position: "absolute",
           inset: "40px",
-          border: "1px solid #e7e5e4",
+          border: "1px solid #262E36",
         }}
       />
 
@@ -37,7 +37,7 @@ export default function OGImage() {
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           fontWeight: 700,
-          color: "#a8a29e",
+          color: "#6C6D74",
         }}
       >
         rimanafougui.com
@@ -59,7 +59,7 @@ export default function OGImage() {
             letterSpacing: "0.35em",
             textTransform: "uppercase",
             fontWeight: 800,
-            color: "#78716c",
+            color: "#6C6D74",
             marginBottom: "28px",
           }}
         >
@@ -71,7 +71,7 @@ export default function OGImage() {
           style={{
             fontSize: "84px",
             fontWeight: 800,
-            color: "#1c1917",
+            color: "#D3D1CE",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
           }}
@@ -82,7 +82,7 @@ export default function OGImage() {
           style={{
             fontSize: "84px",
             fontWeight: 800,
-            color: "#1c1917",
+            color: "#D3D1CE",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
             marginBottom: "32px",
@@ -96,7 +96,7 @@ export default function OGImage() {
           style={{
             width: "72px",
             height: "3px",
-            background: "#44403c",
+            background: "#B3B7BA",
             marginBottom: "32px",
           }}
         />
@@ -106,7 +106,7 @@ export default function OGImage() {
           style={{
             fontSize: "20px",
             fontWeight: 500,
-            color: "#57534e",
+            color: "#6C6D74",
             lineHeight: 1.6,
           }}
         >
@@ -130,8 +130,8 @@ export default function OGImage() {
                 fontWeight: 800,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#44403c",
-                border: "1px solid #d6d3d1",
+                color: "#B3B7BA",
+                border: "1px solid #262E36",
                 padding: "6px 14px",
                 borderRadius: "999px",
               }}
@@ -149,17 +149,13 @@ export default function OGImage() {
           right: "100px",
           top: "50%",
           transform: "translateY(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0px",
         }}
       >
         <div
           style={{
             fontSize: "180px",
             fontWeight: 800,
-            color: "#e7e5e4",
+            color: "#262E36",
             lineHeight: 1,
             letterSpacing: "-0.04em",
           }}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import MotionConfigProvider from "@/components/ui/MotionConfigProvider";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -12,10 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     template: "%s | Rima Nafougui",
-    default: "Rima Nafougui | Software Developer",
+    default: "Rima Nafougui",
   },
   description:
-    "Portfolio of Rima Nafougui — software developer specialising in full-stack web, data engineering, and AI. Available for internships March–Aug 2026.",
+    "Portfolio of Rima Nafougui — software developer specialising in full-stack web, data engineering, and AI.",
   keywords: [
     "Rima Nafougui",
     "Software Engineer",
@@ -76,6 +77,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ScrollProgress />
         {/* Skip to main content — visible on focus for keyboard users */}
         <a
           href="#main-content"
@@ -84,17 +86,15 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <MotionConfigProvider>
-          {children}
-        </MotionConfigProvider>
+        <MotionConfigProvider>{children}</MotionConfigProvider>
 
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#fafaf9",
-              color: "#1c1917",
-              border: "1px solid #e7e5e4",
+              background: "#090F15",
+              color: "#D3D1CE",
+              border: "1px solid #262E36",
               borderRadius: "4px",
               fontFamily: "'Cabinet Grotesk', system-ui, sans-serif",
             },

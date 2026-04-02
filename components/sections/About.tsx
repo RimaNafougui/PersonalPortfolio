@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import AboutMeAccordion from "../ui/Accordion";
+import WordReveal from "@/components/ui/WordReveal";
 import Image from "next/image";
 
 interface AboutProps {
@@ -19,17 +20,18 @@ export default function About({ t }: AboutProps) {
       id="about"
       className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
     >
-      <motion.div
-        className="mb-16 space-y-4"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="mb-16 space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
-          {t.title}
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-      </motion.div>
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-start">
         {/* Profile photo — left column on desktop */}
@@ -66,19 +68,12 @@ export default function About({ t }: AboutProps) {
               <p className="font-serif italic text-xl text-coffee">
                 Rima Nafougui
               </p>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-cartier font-black mt-0.5">
-                Full-Stack Developer
+              <p className="text-[10px] uppercase tracking-wider text-cartier font-black mt-0.5">
+                Director of Technology
               </p>
             </div>
           </div>
 
-          {/* Availability pill */}
-          <div className="flex items-center gap-2 px-4 py-2 border border-cartier/20 rounded-full bg-cartier/5">
-            <span className="w-1.5 h-1.5 rounded-full bg-cartier animate-pulse flex-shrink-0" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-cartier">
-              Available · March 2026
-            </span>
-          </div>
         </motion.div>
 
         {/* Accordion — right column on desktop */}

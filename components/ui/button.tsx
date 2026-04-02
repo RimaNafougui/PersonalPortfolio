@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-cartier text-almond hover:bg-stone-800 border border-cartier hover:border-stone-800",
+          "bg-cartier text-almond hover:bg-[#c8c6c2] border border-cartier hover:border-[#c8c6c2]",
         outline:
           "border border-gold text-coffee bg-transparent hover:border-cartier hover:text-cartier",
         ghost:

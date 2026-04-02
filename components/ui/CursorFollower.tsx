@@ -40,7 +40,7 @@ export default function CursorFollower({
   return (
     <motion.div
       aria-hidden="true"
-      className="fixed top-0 left-0 w-10 h-10 rounded-full border border-cartier/30 pointer-events-none z-50"
+      className="fixed top-0 left-0 pointer-events-none z-50"
       style={{
         x: springX,
         y: springY,
@@ -48,6 +48,9 @@ export default function CursorFollower({
         translateY: "-50%",
         opacity: springOpacity,
       }}
-    />
+    >
+      <div className="w-10 h-10 rounded-full border border-cartier/55" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-cartier/65" />
+    </motion.div>
   );
 }

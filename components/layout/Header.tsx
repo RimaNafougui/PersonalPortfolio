@@ -63,7 +63,7 @@ export default function Header({ t, language, setLanguage }: Props) {
       aria-label="Main navigation"
       className={cn(
         "fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10 transition-shadow duration-300",
-        scrolled && "shadow-[0_1px_16px_rgba(28,25,23,0.08)]"
+        scrolled && "shadow-[0_1px_16px_rgba(0,0,0,0.4)]"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -88,7 +88,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                   href={item.href}
                   className={cn(
                     "group relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
-                    isActive ? "text-cartier" : "text-stone-600 hover:text-coffee"
+                    isActive ? "text-cartier" : "text-[#6C6D74] hover:text-coffee"
                   )}
                 >
                   {item.name}
@@ -150,7 +150,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
                   "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors",
-                  isActive ? "text-cartier" : "text-stone-600 hover:text-coffee"
+                  isActive ? "text-cartier" : "text-[#6C6D74] hover:text-coffee"
                 )}
               >
                 {item.name}

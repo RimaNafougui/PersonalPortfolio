@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, School } from "lucide-react";
+import WordReveal from "@/components/ui/WordReveal";
 
 export interface Milestone {
   date: string;
@@ -27,25 +28,26 @@ export default function Roadmap({ t }: RoadmapProps) {
   return (
     <section
       id="roadmap"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-[#111820] overflow-hidden border-t border-gold/20"
     >
-      <motion.div
-        className="mb-20 text-center space-y-4"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
+      <div className="mb-20 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
-          {t.title}
+          <WordReveal>{t.title}</WordReveal>
         </h2>
-        <div className="h-1 w-24 bg-cartier mx-auto" />
-      </motion.div>
+        <motion.div
+          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
 
       <div className="max-w-4xl mx-auto relative">
         {/* Timeline spine — decorative */}
         <motion.div
           aria-hidden="true"
-          className="absolute left-8 md:left-1/2 top-0 h-full w-px bg-gold/50 md:-translate-x-1/2"
+          className="absolute left-8 md:left-1/2 top-0 h-full w-px bg-gold/50 md:-translate-x-1/2 z-0"
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -72,14 +74,14 @@ export default function Roadmap({ t }: RoadmapProps) {
                 {/* Timeline node icon — decorative */}
                 <div
                   aria-hidden="true"
-                  className="absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center"
+                  className="absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-10"
                 >
                   <div
                     className={`
                     relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-almond transition-all duration-500
                     ${
                       isActive
-                        ? "border-cartier shadow-[0_0_20px_rgba(68,64,60,0.15)] scale-110"
+                        ? "border-cartier shadow-[0_0_20px_rgba(38,46,54,0.2)] scale-110"
                         : "border-gold group-hover:border-coffee"
                     }
                   `}
@@ -92,7 +94,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                       className={`${
                         isActive
                           ? "text-cartier"
-                          : "text-stone-400 group-hover:text-coffee"
+                          : "text-[#6C6D74] group-hover:text-coffee"
                       } transition-colors duration-500`}
                     />
                   </div>
@@ -105,11 +107,13 @@ export default function Roadmap({ t }: RoadmapProps) {
                 >
                   <div
                     className={`
-                    p-5 md:p-8 border border-gold/20 rounded-none transition-all duration-500 relative
+                    p-5 md:p-8 border border-gold/20 rounded-none transition-all duration-500 relative border-l-[3px]
                     ${
                       isActive
-                        ? "border-cartier/40 shadow-lg"
-                        : "hover:border-stone-400/40 hover:shadow-md"
+                        ? "border-cartier/40 border-l-cartier shadow-lg"
+                        : item.status === "completed"
+                        ? "border-l-[#6C6D74] hover:border-[#6C6D74]/40 hover:shadow-md"
+                        : "border-l-[#262E36] hover:border-[#6C6D74]/40 hover:shadow-md"
                     }
                     before:absolute before:top-8 ${
                       isEven
@@ -121,7 +125,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     {/* Fixed: was "blocktext-[10px]" (typo), and was "text-gold" (1.2:1 contrast) */}
                     <span
                       className={`block text-[10px] font-black uppercase tracking-[0.3em] mb-2 ${
-                        isActive ? "text-cartier" : "text-stone-500"
+                        isActive ? "text-cartier" : "text-[#6C6D74]"
                       }`}
                     >
                       {item.date}
@@ -129,10 +133,10 @@ export default function Roadmap({ t }: RoadmapProps) {
                     <h3 className="text-xl md:text-2xl font-display font-bold text-coffee mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm font-bold text-stone-500 uppercase tracking-wider mb-4">
+                    <p className="text-sm font-bold text-[#6C6D74] uppercase tracking-wider mb-4">
                       {item.institution}
                     </p>
-                    <p className="text-stone-600 leading-relaxed font-medium">
+                    <p className="text-[#8a9ab0] leading-relaxed font-medium">
                       {item.description}
                     </p>
                   </div>

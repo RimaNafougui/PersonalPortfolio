@@ -8,6 +8,8 @@ import { ArrowRight } from "lucide-react";
 import { Language } from "@/lib/translation";
 import ResumeDownload from "@/components/ui/ResumeDownload";
 import CursorFollower from "@/components/ui/CursorFollower";
+import TypingText from "@/components/ui/TypingText";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 interface HeroProps {
   t: {
@@ -51,10 +53,18 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
     >
       <CursorFollower containerRef={sectionRef} />
 
-      {/* Decorative background glow — hidden from assistive tech */}
+      {/* Decorative background glows — hidden from assistive tech */}
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] sm:w-[55vw] sm:h-[55vw] md:w-[38vw] md:h-[38vw] bg-coffee/8 rounded-full blur-[90px] -z-10" />
+      <div aria-hidden="true" className="absolute top-1/4 right-[15%] w-[35vw] h-[35vw] sm:w-[22vw] sm:h-[22vw] md:w-[18vw] md:h-[18vw] bg-[#6C6D74]/10 rounded-full blur-[60px] -z-10" />
+      <div aria-hidden="true" className="absolute bottom-1/4 left-[15%] w-[28vw] h-[28vw] sm:w-[18vw] sm:h-[18vw] md:w-[14vw] md:h-[14vw] bg-cartier/8 rounded-full blur-[50px] -z-10" />
+      {/* Grain texture */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] sm:w-[60vw] sm:h-[60vw] md:w-[40vw] md:h-[40vw] bg-coffee/5 rounded-full blur-[100px] -z-10"
+        className="absolute inset-0 pointer-events-none opacity-[0.035]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: "128px 128px",
+        }}
       />
 
       <motion.div
@@ -68,14 +78,14 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
           {t.intro}{" "}
-          <span className="text-cartier font-bold font-display block mt-2">
-            Rima Nafougui
+          <span className="text-cartier font-extrabold font-display block mt-2 tracking-[-0.02em] min-h-[1em]">
+            <TypingText text="Rima Nafougui" ready={ready} delay={900} speed={75} />
           </span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-stone-600 font-medium"
+          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-[#8a9ab0] font-medium"
         >
           {t.description}
         </motion.p>
@@ -84,14 +94,18 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           variants={itemVariants}
           className="flex flex-wrap gap-4 mt-10 justify-center items-center"
         >
-          <Link
-            href="#projects"
-            className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
-          >
-            {t.ctaProjects}
-            <ArrowRight size={20} aria-hidden="true" />
-          </Link>
-          <ResumeDownload language={language} />
+          <MagneticButton>
+            <Link
+              href="#projects"
+              className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+            >
+              {t.ctaProjects}
+              <ArrowRight size={20} aria-hidden="true" />
+            </Link>
+          </MagneticButton>
+          <MagneticButton>
+            <ResumeDownload language={language} />
+          </MagneticButton>
         </motion.div>
 
         <motion.div
@@ -116,7 +130,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex items-center justify-center w-14 h-14 rounded-full border border-stone-300 text-stone-600 hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-[#262E36] text-[#8a9ab0] hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
             >
               <FontAwesomeIcon icon={social.icon} size="lg" aria-hidden="true" />
             </Link>
@@ -130,7 +144,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: ready ? 1 : 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40 pointer-events-none"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 pointer-events-none"
       >
         <span className="text-[10px] uppercase tracking-[0.2em] font-black text-cartier">
           {t.scroll}
