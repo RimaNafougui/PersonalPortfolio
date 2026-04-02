@@ -28,7 +28,7 @@ export default function Roadmap({ t }: RoadmapProps) {
   return (
     <section
       id="roadmap"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-[#111820] overflow-hidden border-t border-gold/20"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-[#1D1309] overflow-hidden border-t border-gold/20"
     >
       <div className="mb-20 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
@@ -81,7 +81,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-almond transition-all duration-500
                     ${
                       isActive
-                        ? "border-cartier shadow-[0_0_20px_rgba(38,46,54,0.2)] scale-110"
+                        ? "border-cartier shadow-[0_0_20px_rgba(30,26,18,0.2)] scale-110"
                         : "border-gold group-hover:border-coffee"
                     }
                   `}
@@ -94,7 +94,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                       className={`${
                         isActive
                           ? "text-cartier"
-                          : "text-[#6C6D74] group-hover:text-coffee"
+                          : "text-[#7D6B5E] group-hover:text-coffee"
                       } transition-colors duration-500`}
                     />
                   </div>
@@ -112,8 +112,8 @@ export default function Roadmap({ t }: RoadmapProps) {
                       isActive
                         ? "border-cartier/40 border-l-cartier shadow-lg"
                         : item.status === "completed"
-                        ? "border-l-[#6C6D74] hover:border-[#6C6D74]/40 hover:shadow-md"
-                        : "border-l-[#262E36] hover:border-[#6C6D74]/40 hover:shadow-md"
+                        ? "border-l-[#7D6B5E] hover:border-[#7D6B5E]/40 hover:shadow-md"
+                        : "border-l-[#261A12] hover:border-[#7D6B5E]/40 hover:shadow-md"
                     }
                     before:absolute before:top-8 ${
                       isEven
@@ -125,7 +125,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     {/* Fixed: was "blocktext-[10px]" (typo), and was "text-gold" (1.2:1 contrast) */}
                     <span
                       className={`block text-[10px] font-black uppercase tracking-[0.3em] mb-2 ${
-                        isActive ? "text-cartier" : "text-[#6C6D74]"
+                        isActive ? "text-cartier" : "text-[#7D6B5E]"
                       }`}
                     >
                       {item.date}
@@ -133,10 +133,10 @@ export default function Roadmap({ t }: RoadmapProps) {
                     <h3 className="text-xl md:text-2xl font-display font-bold text-coffee mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm font-bold text-[#6C6D74] uppercase tracking-wider mb-4">
+                    <p className="text-sm font-bold text-[#7D6B5E] uppercase tracking-wider mb-4">
                       {item.institution}
                     </p>
-                    <p className="text-[#8a9ab0] leading-relaxed font-medium">
+                    <p className="text-[#A08F82] leading-relaxed font-medium">
                       {item.description}
                     </p>
                   </div>

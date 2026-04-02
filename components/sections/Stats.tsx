@@ -7,7 +7,7 @@ interface StatsProps {
 
 export default function Stats({ stats }: StatsProps) {
   return (
-    <section aria-label="Key figures" className="w-full bg-[#111820] border-y border-gold/20 py-12 px-6 md:px-12 lg:px-24">
+    <section aria-label="Key figures" className="w-full bg-[#1D1309] border-y border-gold/20 py-12 px-6 md:px-12 lg:px-24">
       <motion.div
         className="max-w-3xl mx-auto flex items-center justify-center"
         initial={{ opacity: 0, y: 16 }}
@@ -21,7 +21,7 @@ export default function Stats({ stats }: StatsProps) {
               <span className="text-4xl md:text-5xl font-extrabold text-coffee tabular-nums tracking-tight">
                 {stat.value}
               </span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-[#6C6D74] font-bold text-center">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-[#7D6B5E] font-bold text-center">
                 {stat.label}
               </span>
             </div>

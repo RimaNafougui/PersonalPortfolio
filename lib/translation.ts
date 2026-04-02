@@ -60,49 +60,6 @@ export const translations = {
       title: "Projects",
       items: {
         project1: {
-          title: "Supply Chain Analytics Dashboard",
-          description:
-            "End-to-end BI pipeline analyzing 10,000+ global shipments to identify disruption patterns. Uncovered selection bias masking $99K in mitigation value using DAX prescriptive analytics.",
-          problem:
-            "Shipping disruptions are invisible in standard reports because data aggregation hides the selection bias that distorts cost and delay estimates.",
-          features: [
-            "Star schema data model with 50+ DAX measures for prescriptive analytics",
-            "4-page interactive dashboard with drill-through on $17M+ shipping costs",
-            "Reduced delivery time by 2.83 days for high-value products",
-          ],
-          keyDecisions: [
-            "Chose a star schema over a flat model to support complex DAX relationships without query fan-traps across 50+ measures.",
-            "Surfaced the selection bias explicitly in the report rather than silently correcting it — decision-makers need to see the distortion to trust the analysis.",
-            "Used what-if parameters for prescriptive analytics instead of stopping at descriptive — the goal was to support decisions, not just describe past data.",
-          ],
-          technologies: "Power BI, Python, DAX",
-          github: "https://github.com/RimaNafougui/SupplyChainBI",
-          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
-          image: "/images/projects/supply-chain.png",
-        },
-        project2: {
-          title: "ArXiv RAG Research Assistant",
-          description:
-            "Automated AI pipeline that scrapes ArXiv papers and enables semantic chat with research documents using RAG architecture for accurate, cited answers.",
-          problem:
-            "Reading full papers to find relevant insights is hours of manual work that a well-designed retrieval system can reduce to seconds.",
-          features: [
-            "Automated ETL pipeline via GitHub Actions with weekly scheduled scraping",
-            "384-dim vector embeddings + Supabase pgvector for semantic search",
-            "Google Gemini Pro LLM for cited natural-language summaries",
-          ],
-          keyDecisions: [
-            "Used pgvector on Supabase rather than a standalone vector DB — it kept the stack at one host and avoided the operational overhead of a separate service for what was essentially an index.",
-            "Chose 384-dim sentence-transformers over larger models because the speed-quality tradeoff is optimal for academic abstracts, and latency matters more than marginal embedding precision.",
-            "Scheduled weekly GitHub Actions scraping instead of real-time ingestion — ArXiv relevance doesn't decay in hours, so weekly freshness avoids rate-limit complexity for no practical gain.",
-          ],
-          technologies:
-            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/RimaNafougui/arxivsearchengine",
-          url: "https://arxivsearchengine.streamlit.app",
-          image: "/images/projects/arxiv-rag.png",
-        },
-        project3: {
           title: "RCapsule — Smart Closet Manager",
           description:
             "Full-stack wardrobe app with AI outfit recommendations, serverless ML pipeline for background removal, and Chrome extension for auto-importing e-commerce products.",
@@ -123,6 +80,49 @@ export const translations = {
           github: "https://github.com/RimaNafougui/rcapsule",
           url: "https://rcapsule.com",
           image: "/images/projects/rcapsule.png",
+        },
+        project2: {
+          title: "Supply Chain Analytics Dashboard",
+          description:
+            "End-to-end BI pipeline analyzing 10,000+ global shipments to identify disruption patterns. Uncovered selection bias masking $99K in mitigation value using DAX prescriptive analytics.",
+          problem:
+            "Shipping disruptions are invisible in standard reports because data aggregation hides the selection bias that distorts cost and delay estimates.",
+          features: [
+            "Star schema data model with 50+ DAX measures for prescriptive analytics",
+            "4-page interactive dashboard with drill-through on $17M+ shipping costs",
+            "Reduced delivery time by 2.83 days for high-value products",
+          ],
+          keyDecisions: [
+            "Chose a star schema over a flat model to support complex DAX relationships without query fan-traps across 50+ measures.",
+            "Surfaced the selection bias explicitly in the report rather than silently correcting it — decision-makers need to see the distortion to trust the analysis.",
+            "Used what-if parameters for prescriptive analytics instead of stopping at descriptive — the goal was to support decisions, not just describe past data.",
+          ],
+          technologies: "Power BI, Python, DAX",
+          github: "https://github.com/RimaNafougui/SupplyChainBI",
+          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+          image: "/images/projects/supply-chain.png",
+        },
+        project3: {
+          title: "ArXiv RAG Research Assistant",
+          description:
+            "Automated AI pipeline that scrapes ArXiv papers and enables semantic chat with research documents using RAG architecture for accurate, cited answers.",
+          problem:
+            "Reading full papers to find relevant insights is hours of manual work that a well-designed retrieval system can reduce to seconds.",
+          features: [
+            "Automated ETL pipeline via GitHub Actions with weekly scheduled scraping",
+            "384-dim vector embeddings + Supabase pgvector for semantic search",
+            "Google Gemini Pro LLM for cited natural-language summaries",
+          ],
+          keyDecisions: [
+            "Used pgvector on Supabase rather than a standalone vector DB — it kept the stack at one host and avoided the operational overhead of a separate service for what was essentially an index.",
+            "Chose 384-dim sentence-transformers over larger models because the speed-quality tradeoff is optimal for academic abstracts, and latency matters more than marginal embedding precision.",
+            "Scheduled weekly GitHub Actions scraping instead of real-time ingestion — ArXiv relevance doesn't decay in hours, so weekly freshness avoids rate-limit complexity for no practical gain.",
+          ],
+          technologies:
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
+          github: "https://github.com/RimaNafougui/arxivsearchengine",
+          url: "https://arxivsearchengine.streamlit.app",
+          image: "/images/projects/arxiv-rag.png",
         },
         project4: {
           title: "ExpenseFlow — Finance REST API",
@@ -346,49 +346,6 @@ export const translations = {
       title: "Projets",
       items: {
         project1: {
-          title: "Tableau de Bord Chaîne d'Approvisionnement",
-          description:
-            "Pipeline BI complet analysant 10 000+ expéditions mondiales pour identifier les perturbations. A révélé un biais de sélection masquant 99 000 $ de valeur avec des analyses DAX prescriptives.",
-          problem:
-            "Les perturbations de la chaîne d'approvisionnement sont invisibles dans les rapports standards car l'agrégation masque le biais de sélection qui fausse les estimations de coût et de délai.",
-          features: [
-            "Modèle de données en étoile avec 50+ mesures DAX pour l'analyse prescriptive",
-            "Tableau de bord interactif 4 pages avec exploration sur 17M$+ de coûts",
-            "Réduction des délais de livraison de 2,83 jours pour les produits à haute valeur",
-          ],
-          keyDecisions: [
-            "Choix d'un schéma en étoile plutôt qu'un modèle plat pour supporter des relations DAX complexes sans fan-trap sur 50+ mesures.",
-            "Exposition explicite du biais de sélection dans le rapport plutôt que correction silencieuse — les décideurs doivent voir la distorsion pour faire confiance à l'analyse.",
-            "Utilisation de paramètres de simulation pour l'analyse prescriptive plutôt que de s'arrêter au descriptif — l'objectif était d'appuyer les décisions, pas seulement de décrire le passé.",
-          ],
-          technologies: "Power BI, Python, DAX",
-          github: "https://github.com/RimaNafougui/SupplyChainBI",
-          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
-          image: "/images/projects/supply-chain.png",
-        },
-        project2: {
-          title: "Assistant de Recherche ArXiv RAG",
-          description:
-            "Pipeline IA automatisé qui extrait des articles ArXiv et permet de discuter avec les documents via architecture RAG pour des réponses précises et citées.",
-          problem:
-            "Lire des articles entiers pour trouver des informations pertinentes représente des heures de travail manuel qu'un système de récupération bien conçu réduit à quelques secondes.",
-          features: [
-            "Pipeline ETL automatisé via GitHub Actions avec scraping hebdomadaire",
-            "Embeddings 384-dim + Supabase pgvector pour la recherche sémantique",
-            "LLM Google Gemini Pro pour des résumés citées en langage naturel",
-          ],
-          keyDecisions: [
-            "Utilisation de pgvector sur Supabase plutôt qu'une base vectorielle dédiée — un seul hôte, sans surcharge opérationnelle pour ce qui était essentiellement un index.",
-            "Choix de sentence-transformers 384-dim plutôt que des modèles plus grands car le compromis vitesse-qualité est optimal pour les résumés académiques, et la latence compte plus que la précision marginale.",
-            "Scraping hebdomadaire via GitHub Actions plutôt qu'une ingestion en temps réel — la pertinence ArXiv ne se dégrade pas en quelques heures, donc la fraîcheur hebdomadaire évite la complexité de limitation de taux sans gain pratique.",
-          ],
-          technologies:
-            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
-          github: "https://github.com/RimaNafougui/arxivsearchengine",
-          url: "https://arxivsearchengine.streamlit.app",
-          image: "/images/projects/arxiv-rag.png",
-        },
-        project3: {
           title: "RCapsule — Gestionnaire de Garde-robe",
           description:
             "Application full-stack avec recommandations IA, pipeline ML serverless pour suppression d'arrière-plan, et extension Chrome pour importer automatiquement des produits e-commerce.",
@@ -409,6 +366,49 @@ export const translations = {
           github: "https://github.com/RimaNafougui/rcapsule",
           url: "https://rcapsule.com",
           image: "/images/projects/rcapsule.png",
+        },
+        project2: {
+          title: "Tableau de Bord Chaîne d'Approvisionnement",
+          description:
+            "Pipeline BI complet analysant 10 000+ expéditions mondiales pour identifier les perturbations. A révélé un biais de sélection masquant 99 000 $ de valeur avec des analyses DAX prescriptives.",
+          problem:
+            "Les perturbations de la chaîne d'approvisionnement sont invisibles dans les rapports standards car l'agrégation masque le biais de sélection qui fausse les estimations de coût et de délai.",
+          features: [
+            "Modèle de données en étoile avec 50+ mesures DAX pour l'analyse prescriptive",
+            "Tableau de bord interactif 4 pages avec exploration sur 17M$+ de coûts",
+            "Réduction des délais de livraison de 2,83 jours pour les produits à haute valeur",
+          ],
+          keyDecisions: [
+            "Choix d'un schéma en étoile plutôt qu'un modèle plat pour supporter des relations DAX complexes sans fan-trap sur 50+ mesures.",
+            "Exposition explicite du biais de sélection dans le rapport plutôt que correction silencieuse — les décideurs doivent voir la distorsion pour faire confiance à l'analyse.",
+            "Utilisation de paramètres de simulation pour l'analyse prescriptive plutôt que de s'arrêter au descriptif — l'objectif était d'appuyer les décisions, pas seulement de décrire le passé.",
+          ],
+          technologies: "Power BI, Python, DAX",
+          github: "https://github.com/RimaNafougui/SupplyChainBI",
+          url: "https://app.powerbi.com/groups/me/reports/1b049350-80b0-4644-bd5b-46ca816147c7/1c89a3a18280f05f105e?experience=power-bi",
+          image: "/images/projects/supply-chain.png",
+        },
+        project3: {
+          title: "Assistant de Recherche ArXiv RAG",
+          description:
+            "Pipeline IA automatisé qui extrait des articles ArXiv et permet de discuter avec les documents via architecture RAG pour des réponses précises et citées.",
+          problem:
+            "Lire des articles entiers pour trouver des informations pertinentes représente des heures de travail manuel qu'un système de récupération bien conçu réduit à quelques secondes.",
+          features: [
+            "Pipeline ETL automatisé via GitHub Actions avec scraping hebdomadaire",
+            "Embeddings 384-dim + Supabase pgvector pour la recherche sémantique",
+            "LLM Google Gemini Pro pour des résumés citées en langage naturel",
+          ],
+          keyDecisions: [
+            "Utilisation de pgvector sur Supabase plutôt qu'une base vectorielle dédiée — un seul hôte, sans surcharge opérationnelle pour ce qui était essentiellement un index.",
+            "Choix de sentence-transformers 384-dim plutôt que des modèles plus grands car le compromis vitesse-qualité est optimal pour les résumés académiques, et la latence compte plus que la précision marginale.",
+            "Scraping hebdomadaire via GitHub Actions plutôt qu'une ingestion en temps réel — la pertinence ArXiv ne se dégrade pas en quelques heures, donc la fraîcheur hebdomadaire évite la complexité de limitation de taux sans gain pratique.",
+          ],
+          technologies:
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
+          github: "https://github.com/RimaNafougui/arxivsearchengine",
+          url: "https://arxivsearchengine.streamlit.app",
+          image: "/images/projects/arxiv-rag.png",
         },
         project4: {
           title: "ExpenseFlow — API REST Finance",
