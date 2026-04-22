@@ -50,7 +50,7 @@ export default function About({ t }: AboutProps) {
             {/* Photo container */}
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-gold/10 border border-gold/30">
               <Image
-                src="/images/profile.jpg"
+                src="/images/image.jpg"
                 alt="Rima Nafougui, Software Developer"
                 fill
                 className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
