@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
@@ -18,6 +18,8 @@ export default function Header({ t, language, setLanguage }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const firstMenuItemRef = useRef<HTMLAnchorElement>(null);
 
   // ── Active section via IntersectionObserver ──────────────────────────────
   useEffect(() => {
@@ -40,6 +42,15 @@ export default function Header({ t, language, setLanguage }: Props) {
 
     return () => observers.forEach((o) => o.disconnect());
   }, []);
+
+  // ── Mobile menu focus management ─────────────────────────────────────────
+  useEffect(() => {
+    if (isMenuOpen) {
+      firstMenuItemRef.current?.focus();
+    } else {
+      menuButtonRef.current?.focus();
+    }
+  }, [isMenuOpen]);
 
   // ── Scroll shadow ─────────────────────────────────────────────────────────
   useEffect(() => {
@@ -118,10 +129,12 @@ export default function Header({ t, language, setLanguage }: Props) {
           <div className="flex items-center lg:hidden gap-4">
             <LanguageSwitcher language={language} setLanguage={setLanguage} />
             <button
+              ref={menuButtonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-coffee hover:text-cartier transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
               aria-expanded={isMenuOpen}
-              aria-label="Toggle menu"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
             >
               {isMenuOpen ? (
                 <X size={24} strokeWidth={1.5} />
@@ -135,21 +148,26 @@ export default function Header({ t, language, setLanguage }: Props) {
 
       {/* Mobile menu */}
       <div
+        id="mobile-menu"
+        role="region"
+        aria-label="Mobile navigation"
         className={cn(
           "lg:hidden fixed inset-x-0 bg-almond border-b border-gold/20 transition-all duration-500 ease-in-out",
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         )}
       >
         <div className="flex flex-col items-center space-y-7 py-10">
-          {navigation.map((item) => {
+          {navigation.map((item, idx) => {
             const isActive = item.id && activeSection === item.id;
             return (
               <Link
                 key={item.name}
+                ref={idx === 0 ? firstMenuItemRef : undefined}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
+                tabIndex={isMenuOpen ? 0 : -1}
                 className={cn(
-                  "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors",
+                  "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
                   isActive ? "text-cartier" : "text-[#6A89A7] hover:text-coffee"
                 )}
               >

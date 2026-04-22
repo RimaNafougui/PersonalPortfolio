@@ -17,7 +17,16 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export default function Contact({ t }: any) {
+interface ContactTranslation {
+  title: string;
+  name: { label: string; placeholder: string };
+  email: { label: string; placeholder: string };
+  message: { label: string; placeholder: string };
+  submit: string;
+  reset: string;
+}
+
+export default function Contact({ t }: { t: ContactTranslation }) {
   const {
     register,
     handleSubmit,

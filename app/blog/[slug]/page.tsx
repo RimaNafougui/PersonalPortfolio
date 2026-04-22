@@ -1,6 +1,8 @@
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+
+const BASE_URL = "https://rimanafougui.vercel.app";
 import PostBody from "@/components/blog/PostBody";
 import BlogHeader from "@/components/blog/BlogHeader";
 import Footer from "@/components/layout/Footer";
@@ -15,14 +17,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const canonicalUrl = `${BASE_URL}/blog/${slug}`;
   return {
     title: post.title,
     description: post.summary,
+    alternates: { canonical: canonicalUrl },
+    authors: [{ name: "Rima Nafougui", url: BASE_URL }],
     openGraph: {
       title: post.title,
       description: post.summary,
       type: "article",
+      url: canonicalUrl,
       publishedTime: post.date,
+      authors: ["Rima Nafougui"],
+      siteName: "Rima Nafougui",
+    },
+    twitter: {
+      card: "summary",
+      title: post.title,
+      description: post.summary,
     },
   };
 }
@@ -41,19 +54,19 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <BlogHeader />
-      <main id="main-content" className="pt-24 min-h-screen">
+      <main id="main-content" className="pt-24 min-h-screen bg-almond">
         <article className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-12 space-y-6">
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-stone-500 hover:text-cartier transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
+              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-coffee/40 hover:text-coffee transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-coffee rounded-sm"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               All posts
             </Link>
 
             <div className="space-y-4 pt-2">
-              <time className="block text-[10px] uppercase tracking-[0.3em] text-stone-500 font-bold">
+              <time className="block text-[10px] uppercase tracking-[0.3em] text-coffee/35 font-bold">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -63,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-coffee leading-tight">
                 {post.title}
               </h1>
-              <p className="text-base text-stone-600 leading-relaxed border-l-2 border-cartier/30 pl-4 italic">
+              <p className="text-base text-coffee/55 leading-relaxed border-l-2 border-cartier/40 pl-4 italic">
                 {post.summary}
               </p>
               {post.tags && post.tags.length > 0 && (
@@ -71,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] uppercase tracking-widest text-cartier/60 font-bold border border-cartier/20 px-2 py-0.5"
+                      className="text-[10px] uppercase tracking-widest text-cartier/70 font-bold border border-cartier/25 px-2 py-0.5"
                     >
                       {tag}
                     </span>
@@ -80,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
               )}
             </div>
 
-            <div className="h-px w-full bg-gold/30" />
+            <div className="h-px w-full bg-coffee/10" />
           </div>
 
           <PostBody content={post.content} />

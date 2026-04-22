@@ -9,6 +9,20 @@ import "./globals.css";
 
 const BASE_URL = "https://rimanafougui.vercel.app";
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rima Nafougui",
+  url: BASE_URL,
+  jobTitle: "Software Developer",
+  description:
+    "Full-stack developer specialising in web, data engineering, and AI.",
+  sameAs: [
+    "https://github.com/rimalnafougui",
+    "https://linkedin.com/in/rima-nafougui",
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
@@ -70,10 +84,19 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Cabinet Grotesk from Fontshare */}
-        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&display=swap"
+        />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&display=swap"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
       <body>

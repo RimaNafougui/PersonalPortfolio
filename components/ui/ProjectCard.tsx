@@ -103,25 +103,14 @@ export default function ProjectCard({
                 <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-almond/80 to-transparent pointer-events-none" />
               </>
             ) : (
-              <div className="absolute inset-0 bg-[#253444] flex flex-col items-center justify-center gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 md:delay-100">
-                <div
-                  className="w-full h-full"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(189,221,252,0.04) 19px,rgba(189,221,252,0.04) 20px)," +
-                      "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(189,221,252,0.04) 19px,rgba(189,221,252,0.04) 20px)",
-                  }}
-                />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#BDDDFC" strokeWidth="1.2" strokeOpacity="0.15">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M3 9h18M9 21V9" />
-                  </svg>
-                  <p className="text-[9px] uppercase tracking-[0.25em] font-bold text-cartier/40">
-                    Add to /public/images/projects/
-                  </p>
-                </div>
-              </div>
+              <div
+                className="absolute inset-0 bg-[#253444] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 md:delay-100"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(189,221,252,0.04) 19px,rgba(189,221,252,0.04) 20px)," +
+                    "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(189,221,252,0.04) 19px,rgba(189,221,252,0.04) 20px)",
+                }}
+              />
             )}
           </div>
         </div>

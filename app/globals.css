@@ -125,15 +125,16 @@ input:focus {
   opacity: 0.8;
 }
 
-/* ─── Blog prose styles ──────────────────────────────────────────────────── */
+/* ─── Blog prose styles (dark slate background: #1E2B36) ─────────────────── */
+/* coffee = #BDDDFC (pale periwinkle), cartier = #88BDF2 (sky blue)          */
 .blog-prose {
-  color: var(--color-stone-700);
+  color: rgba(189, 221, 252, 0.8);
   line-height: 1.8;
   font-size: 1rem;
 }
 
 .blog-prose h2 {
-  color: var(--color-stone-900);
+  color: #BDDDFC;
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: 1.75rem;
@@ -143,7 +144,7 @@ input:focus {
 }
 
 .blog-prose h3 {
-  color: var(--color-stone-900);
+  color: #BDDDFC;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.3rem;
@@ -153,7 +154,7 @@ input:focus {
 }
 
 .blog-prose h4 {
-  color: var(--color-stone-900);
+  color: #BDDDFC;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -164,29 +165,29 @@ input:focus {
 
 .blog-prose p {
   margin-bottom: 1.4rem;
-  color: var(--color-stone-700);
+  color: rgba(189, 221, 252, 0.8);
 }
 
 .blog-prose a {
-  color: var(--color-stone-700);
+  color: #88BDF2;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(68, 64, 60, 0.3);
+  text-decoration-color: rgba(136, 189, 242, 0.3);
   transition: text-decoration-color 0.2s;
 }
 
 .blog-prose a:hover {
-  text-decoration-color: var(--color-stone-700);
+  text-decoration-color: rgba(136, 189, 242, 0.8);
 }
 
 .blog-prose strong {
-  color: var(--color-stone-900);
+  color: #BDDDFC;
   font-weight: 700;
 }
 
 .blog-prose em {
   font-style: italic;
-  color: var(--color-stone-500);
+  color: rgba(189, 221, 252, 0.55);
 }
 
 .blog-prose ul,
@@ -204,14 +205,14 @@ input:focus {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--color-stone-700);
+  color: rgba(189, 221, 252, 0.8);
 }
 
 .blog-prose ul li::before {
   content: "–";
   position: absolute;
   left: 0;
-  color: var(--color-stone-400);
+  color: rgba(189, 221, 252, 0.3);
   font-weight: 700;
 }
 
@@ -221,39 +222,39 @@ input:focus {
 
 .blog-prose ol li {
   margin-bottom: 0.5rem;
-  color: var(--color-stone-700);
+  color: rgba(189, 221, 252, 0.8);
   padding-left: 0.25rem;
 }
 
 .blog-prose blockquote {
-  border-left: 2px solid var(--color-stone-300);
+  border-left: 2px solid rgba(189, 221, 252, 0.2);
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  color: var(--color-stone-500);
+  color: rgba(189, 221, 252, 0.5);
   font-style: italic;
 }
 
 .blog-prose hr {
   border: none;
-  border-top: 1px solid var(--color-stone-200);
+  border-top: 1px solid rgba(189, 221, 252, 0.1);
   margin: 2.5rem 0;
 }
 
 .blog-prose code:not(pre code) {
-  background: var(--color-stone-100);
-  color: var(--color-stone-800);
+  background: rgba(189, 221, 252, 0.07);
+  color: #BDDDFC;
   font-size: 0.875em;
   padding: 0.1em 0.35em;
   border-radius: 3px;
   font-family: var(--font-mono);
-  border: 1px solid var(--color-stone-200);
+  border: 1px solid rgba(189, 221, 252, 0.12);
 }
 
 .blog-prose pre {
   margin: 1.75rem 0;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid var(--color-stone-200);
+  border: 1px solid rgba(189, 221, 252, 0.08);
 }
 
 .blog-prose pre code {
@@ -273,7 +274,7 @@ input:focus {
 }
 
 .blog-prose thead {
-  border-bottom: 1px solid var(--color-stone-200);
+  border-bottom: 1px solid rgba(189, 221, 252, 0.1);
 }
 
 .blog-prose th {
@@ -283,13 +284,13 @@ input:focus {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-stone-500);
+  color: rgba(189, 221, 252, 0.4);
 }
 
 .blog-prose td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid var(--color-stone-100);
-  color: var(--color-stone-700);
+  border-bottom: 1px solid rgba(189, 221, 252, 0.07);
+  color: rgba(189, 221, 252, 0.8);
 }
 
 /* ─── Syntax highlighting — dark code blocks on light page ───────────────── */

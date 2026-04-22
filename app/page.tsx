@@ -1,20 +1,22 @@
 "use client";
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
-import Contact from "@/components/sections/Contact";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
-import "./globals.css";
-import Roadmap, { Milestone } from "@/components/sections/Roadmap";
 import PageLoader from "@/components/ui/PageLoader";
 import { AnimatePresence } from "framer-motion";
+import { Milestone } from "@/components/sections/Roadmap";
+
+const Footer = dynamic(() => import("@/components/layout/Footer"));
+const Contact = dynamic(() => import("@/components/sections/Contact"));
+const Roadmap = dynamic(() => import("@/components/sections/Roadmap"));
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");

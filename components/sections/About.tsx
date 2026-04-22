@@ -50,8 +50,8 @@ export default function About({ t }: AboutProps) {
             {/* Photo container */}
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-gold/10 border border-gold/30">
               <Image
-                src="/images/profile.JPG"
-                alt="Rima Nafougui"
+                src="/images/profile.jpg"
+                alt="Rima Nafougui, Software Developer"
                 fill
                 className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 sizes="(max-width: 768px) 256px, 320px"
@@ -69,11 +69,10 @@ export default function About({ t }: AboutProps) {
                 Rima Nafougui
               </p>
               <p className="text-[10px] uppercase tracking-wider text-cartier font-black mt-0.5">
-                Builder. Optimist. Polyglot.
+                Builder. Optimist. Aspiring.
               </p>
             </div>
           </div>
-
         </motion.div>
 
         {/* Accordion — right column on desktop */}
