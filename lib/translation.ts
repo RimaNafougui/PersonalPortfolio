@@ -28,7 +28,7 @@ export const translations = {
       accordion1: {
         title: "Background & Education",
         content:
-          "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I chose tech for the freedom to build things on my own terms. Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at Concordia University (Fall 2026).",
+          "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I chose tech for the freedom to build things on my own terms. Graduating from Collège Ahuntsic in May 2026 with a DEC in Computer Science, and incoming CS student at University of Montreal (Fall 2026).",
       },
       accordion2: {
         title: "My Journey",
@@ -270,7 +270,7 @@ export const translations = {
           status: "future",
           date: "FALL 2026",
           title: "BSc in Computer Science",
-          institution: "Concordia University",
+          institution: "University of Montreal",
           description:
             "Incoming CS student. Deepening theoretical foundations in software architecture and large-scale systems while continuing to ship production projects.",
         },
@@ -314,7 +314,7 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai choisi la tech pour la liberté de construire des choses selon mes propres termes. Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en informatique à l'Université Concordia (automne 2026).",
+          "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai choisi la tech pour la liberté de construire des choses selon mes propres termes. Finissante au Collège Ahuntsic en mai 2026 (DEC en informatique) et future étudiante en informatique à l'Université de Montréal (automne 2026).",
       },
       accordion2: {
         title: "Mon Parcours",
@@ -556,7 +556,7 @@ export const translations = {
           status: "future",
           date: "AUTOMNE 2026",
           title: "Baccalauréat en Informatique",
-          institution: "Université Concordia",
+          institution: "Université de Montréal",
           description:
             "Future étudiante en informatique. Approfondissement des fondements théoriques en architecture logicielle et systèmes à grande échelle, tout en continuant à livrer des projets en production.",
         },
