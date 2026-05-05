@@ -121,7 +121,7 @@ export const translations = {
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
           github: "https://github.com/RimaNafougui/arxivsearchengine",
-          url: "https://arxivsearchengine.streamlit.app",
+          url: "https://huggingface.co/spaces/RimaNafougui/ArxivSearchEngine",
           image: "/images/projects/arxiv-rag.png",
         },
         project4: {
@@ -407,7 +407,7 @@ export const translations = {
           technologies:
             "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit",
           github: "https://github.com/RimaNafougui/arxivsearchengine",
-          url: "https://arxivsearchengine.streamlit.app",
+          url: "https://huggingface.co/spaces/RimaNafougui/ArxivSearchEngine",
           image: "/images/projects/arxiv-rag.png",
         },
         project4: {
