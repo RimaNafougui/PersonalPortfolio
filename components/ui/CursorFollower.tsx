@@ -49,8 +49,8 @@ export default function CursorFollower({
         opacity: springOpacity,
       }}
     >
-      <div className="w-10 h-10 rounded-full border border-cartier/55" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-cartier/65" />
+      <div className="w-10 h-10 rounded-full border border-primary/55" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/65" />
     </motion.div>
   );
 }

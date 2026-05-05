@@ -73,7 +73,7 @@ export default function Header({ t, language, setLanguage }: Props) {
     <nav
       aria-label="Main navigation"
       className={cn(
-        "fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10 transition-shadow duration-300",
+        "fixed top-0 w-full bg-background/80 backdrop-blur-lg z-[100] border-b border-surface/10 transition-shadow duration-300",
         scrolled && "shadow-[0_1px_16px_rgba(0,0,0,0.4)]"
       )}
     >
@@ -82,10 +82,10 @@ export default function Header({ t, language, setLanguage }: Props) {
           {/* Logo */}
           <Link href="/" className="group" onClick={() => setIsMenuOpen(false)}>
             <div className="flex items-center gap-2">
-              <span className="text-4xl lg:text-5xl font-display font-extrabold text-coffee group-hover:text-cartier transition-colors duration-500">
+              <span className="text-4xl lg:text-5xl font-display font-extrabold text-foreground group-hover:text-primary transition-colors duration-500">
                 R.
               </span>
-              <div className="hidden md:block h-px w-0 group-hover:w-10 bg-cartier transition-all duration-700" />
+              <div className="hidden md:block h-px w-0 group-hover:w-10 bg-primary transition-all duration-700" />
             </div>
           </Link>
 
@@ -98,8 +98,8 @@ export default function Header({ t, language, setLanguage }: Props) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "group relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
-                    isActive ? "text-cartier" : "text-[#6A89A7] hover:text-coffee"
+                    "group relative text-[10px] font-extrabold uppercase tracking-[0.3em] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm",
+                    isActive ? "text-primary" : "text-muted hover:text-foreground"
                   )}
                 >
                   {item.name}
@@ -113,7 +113,7 @@ export default function Header({ t, language, setLanguage }: Props) {
                   {/* Active indicator dot */}
                   <span
                     className={cn(
-                      "absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-cartier transition-all duration-300",
+                      "absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary transition-all duration-300",
                       isActive ? "opacity-100 scale-100" : "opacity-0 scale-0"
                     )}
                   />
@@ -121,7 +121,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               );
             })}
 
-            <div className="h-4 w-px bg-gold/30 mx-1" />
+            <div className="h-4 w-px bg-surface/30 mx-1" />
             <LanguageSwitcher language={language} setLanguage={setLanguage} />
           </div>
 
@@ -131,7 +131,7 @@ export default function Header({ t, language, setLanguage }: Props) {
             <button
               ref={menuButtonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-coffee hover:text-cartier transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm"
+              className="p-2 text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle navigation menu"
@@ -152,7 +152,7 @@ export default function Header({ t, language, setLanguage }: Props) {
         role="region"
         aria-label="Mobile navigation"
         className={cn(
-          "lg:hidden fixed inset-x-0 bg-almond border-b border-gold/20 transition-all duration-500 ease-in-out",
+          "lg:hidden fixed inset-x-0 bg-background border-b border-surface/20 transition-all duration-500 ease-in-out",
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         )}
       >
@@ -167,8 +167,8 @@ export default function Header({ t, language, setLanguage }: Props) {
                 onClick={() => setIsMenuOpen(false)}
                 tabIndex={isMenuOpen ? 0 : -1}
                 className={cn(
-                  "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond rounded-sm",
-                  isActive ? "text-cartier" : "text-[#6A89A7] hover:text-coffee"
+                  "text-xs font-extrabold uppercase tracking-[0.4em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm",
+                  isActive ? "text-primary" : "text-muted hover:text-foreground"
                 )}
               >
                 {item.name}

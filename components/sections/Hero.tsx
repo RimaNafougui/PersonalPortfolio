@@ -48,16 +48,15 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
   return (
     <section
       ref={sectionRef}
-      id="main-content"
       aria-label="Introduction"
       className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
       <CursorFollower containerRef={sectionRef} />
 
       {/* Decorative background glows — hidden from assistive tech */}
-      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] sm:w-[55vw] sm:h-[55vw] md:w-[38vw] md:h-[38vw] bg-coffee/8 rounded-full blur-[90px] -z-10" />
-      <div aria-hidden="true" className="absolute top-1/4 right-[15%] w-[35vw] h-[35vw] sm:w-[22vw] sm:h-[22vw] md:w-[18vw] md:h-[18vw] bg-[#6A89A7]/10 rounded-full blur-[60px] -z-10" />
-      <div aria-hidden="true" className="absolute bottom-1/4 left-[15%] w-[28vw] h-[28vw] sm:w-[18vw] sm:h-[18vw] md:w-[14vw] md:h-[14vw] bg-cartier/8 rounded-full blur-[50px] -z-10" />
+      <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] sm:w-[55vw] sm:h-[55vw] md:w-[38vw] md:h-[38vw] bg-foreground/8 rounded-full blur-[90px] -z-10" />
+      <div aria-hidden="true" className="absolute top-1/4 right-[15%] w-[35vw] h-[35vw] sm:w-[22vw] sm:h-[22vw] md:w-[18vw] md:h-[18vw] bg-primary/10 rounded-full blur-[60px] -z-10" />
+      <div aria-hidden="true" className="absolute bottom-1/4 left-[15%] w-[28vw] h-[28vw] sm:w-[18vw] sm:h-[18vw] md:w-[14vw] md:h-[14vw] bg-primary/8 rounded-full blur-[50px] -z-10" />
       {/* Grain texture */}
       <div
         aria-hidden="true"
@@ -78,14 +77,14 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
-          <span className="text-cartier font-extrabold font-display block tracking-[-0.02em] min-h-[1em]">
+          <span className="text-primary font-extrabold font-display block tracking-[-0.02em] min-h-[1em]">
             <TypingText text="Rima Nafougui" ready={ready} delay={900} speed={75} />
           </span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-[#8AAFC4] font-medium"
+          className="text-base md:text-xl mt-6 md:mt-8 max-w-2xl leading-relaxed text-muted font-medium"
         >
           {t.description}
         </motion.p>
@@ -97,7 +96,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
           <MagneticButton>
             <Link
               href="#projects"
-              className="flex items-center gap-2 bg-cartier text-almond px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+              className="flex items-center gap-2 bg-primary text-background px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {t.ctaProjects}
               <ArrowRight size={20} aria-hidden="true" />
@@ -130,7 +129,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="flex items-center justify-center w-14 h-14 rounded-full border border-[#384959] text-[#8AAFC4] hover:bg-coffee hover:text-almond hover:border-coffee hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-surface text-muted hover:bg-foreground hover:text-background hover:border-foreground hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <FontAwesomeIcon icon={social.icon} size="lg" aria-hidden="true" />
             </Link>
@@ -147,14 +146,14 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 pointer-events-none"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-black text-cartier">
+        <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary">
           {t.scroll}
         </span>
-        <div className="w-[1px] h-12 bg-cartier/30 relative overflow-hidden">
+        <div className="w-[1px] h-12 bg-primary/30 relative overflow-hidden">
           <motion.div
             animate={{ y: [0, 48, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 w-full h-1/2 bg-coffee"
+            className="absolute top-0 w-full h-1/2 bg-foreground"
           />
         </div>
       </motion.div>

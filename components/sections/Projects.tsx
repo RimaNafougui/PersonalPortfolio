@@ -31,20 +31,20 @@ export default function Projects({ t }: ProjectsProp) {
   return (
     <section
       id="projects"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-[#111820] overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-background overflow-hidden"
     >
       <div className="mb-16 space-y-4">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center text-coffee">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center text-foreground">
           <WordReveal>{t.title}</WordReveal>
         </h2>
         <motion.div
-          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          className="h-1 w-24 bg-primary mx-auto origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
         />
-        <p className="text-center text-coffee/50 text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
+        <p className="text-center text-muted text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
           {projects.length} selected works
         </p>
       </div>

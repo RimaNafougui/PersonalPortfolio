@@ -22,13 +22,13 @@ interface ExperienceProp {
 
 export default function Experience({ t, language }: ExperienceProp) {
   return (
-    <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 bg-almond">
+    <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div className="mb-16 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
           <WordReveal>{t.title}</WordReveal>
         </h2>
         <motion.div
-          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          className="h-1 w-24 bg-primary mx-auto origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}

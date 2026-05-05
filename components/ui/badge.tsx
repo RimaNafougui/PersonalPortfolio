@@ -8,13 +8,13 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-cartier/10 text-cartier border border-cartier/20 hover:bg-cartier hover:text-almond hover:border-cartier",
+          "bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-background hover:border-primary",
         secondary:
-          "bg-gold/10 text-coffee/50 border border-gold/20",
+          "bg-surface/10 text-muted border border-surface/20",
         outline:
-          "border border-gold/30 text-coffee/60 bg-transparent",
+          "border border-surface/30 text-muted bg-transparent",
         solid:
-          "bg-cartier text-almond border border-cartier",
+          "bg-primary text-background border border-primary",
       },
       size: {
         default: "text-[10px] px-2.5 py-0.5 rounded-full h-5",

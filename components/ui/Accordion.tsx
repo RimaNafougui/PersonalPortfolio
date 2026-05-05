@@ -20,34 +20,34 @@ const items = (t: AccordionProps["t"]) => [
 
 export default function AboutMeAccordion({ t }: AccordionProps) {
   return (
-    <div className="w-full bg-almond/30 border-t border-gold/30">
+    <div className="w-full bg-background/30 border-t border-surface/30">
       <AccordionPrimitive.Root type="single" collapsible>
         {items(t).map((item, i) => (
           <AccordionPrimitive.Item
             key={i}
             value={String(i)}
-            className="border-b border-gold/30 last:border-none"
+            className="border-b border-surface/30 last:border-none"
           >
             <AccordionPrimitive.Header>
               <AccordionPrimitive.Trigger
                 className="
                   flex w-full items-center justify-between px-4 py-6 text-left
-                  font-sans font-bold text-xl md:text-2xl text-coffee
-                  hover:bg-cartier/5 hover:text-cartier transition-all duration-300
-                  data-[state=open]:text-cartier
+                  font-sans font-bold text-xl md:text-2xl text-foreground
+                  hover:bg-primary/5 hover:text-primary transition-all duration-300
+                  data-[state=open]:text-primary
                   [&[data-state=open]>svg]:rotate-90
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cartier
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary
                 "
               >
                 {item.title}
                 <ChevronRight
                   size={20}
-                  className="text-cartier shrink-0 transition-transform duration-500"
+                  className="text-primary shrink-0 transition-transform duration-500"
                 />
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
             <AccordionPrimitive.Content className="overflow-hidden data-[state=open]:animate-none data-[state=closed]:animate-none">
-              <p className="text-base leading-relaxed text-coffee/70 px-4 pb-6 pt-2 font-medium">
+              <p className="text-base leading-relaxed text-muted px-4 pb-6 pt-2 font-medium">
                 {item.content}
               </p>
             </AccordionPrimitive.Content>

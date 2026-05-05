@@ -29,9 +29,9 @@ export default function ResumeDownload({ language }: ResumeDownloadProps) {
   return (
     <button
       onClick={handleDownloadResume}
-      className="group relative flex items-center gap-2 px-8 py-3.5 border-2 border-coffee text-coffee font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-almond active:scale-95 cursor-pointer shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+      className="group relative flex items-center gap-2 px-8 py-3.5 border-2 border-foreground text-foreground font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-background active:scale-95 cursor-pointer shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <span className="absolute inset-0 bg-coffee translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+      <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
 
       <span className="relative z-10 flex items-center gap-2">
         <Download

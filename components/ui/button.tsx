@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-bold uppercase tracking-widest text-[10px] transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-bold uppercase tracking-widest text-[10px] transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
   {
     variants: {
       variant: {
         default:
-          "bg-cartier text-almond hover:bg-[#6EA8E0] border border-cartier hover:border-[#6EA8E0]",
+          "bg-primary text-background hover:bg-foreground hover:text-background border border-primary hover:border-foreground",
         outline:
-          "border border-gold text-coffee bg-transparent hover:border-cartier hover:text-cartier",
+          "border border-surface text-foreground bg-transparent hover:border-primary hover:text-primary",
         ghost:
-          "text-coffee/60 hover:text-cartier hover:bg-cartier/5",
+          "text-muted hover:text-primary hover:bg-primary/5",
         link:
-          "text-cartier underline-offset-4 hover:underline p-0 h-auto",
+          "text-primary underline-offset-4 hover:underline p-0 h-auto",
         destructive:
           "bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20",
       },

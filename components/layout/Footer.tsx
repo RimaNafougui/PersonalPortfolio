@@ -14,16 +14,16 @@ export default function Footer({ t }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full text-coffee py-12 px-6 md:px-12 lg:px-24 border-t border-gold/20">
+    <footer className="w-full text-foreground py-12 px-6 md:px-12 lg:px-24 border-t border-surface/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start space-y-2">
           <p className="font-display font-extrabold text-2xl tracking-tight">
             Rima Nafougui
           </p>
-          <p className="text-xs text-[#6A89A7] font-medium italic">
+          <p className="text-xs text-muted font-medium italic">
             Designing &amp; building things for the web
           </p>
-          <p className="text-xs uppercase tracking-[0.2em] opacity-40">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">
             {t.rights} &copy; {currentYear}
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function Footer({ t }: FooterProps) {
 <div className="flex flex-col items-center md:items-end gap-4">
           <Link
             href="#main-content"
-            className="text-xs uppercase tracking-[0.2em] font-bold text-[#6A89A7] hover:text-cartier transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier"
+            className="text-xs uppercase tracking-[0.2em] font-bold text-muted hover:text-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             ↑ Back to top
           </Link>
@@ -53,7 +53,7 @@ export default function Footer({ t }: FooterProps) {
                 href={social.href}
                 target="_blank"
                 aria-label={social.label}
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-gold/30 text-[#6A89A7] hover:text-cartier hover:border-cartier hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-surface/30 text-muted hover:text-primary hover:border-primary hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <FontAwesomeIcon icon={social.icon} />
               </Link>

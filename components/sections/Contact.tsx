@@ -76,21 +76,21 @@ export default function Contact({ t }: { t: ContactTranslation }) {
   };
 
   const labelStyle =
-    "block text-[10px] font-black uppercase tracking-[0.3em] text-cartier mb-4";
+    "block text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4";
   const inputStyle =
-    "w-full bg-transparent py-3 text-lg text-coffee outline-none transition-colors duration-300 placeholder:text-coffee/20";
+    "w-full bg-transparent py-3 text-lg text-foreground outline-none transition-colors duration-300 placeholder:text-foreground/20";
 
   return (
     <section
       id="contact"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almond min-h-screen flex flex-col items-center border-t border-gold/20"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-background min-h-screen flex flex-col items-center border-t border-surface/20"
     >
       <div className="mb-20 text-center space-y-4">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-foreground">
           <WordReveal>{t.title}</WordReveal>
         </h2>
         <motion.div
-          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          className="h-1 w-24 bg-primary mx-auto origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -107,10 +107,10 @@ export default function Contact({ t }: { t: ContactTranslation }) {
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-almond/30 border border-gold/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
+          className="bg-background/30 border border-surface/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
-            <div className="relative group border-b border-gold/40 transition-colors duration-300">
+            <div className="relative group border-b border-surface/40 transition-colors duration-300">
               <label htmlFor="name" className={labelStyle}>
                 {t.name.label}
               </label>
@@ -124,7 +124,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
                 {...register("name")}
                 className={inputStyle}
               />
-              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
+              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
               {errors.name && (
                 <span id="name-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.name.message}
@@ -132,7 +132,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
               )}
             </div>
 
-            <div className="relative group border-b border-gold/40 transition-colors duration-300">
+            <div className="relative group border-b border-surface/40 transition-colors duration-300">
               <label htmlFor="email" className={labelStyle}>
                 {t.email.label}
               </label>
@@ -146,7 +146,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
                 {...register("email")}
                 className={inputStyle}
               />
-              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
+              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
               {errors.email && (
                 <span id="email-error" role="alert" className="text-red-600 text-xs mt-2 block">
                   {errors.email.message}
@@ -155,7 +155,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
             </div>
           </div>
 
-          <div className="relative group border-b border-gold/40 transition-colors duration-300">
+          <div className="relative group border-b border-surface/40 transition-colors duration-300">
             <label htmlFor="message" className={labelStyle}>
               {t.message.label}
             </label>
@@ -168,7 +168,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
               {...register("message")}
               className={`${inputStyle} resize-none`}
             />
-            <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-cartier origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
+            <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
             {errors.message && (
               <span id="message-error" role="alert" className="text-red-600 text-xs mt-2 block">
                 {errors.message.message}
@@ -182,7 +182,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
               disabled={isSubmitting}
               aria-busy={isSubmitting}
               aria-live="polite"
-              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-cartier text-almond rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-primary text-background rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               {isSubmitting ? "Sending…" : t.submit}
             </button>
@@ -190,7 +190,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
             <button
               type="button"
               onClick={() => reset()}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-[#384959] text-coffee rounded-full font-bold text-base md:text-lg hover:bg-[#253444] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2"
+              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-surface text-foreground rounded-full font-bold text-base md:text-lg hover:bg-surface transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               {t.reset}
             </button>

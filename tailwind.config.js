@@ -7,11 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* Brand tokens — values mirror @theme in globals.css */
-        almond:  "#fafaf9",   /* stone-50  — primary background */
-        coffee:  "#1c1917",   /* stone-900 — primary text       */
-        cartier: "#44403c",   /* stone-700 — accent             */
-        gold:    "#e7e5e4",   /* stone-200 — borders            */
+        /* Brand tokens — White / Midnight / Moss-900 */
+        background: "#FFFFFF",  /* White      — clean page bg      */
+        foreground: "#14532d",  /* Moss-900   — deep green text    */
+        primary:    "#1C2B40",  /* Midnight   — navy accent        */
+        surface:    "#F5F1EA",  /* Off-white  — cards/borders      */
+        muted:      "#4a7459",  /* Muted green — secondary text    */
         /* Full stone scale */
         stone: {
           50:  "#fafaf9",
@@ -28,8 +29,9 @@ export default {
         },
       },
       fontFamily: {
-        sans:    ["Cabinet Grotesk", "system-ui", "sans-serif"],
-        display: ["Cabinet Grotesk", "system-ui", "sans-serif"],
+        sans:    ["Jost", "system-ui", "sans-serif"],
+        display: ["Jost", "system-ui", "sans-serif"],
+        serif:   ["Cormorant Garamond", "Georgia", "serif"],
         mono:    ["JetBrains Mono", "Fira Code", "Consolas", "monospace"],
       },
       borderRadius: {

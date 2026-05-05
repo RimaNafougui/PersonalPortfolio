@@ -29,25 +29,27 @@ export default function Home() {
         {loading && <PageLoader onDone={() => setLoading(false)} />}
       </AnimatePresence>
       <Header t={t} language={language} setLanguage={setLanguage} />
-      <Hero t={t.hero} language={language} ready={!loading} />
-      <Stats stats={t.hero.stats} />
-      <About t={t.about} />
-      <Separator />
-      <Experience t={t.experience} language={language} />
-      <Separator />
-      <Projects t={t.projects} />
-      <Separator />
-      <Skills t={t.skills} />
-      <Separator />
-      <Roadmap
-        t={{
-          title: t.roadmap.title,
-          milestones: t.roadmap.milestones as unknown as Milestone[],
-        }}
-      />
-      <Separator />
-      <Contact t={t.contact} />
-      <Separator />
+      <main id="main-content">
+        <Hero t={t.hero} language={language} ready={!loading} />
+        <Stats stats={t.hero.stats} />
+        <About t={t.about} />
+        <Separator />
+        <Experience t={t.experience} language={language} />
+        <Separator />
+        <Projects t={t.projects} />
+        <Separator />
+        <Skills t={t.skills} />
+        <Separator />
+        <Roadmap
+          t={{
+            title: t.roadmap.title,
+            milestones: t.roadmap.milestones as unknown as Milestone[],
+          }}
+        />
+        <Separator />
+        <Contact t={t.contact} />
+        <Separator />
+      </main>
       <Footer t={t.footer} />
     </>
   );

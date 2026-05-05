@@ -2,15 +2,12 @@
 
 /* ─── Design Tokens — single source of truth ─────────────────────────────── */
 @theme {
-  /* ── Brand palette (semantic names kept for backward compat) ─────── */
-  /* almond  → stone-50   light background                              */
-  /* coffee  → stone-900  dark primary text                             */
-  /* cartier → stone-700  warm dark accent                              */
-  /* gold    → stone-200  warm light borders                            */
-  --color-almond:  #1E2B36;   /* deep slate        */
-  --color-coffee:  #BDDDFC;   /* pale periwinkle   */
-  --color-cartier: #88BDF2;   /* sky blue accent   */
-  --color-gold:    #384959;   /* stormy border     */
+  /* ── Brand palette — White / Midnight / Moss-900 ────────────────────── */
+  --color-background: #FFFFFF;  /* White       — clean page bg        */
+  --color-foreground: #14532d;  /* Moss-900    — deep green text      */
+  --color-primary:    #1C2B40;  /* Midnight    — deep navy accent     */
+  --color-surface:    #F5F1EA;  /* Off-white   — cards/borders        */
+  --color-muted:      #4a7459;  /* Muted green — secondary text       */
 
   /* ── Full stone scale ────────────────────────────────────────────── */
   --color-stone-50:  #fafaf9;
@@ -26,8 +23,9 @@
   --color-stone-950: #0c0a09;
 
   /* ── Typography ──────────────────────────────────────────────────── */
-  --font-sans:    "Cabinet Grotesk", system-ui, sans-serif;
-  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-sans:    "Jost", system-ui, sans-serif;
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-serif:   "Cormorant Garamond", Georgia, serif;
   --font-mono:    "JetBrains Mono", "Fira Code", Consolas, monospace;
 
   /* ── Font size scale ─────────────────────────────────────────────── */
@@ -62,15 +60,15 @@
 
 /* ─── Semantic CSS vars (consumed by components) ─────────────────────────── */
 :root {
-  --background:   var(--color-almond);
-  --foreground:   var(--color-coffee);
-  --border:       var(--color-gold);
-  --accent:       var(--color-cartier);
-  --surface:      var(--color-stone-100);
-  --surface-high: var(--color-stone-200);
-  --muted:        var(--color-stone-100);
-  --muted-fg:     var(--color-stone-500);
-  --ring:         var(--color-cartier);
+  --background:   var(--color-background);
+  --foreground:   var(--color-foreground);
+  --border:       var(--color-surface);
+  --accent:       var(--color-primary);
+  --surface:      var(--color-surface);
+  --surface-high: #EAE6DF;
+  --muted:        var(--color-surface);
+  --muted-fg:     var(--color-muted);
+  --ring:         var(--color-primary);
 }
 
 /* ─── Base styles ────────────────────────────────────────────────────────── */
@@ -94,8 +92,8 @@ h3 {
 }
 
 ::selection {
-  background-color: var(--color-cartier);
-  color: var(--color-almond);
+  background-color: var(--color-primary);
+  color: var(--color-background);
 }
 
 input:focus {
@@ -104,20 +102,20 @@ input:focus {
 
 /* ─── Glass surface ──────────────────────────────────────────────────────── */
 .glassBackground {
-  background: rgba(30, 43, 54, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 30px rgba(20, 83, 45, 0.08);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(56, 73, 89, 0.8);
+  border: 1px solid rgba(245, 241, 234, 0.9);
 }
 
 /* ─── Toast styles ───────────────────────────────────────────────────────── */
-.cartier-toast [data-title] {
+.primary-toast [data-title] {
   font-family: var(--font-sans);
   font-size: 1rem;
 }
 
-.cartier-toast [data-description] {
+.primary-toast [data-description] {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.7rem;
@@ -125,16 +123,15 @@ input:focus {
   opacity: 0.8;
 }
 
-/* ─── Blog prose styles (dark slate background: #1E2B36) ─────────────────── */
-/* coffee = #BDDDFC (pale periwinkle), cartier = #88BDF2 (sky blue)          */
+/* ─── Blog prose styles (light linen background) ──────────────────────────── */
 .blog-prose {
-  color: rgba(189, 221, 252, 0.8);
+  color: rgba(20, 83, 45, 0.82);
   line-height: 1.8;
   font-size: 1rem;
 }
 
 .blog-prose h2 {
-  color: #BDDDFC;
+  color: #14532d;
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: 1.75rem;
@@ -144,7 +141,7 @@ input:focus {
 }
 
 .blog-prose h3 {
-  color: #BDDDFC;
+  color: #14532d;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.3rem;
@@ -154,7 +151,7 @@ input:focus {
 }
 
 .blog-prose h4 {
-  color: #BDDDFC;
+  color: #14532d;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -165,29 +162,29 @@ input:focus {
 
 .blog-prose p {
   margin-bottom: 1.4rem;
-  color: rgba(189, 221, 252, 0.8);
+  color: rgba(20, 83, 45, 0.82);
 }
 
 .blog-prose a {
-  color: #88BDF2;
+  color: #14532d;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(136, 189, 242, 0.3);
+  text-decoration-color: rgba(20, 83, 45, 0.3);
   transition: text-decoration-color 0.2s;
 }
 
 .blog-prose a:hover {
-  text-decoration-color: rgba(136, 189, 242, 0.8);
+  text-decoration-color: rgba(59, 92, 58, 0.8);
 }
 
 .blog-prose strong {
-  color: #BDDDFC;
+  color: #14532d;
   font-weight: 700;
 }
 
 .blog-prose em {
   font-style: italic;
-  color: rgba(189, 221, 252, 0.55);
+  color: rgba(20, 83, 45, 0.55);
 }
 
 .blog-prose ul,
@@ -205,14 +202,14 @@ input:focus {
   position: relative;
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
-  color: rgba(189, 221, 252, 0.8);
+  color: rgba(20, 83, 45, 0.82);
 }
 
 .blog-prose ul li::before {
   content: "–";
   position: absolute;
   left: 0;
-  color: rgba(189, 221, 252, 0.3);
+  color: rgba(20, 83, 45, 0.3);
   font-weight: 700;
 }
 
@@ -222,39 +219,39 @@ input:focus {
 
 .blog-prose ol li {
   margin-bottom: 0.5rem;
-  color: rgba(189, 221, 252, 0.8);
+  color: rgba(20, 83, 45, 0.82);
   padding-left: 0.25rem;
 }
 
 .blog-prose blockquote {
-  border-left: 2px solid rgba(189, 221, 252, 0.2);
+  border-left: 2px solid rgba(20, 83, 45, 0.3);
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  color: rgba(189, 221, 252, 0.5);
+  color: rgba(20, 83, 45, 0.5);
   font-style: italic;
 }
 
 .blog-prose hr {
   border: none;
-  border-top: 1px solid rgba(189, 221, 252, 0.1);
+  border-top: 1px solid rgba(20, 83, 45, 0.1);
   margin: 2.5rem 0;
 }
 
 .blog-prose code:not(pre code) {
-  background: rgba(189, 221, 252, 0.07);
-  color: #BDDDFC;
+  background: rgba(20, 83, 45, 0.06);
+  color: #14532d;
   font-size: 0.875em;
   padding: 0.1em 0.35em;
   border-radius: 3px;
   font-family: var(--font-mono);
-  border: 1px solid rgba(189, 221, 252, 0.12);
+  border: 1px solid rgba(20, 83, 45, 0.1);
 }
 
 .blog-prose pre {
   margin: 1.75rem 0;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid rgba(189, 221, 252, 0.08);
+  border: 1px solid rgba(20, 83, 45, 0.08);
 }
 
 .blog-prose pre code {
@@ -274,7 +271,7 @@ input:focus {
 }
 
 .blog-prose thead {
-  border-bottom: 1px solid rgba(189, 221, 252, 0.1);
+  border-bottom: 1px solid rgba(20, 83, 45, 0.12);
 }
 
 .blog-prose th {
@@ -284,16 +281,16 @@ input:focus {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(189, 221, 252, 0.4);
+  color: rgba(20, 83, 45, 0.4);
 }
 
 .blog-prose td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid rgba(189, 221, 252, 0.07);
-  color: rgba(189, 221, 252, 0.8);
+  border-bottom: 1px solid rgba(20, 83, 45, 0.07);
+  color: rgba(20, 83, 45, 0.82);
 }
 
-/* ─── Syntax highlighting — dark code blocks on light page ───────────────── */
+/* ─── Syntax highlighting — dark code blocks ──────────────────────────────── */
 .hljs {
   display: block;
   overflow-x: auto;

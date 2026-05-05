@@ -18,14 +18,14 @@ export default function About({ t }: AboutProps) {
   return (
     <section
       id="about"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-background overflow-hidden"
     >
       <div className="mb-16 space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-center">
           <WordReveal>{t.title}</WordReveal>
         </h2>
         <motion.div
-          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          className="h-1 w-24 bg-primary mx-auto origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -44,11 +44,11 @@ export default function About({ t }: AboutProps) {
         >
           <div className="relative w-full max-w-[260px] sm:max-w-xs md:max-w-none">
             {/* Decorative offset border */}
-            <div className="absolute -bottom-3 -right-3 w-full h-full border border-cartier/30 pointer-events-none" />
-            <div className="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-gold/60 pointer-events-none" />
+            <div className="absolute -bottom-3 -right-3 w-full h-full border border-primary/30 pointer-events-none" />
+            <div className="absolute -top-3 -left-3 w-16 h-16 border-t border-l border-surface/60 pointer-events-none" />
 
             {/* Photo container */}
-            <div className="relative w-full aspect-[3/4] overflow-hidden bg-gold/10 border border-gold/30">
+            <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface/10 border border-surface/30">
               <Image
                 src="/images/image.jpg"
                 alt="Rima Nafougui, Software Developer"
@@ -65,10 +65,10 @@ export default function About({ t }: AboutProps) {
 
             {/* Name tag below photo */}
             <div className="mt-4 pl-1">
-              <p className="font-serif italic text-xl text-coffee">
+              <p className="font-serif italic text-xl text-foreground">
                 Rima Nafougui
               </p>
-              <p className="text-[10px] uppercase tracking-wider text-cartier font-black mt-0.5">
+              <p className="text-[10px] uppercase tracking-wider text-primary font-black mt-0.5">
                 Builder. Optimist. Aspiring.
               </p>
             </div>

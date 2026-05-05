@@ -22,31 +22,31 @@ export default function Info({ items }: InfoProps) {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true }}
-          className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 pb-12 border-b border-gold/20 last:border-none"
+          className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 pb-12 border-b border-surface/20 last:border-none"
         >
           <div className="md:col-span-3 flex flex-col pt-1">
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-coffee">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground">
               {item.duration}
             </span>
           </div>
 
           <div className="md:col-span-9 space-y-4">
             <div className="space-y-1">
-              <h3 className="text-2xl md:text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
+              <h3 className="text-2xl md:text-3xl font-serif italic text-foreground group-hover:text-primary transition-colors duration-500">
                 {item.position}
               </h3>
-              <p className="text-xs font-bold text-cartier uppercase tracking-widest">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest">
                 {item.company}
               </p>
             </div>
 
-            <p className="text-coffee/70 leading-relaxed max-w-2xl font-medium text-sm md:text-base">
+            <p className="text-muted leading-relaxed max-w-2xl font-medium text-sm md:text-base">
               {item.description}
             </p>
 
             {item.reference && (
               <div className="flex gap-4 pt-2">
-                <div className="h-px w-8 bg-gold/40 self-center" />
+                <div className="h-px w-8 bg-surface/40 self-center" />
                 <span className="text-[10px] italic text-stone-400 font-semibold uppercase tracking-wider">
                   {item.reference}
                 </span>

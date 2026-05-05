@@ -83,16 +83,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Cabinet Grotesk from Fontshare */}
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        {/* Cormorant Garamond + Jost from Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="style"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
         />
         <link
           rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
         />
         <script
           type="application/ld+json"
@@ -104,7 +105,7 @@ export default function RootLayout({
         {/* Skip to main content — visible on focus for keyboard users */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-coffee focus:text-almond focus:text-sm focus:font-bold focus:rounded"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:text-sm focus:font-bold focus:rounded"
         >
           Skip to main content
         </a>
@@ -115,11 +116,11 @@ export default function RootLayout({
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#1E2B36",
-              color: "#BDDDFC",
-              border: "1px solid #384959",
+              background: "#FFFFFF",
+              color: "#14532d",
+              border: "1px solid #F5F1EA",
               borderRadius: "4px",
-              fontFamily: "'Cabinet Grotesk', system-ui, sans-serif",
+              fontFamily: "'Jost', system-ui, sans-serif",
             },
           }}
         />

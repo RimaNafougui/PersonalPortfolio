@@ -7,7 +7,7 @@ export default function OGImage() {
   return new ImageResponse(
     <div
       style={{
-        background: "#1E2B36",
+        background: "#FFFFFF",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -24,7 +24,7 @@ export default function OGImage() {
           display: "flex",
           position: "absolute",
           inset: "40px",
-          border: "1px solid #384959",
+          border: "1px solid #F5F1EA",
         }}
       />
 
@@ -39,7 +39,7 @@ export default function OGImage() {
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           fontWeight: 700,
-          color: "#6A89A7",
+          color: "#6B7A87",
         }}
       >
         rimanafougui.com
@@ -61,7 +61,7 @@ export default function OGImage() {
             letterSpacing: "0.35em",
             textTransform: "uppercase",
             fontWeight: 800,
-            color: "#6A89A7",
+            color: "#8A8F96",
             marginBottom: "28px",
           }}
         >
@@ -74,7 +74,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "84px",
             fontWeight: 800,
-            color: "#BDDDFC",
+            color: "#14532d",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
           }}
@@ -86,7 +86,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "84px",
             fontWeight: 800,
-            color: "#BDDDFC",
+            color: "#14532d",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
             marginBottom: "32px",
@@ -95,13 +95,13 @@ export default function OGImage() {
           Nafougui
         </div>
 
-        {/* Accent rule */}
+        {/* Accent rule — Moss green */}
         <div
           style={{
             display: "flex",
             width: "72px",
             height: "3px",
-            background: "#88BDF2",
+            background: "#1C2B40",
             marginBottom: "32px",
           }}
         />
@@ -112,7 +112,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "20px",
             fontWeight: 500,
-            color: "#6A89A7",
+            color: "#8A8F96",
             lineHeight: 1.6,
           }}
         >
@@ -137,8 +137,8 @@ export default function OGImage() {
                 fontWeight: 800,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#88BDF2",
-                border: "1px solid #384959",
+                color: "#14532d",
+                border: "1px solid #F5F1EA",
                 padding: "6px 14px",
                 borderRadius: "999px",
               }}
@@ -158,7 +158,7 @@ export default function OGImage() {
           top: "50%",
           fontSize: "180px",
           fontWeight: 800,
-          color: "#384959",
+          color: "#F5F1EA",
           lineHeight: 1,
           letterSpacing: "-0.04em",
           marginTop: "-90px",

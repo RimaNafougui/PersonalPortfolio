@@ -54,29 +54,29 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <BlogHeader />
-      <main id="main-content" className="pt-24 min-h-screen bg-almond">
+      <main id="main-content" className="pt-24 min-h-screen bg-background">
         <article className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-12 space-y-6">
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-coffee/40 hover:text-coffee transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cartier focus-visible:ring-offset-2 focus-visible:ring-offset-coffee rounded-sm"
+              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/40 hover:text-foreground transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               All posts
             </Link>
 
             <div className="space-y-4 pt-2">
-              <time className="block text-[10px] uppercase tracking-[0.3em] text-coffee/35 font-bold">
+              <time className="block text-[10px] uppercase tracking-[0.3em] text-foreground/35 font-bold">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </time>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-coffee leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-foreground leading-tight">
                 {post.title}
               </h1>
-              <p className="text-base text-coffee/55 leading-relaxed border-l-2 border-cartier/40 pl-4 italic">
+              <p className="text-base text-foreground/55 leading-relaxed border-l-2 border-primary/40 pl-4 italic">
                 {post.summary}
               </p>
               {post.tags && post.tags.length > 0 && (
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] uppercase tracking-widest text-cartier/70 font-bold border border-cartier/25 px-2 py-0.5"
+                      className="text-[10px] uppercase tracking-widest text-primary/70 font-bold border border-primary/25 px-2 py-0.5"
                     >
                       {tag}
                     </span>
@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
               )}
             </div>
 
-            <div className="h-px w-full bg-coffee/10" />
+            <div className="h-px w-full bg-foreground/10" />
           </div>
 
           <PostBody content={post.content} />

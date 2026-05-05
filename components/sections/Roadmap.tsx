@@ -28,14 +28,14 @@ export default function Roadmap({ t }: RoadmapProps) {
   return (
     <section
       id="roadmap"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-[#253444] overflow-hidden border-t border-gold/20"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-background overflow-hidden border-t border-foreground/10"
     >
       <div className="mb-20 text-center space-y-4">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-coffee">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-foreground">
           <WordReveal>{t.title}</WordReveal>
         </h2>
         <motion.div
-          className="h-1 w-24 bg-cartier mx-auto origin-left"
+          className="h-1 w-24 bg-primary mx-auto origin-left"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -47,14 +47,17 @@ export default function Roadmap({ t }: RoadmapProps) {
         {/* Timeline spine — decorative */}
         <motion.div
           aria-hidden="true"
-          className="absolute left-8 md:left-1/2 top-0 h-full w-px bg-gold/50 md:-translate-x-1/2 z-0"
+          className="absolute left-8 md:left-1/2 top-0 h-full w-px bg-foreground/20 md:-translate-x-1/2 z-0"
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
           viewport={{ once: true }}
         />
 
-        <ol aria-label="Career milestones" className="space-y-10 md:space-y-16 relative list-none">
+        <ol
+          aria-label="Career milestones"
+          className="space-y-10 md:space-y-16 relative list-none"
+        >
           {t.milestones.map((item, index) => {
             const Icon = icons[item.status];
             const isEven = index % 2 === 0;
@@ -78,23 +81,23 @@ export default function Roadmap({ t }: RoadmapProps) {
                 >
                   <div
                     className={`
-                    relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-almond transition-all duration-500
+                    relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-background transition-all duration-500
                     ${
                       isActive
-                        ? "border-cartier shadow-[0_0_20px_rgba(56,73,89,0.3)] scale-110"
-                        : "border-gold group-hover:border-coffee"
+                        ? "border-primary shadow-[0_0_20px_rgba(28,43,64,0.25)] scale-110"
+                        : "border-foreground/20 group-hover:border-foreground/50"
                     }
                   `}
                   >
                     {isActive && (
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-cartier opacity-20 animate-ping" />
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-20 animate-ping" />
                     )}
                     <Icon
                       size={24}
                       className={`${
                         isActive
-                          ? "text-cartier"
-                          : "text-[#6A89A7] group-hover:text-coffee"
+                          ? "text-primary"
+                          : "text-muted group-hover:text-foreground"
                       } transition-colors duration-500`}
                     />
                   </div>
@@ -107,36 +110,35 @@ export default function Roadmap({ t }: RoadmapProps) {
                 >
                   <div
                     className={`
-                    p-5 md:p-8 border border-gold/20 rounded-none transition-all duration-500 relative border-l-[3px]
+                    p-5 md:p-8 bg-background border border-foreground/10 rounded-none transition-all duration-500 relative border-l-[3px]
                     ${
                       isActive
-                        ? "border-cartier/40 border-l-cartier shadow-lg"
+                        ? "border-primary/30 border-l-primary shadow-lg"
                         : item.status === "completed"
-                        ? "border-l-[#6A89A7] hover:border-[#6A89A7]/40 hover:shadow-md"
-                        : "border-l-[#384959] hover:border-[#6A89A7]/40 hover:shadow-md"
+                          ? "border-l-muted hover:border-muted/40 hover:shadow-md"
+                          : "border-l-foreground/20 hover:border-foreground/30 hover:shadow-md"
                     }
                     before:absolute before:top-8 ${
                       isEven
-                        ? "before:right-[-17px] before:border-l-transparent before:border-r-gold/20"
-                        : "before:left-[-17px] before:border-r-transparent before:border-l-gold/20"
+                        ? "before:right-[-17px] before:border-l-transparent before:border-r-foreground/10"
+                        : "before:left-[-17px] before:border-r-transparent before:border-l-foreground/10"
                     } before:border-b-transparent before:border-t-transparent before:border-[8px] md:before:content-['']
                   `}
                   >
-                    {/* Fixed: was "blocktext-[10px]" (typo), and was "text-gold" (1.2:1 contrast) */}
                     <span
                       className={`block text-[10px] font-black uppercase tracking-[0.3em] mb-2 ${
-                        isActive ? "text-cartier" : "text-[#6A89A7]"
+                        isActive ? "text-primary" : "text-muted"
                       }`}
                     >
                       {item.date}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-display font-bold text-coffee mb-1">
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-foreground mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm font-bold text-[#6A89A7] uppercase tracking-wider mb-4">
+                    <p className="text-sm font-bold text-muted uppercase tracking-wider mb-4">
                       {item.institution}
                     </p>
-                    <p className="text-[#8AAFC4] leading-relaxed font-medium">
+                    <p className="text-muted leading-relaxed font-medium">
                       {item.description}
                     </p>
                   </div>
