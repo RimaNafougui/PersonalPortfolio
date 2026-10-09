@@ -22,9 +22,11 @@ export const frameworks = [
   "Express.js",
   "React.js",
   "Tailwind CSS",
+  "Spring Boot",
+  "Jetpack Compose",
 ];
 
-export const databases = ["PostgreSQL", "MySQL", "MongoDB", "Supabase"];
+export const databases = ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Redis"];
 
 export const IDEs = [
   "Visual Studio Code",
@@ -38,6 +40,6 @@ export const IDEs = [
   "IntelliJ IDEA",
 ];
 export const networking = ["Linux", "VMWare", "Cisco Packet Tracer", "XAMPP"];
-export const cloud = ["AWS", "Github Action", "Vercel"];
+export const cloud = ["AWS", "Docker", "GitHub Actions", "Vercel", "Railway"];
 export const versionControl = ["GitHub", "Git"];
-export const tools = ["REST APIs", "Postman"];
+export const tools = ["REST APIs", "Postman", "Vitest", "JUnit"];

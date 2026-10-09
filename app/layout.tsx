@@ -16,9 +16,9 @@ const personJsonLd = {
   url: BASE_URL,
   jobTitle: "Software Developer",
   description:
-    "Full-stack developer specialising in web, data engineering, and AI.",
+    "Computer Science student and full-stack developer building production web apps, AI retrieval pipelines and APIs.",
   sameAs: [
-    "https://github.com/rimalnafougui",
+    "https://github.com/rimanafougui",
     "https://linkedin.com/in/rima-nafougui",
   ],
 };
