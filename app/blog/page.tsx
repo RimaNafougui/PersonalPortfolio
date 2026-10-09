@@ -23,17 +23,17 @@ export default function BlogPage() {
               Notes
             </h1>
             <div className="h-px w-24 bg-foreground/20" />
-            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-foreground/40 pt-2">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-foreground/70 pt-2">
               Writing on engineering &amp; craft
             </p>
           </div>
 
           {posts.length === 0 ? (
             <div className="py-16 text-center space-y-4">
-              <p className="text-foreground/40 text-sm font-bold uppercase tracking-widest">
+              <p className="text-foreground/70 text-sm font-bold uppercase tracking-widest">
                 No posts yet
               </p>
-              <p className="text-foreground/25 text-xs">
+              <p className="text-foreground/70 text-xs">
                 Posts are being drafted — check back soon.
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function BlogPage() {
                     className="group block py-10"
                   >
                     <div className="flex flex-col gap-3">
-                      <time className="text-[10px] uppercase tracking-[0.3em] text-foreground/35 font-bold">
+                      <time className="text-[10px] uppercase tracking-[0.3em] text-foreground/70 font-bold">
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
@@ -57,7 +57,7 @@ export default function BlogPage() {
                       <p className="text-xl sm:text-2xl md:text-3xl font-serif italic text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
                         {post.title}
                       </p>
-                      <p className="text-sm text-foreground/55 leading-relaxed">
+                      <p className="text-sm text-foreground/75 leading-relaxed">
                         {post.summary}
                       </p>
                       {post.tags && post.tags.length > 0 && (
@@ -65,7 +65,7 @@ export default function BlogPage() {
                           {post.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[10px] uppercase tracking-widest text-primary/70 font-bold border border-primary/25 px-2 py-0.5"
+                              className="text-[10px] uppercase tracking-widest text-primary font-bold border border-primary/25 px-2 py-0.5"
                             >
                               {tag}
                             </span>

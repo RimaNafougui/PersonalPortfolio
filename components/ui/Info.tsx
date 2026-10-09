@@ -47,7 +47,7 @@ export default function Info({ items }: InfoProps) {
             {item.reference && (
               <div className="flex gap-4 pt-2">
                 <div className="h-px w-8 bg-surface/40 self-center" />
-                <span className="text-[10px] italic text-stone-400 font-semibold uppercase tracking-wider">
+                <span className="text-[10px] italic text-stone-600 font-semibold uppercase tracking-wider">
                   {item.reference}
                 </span>
               </div>

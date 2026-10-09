@@ -24,7 +24,7 @@ export default function Stats({ stats }: StatsProps) {
               <span className="text-4xl md:text-5xl font-extrabold text-background tabular-nums tracking-tight">
                 {stat.value}
               </span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-background/75 font-bold text-center">
+              <span className="text-[9px] uppercase tracking-[0.3em] text-background/90 font-bold text-center">
                 {stat.label}
               </span>
             </div>

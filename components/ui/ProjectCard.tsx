@@ -22,21 +22,21 @@ type ProjectCardProps = {
 };
 
 const TERMINAL_LINES = [
-  { method: "GET",    path: "/api/expenses",         status: "200", methodColor: "text-emerald-400" },
-  { method: "POST",   path: "/api/expenses",         status: "201", methodColor: "text-blue-400"    },
-  { method: "GET",    path: "/api/expenses/summary", status: "200", methodColor: "text-emerald-400" },
-  { method: "DELETE", path: "/api/expenses/:id",     status: "204", methodColor: "text-amber-400"   },
-  { method: "POST",   path: "/api/auth/login",       status: "200", methodColor: "text-emerald-400" },
+  { method: "GET",    path: "/api/expenses",         status: "200", methodColor: "text-sky-300" },
+  { method: "POST",   path: "/api/expenses",         status: "201", methodColor: "text-blue-300"   },
+  { method: "GET",    path: "/api/expenses/summary", status: "200", methodColor: "text-sky-300" },
+  { method: "DELETE", path: "/api/expenses/:id",     status: "204", methodColor: "text-slate-400" },
+  { method: "POST",   path: "/api/auth/login",       status: "200", methodColor: "text-sky-300" },
 ];
 
 function BackendHoverPanel() {
   return (
-    <div className="absolute inset-0 bg-[#090F15] flex flex-col justify-center px-5 py-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-400 delay-75 font-mono">
+    <div className="absolute inset-0 bg-[#0F172A] flex flex-col justify-center px-5 py-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-400 delay-75 font-mono">
       <div className="flex items-center gap-1.5 mb-4">
-        <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
-        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-        <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
-        <span className="ml-3 text-[9px] text-[#E8E0CC]/25 uppercase tracking-[0.2em]">
+        <span className="w-2.5 h-2.5 rounded-full bg-slate-500/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-slate-500/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-slate-500/60" />
+        <span className="ml-3 text-[9px] text-[#E2E8F0]/60 uppercase tracking-[0.2em]">
           localhost:8080
         </span>
       </div>
@@ -47,17 +47,17 @@ function BackendHoverPanel() {
             <span className={`font-black w-[52px] text-right flex-shrink-0 ${line.methodColor}`}>
               {line.method}
             </span>
-            <span className="text-[#E8E0CC]/30 flex-shrink-0">/v1</span>
-            <span className="text-[#E8E0CC]/70 truncate">{line.path}</span>
-            <span className="ml-auto flex-shrink-0 tabular-nums text-[#E8E0CC]/35">{line.status}</span>
+            <span className="text-[#E2E8F0]/60 flex-shrink-0">/v1</span>
+            <span className="text-[#E2E8F0]/70 truncate">{line.path}</span>
+            <span className="ml-auto flex-shrink-0 tabular-nums text-[#E2E8F0]/60">{line.status}</span>
           </div>
         ))}
       </div>
 
       <div className="flex items-center gap-2 mt-4 border-t border-background/10 pt-3">
         <span className="text-primary text-[10px] font-black">$</span>
-        <span className="text-[#E8E0CC]/30 text-[10px]">mvn spring-boot:run</span>
-        <span className="inline-block w-[7px] h-[11px] bg-[#E8E0CC]/30 animate-pulse" />
+        <span className="text-[#E2E8F0]/60 text-[10px]">mvn spring-boot:run</span>
+        <span className="inline-block w-[7px] h-[11px] bg-[#E2E8F0]/30 animate-pulse" />
       </div>
     </div>
   );
@@ -80,7 +80,7 @@ export default function ProjectCard({
   return (
     <TooltipProvider delayDuration={200}>
       <div
-        className={`bg-background h-full border border-surface shadow-none hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(59,92,58,0.12)] transition-all duration-500 group rounded-none overflow-hidden flex flex-col cursor-pointer border-l-[3px] ${isBackend ? "border-l-foreground/50" : "border-l-muted/60"}`}
+        className={`bg-background h-full border border-surface shadow-none hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(29,78,216,0.14)] transition-all duration-500 group rounded-none overflow-hidden flex flex-col cursor-pointer border-l-[3px] ${isBackend ? "border-l-foreground/50" : "border-l-muted/60"}`}
         onClick={() => { if (url) window.open(url, "_blank"); }}
         role={url ? "link" : undefined}
         tabIndex={url ? 0 : undefined}
@@ -107,8 +107,8 @@ export default function ProjectCard({
                 className="absolute inset-0 bg-surface opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 md:delay-100"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(28,43,64,0.05) 19px,rgba(28,43,64,0.05) 20px)," +
-                    "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(28,43,64,0.05) 19px,rgba(28,43,64,0.05) 20px)",
+                    "repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(15,23,42,0.05) 19px,rgba(15,23,42,0.05) 20px)," +
+                    "repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(15,23,42,0.05) 19px,rgba(15,23,42,0.05) 20px)",
                 }}
               />
             )}
@@ -164,7 +164,7 @@ export default function ProjectCard({
         <div className="px-6 py-3 flex-1">
           {/* Problem */}
           <div className="mb-4">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary/70 mb-1.5">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1.5">
               Problem
             </p>
             <p className="text-sm text-foreground leading-relaxed font-semibold">
@@ -187,7 +187,7 @@ export default function ProjectCard({
 
         {/* ── Key Decisions ─────────────────────────────────────────────── */}
         <div className="px-6 py-4">
-          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary/50 mb-3">
+          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-3">
             Key Decisions
           </p>
           <div className="space-y-2.5">

@@ -24,7 +24,7 @@ export default function OGImage() {
           display: "flex",
           position: "absolute",
           inset: "40px",
-          border: "1px solid #F5F1EA",
+          border: "1px solid #E2E8F0",
         }}
       />
 
@@ -39,7 +39,7 @@ export default function OGImage() {
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           fontWeight: 700,
-          color: "#6B7A87",
+          color: "#475569",
         }}
       >
         rimanafougui.com
@@ -61,7 +61,7 @@ export default function OGImage() {
             letterSpacing: "0.35em",
             textTransform: "uppercase",
             fontWeight: 800,
-            color: "#8A8F96",
+            color: "#64748B",
             marginBottom: "28px",
           }}
         >
@@ -74,7 +74,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "84px",
             fontWeight: 800,
-            color: "#14532d",
+            color: "#0F172A",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
           }}
@@ -86,7 +86,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "84px",
             fontWeight: 800,
-            color: "#14532d",
+            color: "#0F172A",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
             marginBottom: "32px",
@@ -95,13 +95,13 @@ export default function OGImage() {
           Nafougui
         </div>
 
-        {/* Accent rule — Moss green */}
+        {/* Accent rule — Cobalt */}
         <div
           style={{
             display: "flex",
             width: "72px",
             height: "3px",
-            background: "#1C2B40",
+            background: "#1D4ED8",
             marginBottom: "32px",
           }}
         />
@@ -112,7 +112,7 @@ export default function OGImage() {
             display: "flex",
             fontSize: "20px",
             fontWeight: 500,
-            color: "#8A8F96",
+            color: "#64748B",
             lineHeight: 1.6,
           }}
         >
@@ -137,8 +137,8 @@ export default function OGImage() {
                 fontWeight: 800,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "#14532d",
-                border: "1px solid #F5F1EA",
+                color: "#0F172A",
+                border: "1px solid #E2E8F0",
                 padding: "6px 14px",
                 borderRadius: "999px",
               }}
@@ -158,7 +158,7 @@ export default function OGImage() {
           top: "50%",
           fontSize: "180px",
           fontWeight: 800,
-          color: "#F5F1EA",
+          color: "#E2E8F0",
           lineHeight: 1,
           letterSpacing: "-0.04em",
           marginTop: "-90px",

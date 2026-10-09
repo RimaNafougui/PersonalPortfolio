@@ -78,7 +78,7 @@ export default function Contact({ t }: { t: ContactTranslation }) {
   const labelStyle =
     "block text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4";
   const inputStyle =
-    "w-full bg-transparent py-3 text-lg text-foreground outline-none transition-colors duration-300 placeholder:text-foreground/20";
+    "w-full bg-transparent py-3 text-lg text-foreground outline-none transition-colors duration-300 placeholder:text-foreground/60";
 
   return (
     <section

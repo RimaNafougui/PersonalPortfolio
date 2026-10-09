@@ -12,6 +12,11 @@ export default function PostBody({ content }: Props) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
+        components={{
+          // Scrollable code blocks must be reachable by keyboard.
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          pre: ({ node, ...props }) => <pre tabIndex={0} {...props} />,
+        }}
       >
         {content}
       </ReactMarkdown>

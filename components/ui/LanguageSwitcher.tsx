@@ -31,7 +31,7 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
             ${
               language === lang
                 ? "text-background"
-                : "text-foreground/60 hover:text-foreground"
+                : "text-foreground/75 hover:text-foreground"
             }
           `}
         >

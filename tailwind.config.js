@@ -7,25 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* Brand tokens — White / Midnight / Moss-900 */
+        /* Brand tokens — Ink & Cobalt */
         background: "#FFFFFF",  /* White      — clean page bg      */
-        foreground: "#14532d",  /* Moss-900   — deep green text    */
-        primary:    "#1C2B40",  /* Midnight   — navy accent        */
-        surface:    "#F5F1EA",  /* Off-white  — cards/borders      */
-        muted:      "#4a7459",  /* Muted green — secondary text    */
+        foreground: "#0F172A",  /* Ink        — near-black text    */
+        primary:    "#1D4ED8",  /* Cobalt     — blue accent        */
+        surface:    "#F1F5F9",  /* Slate-100  — cards/borders      */
+        muted:      "#475569",  /* Slate-600  — secondary text     */
         /* Full stone scale */
         stone: {
-          50:  "#fafaf9",
-          100: "#f5f5f4",
-          200: "#e7e5e4",
-          300: "#d6d3d1",
-          400: "#a8a29e",
-          500: "#78716c",
-          600: "#57534e",
-          700: "#44403c",
-          800: "#292524",
-          900: "#1c1917",
-          950: "#0c0a09",
+          50:  "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a",
+          950: "#020617",
         },
       },
       fontFamily: {

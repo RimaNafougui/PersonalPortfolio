@@ -84,7 +84,7 @@ export default function Roadmap({ t }: RoadmapProps) {
                     relative flex items-center justify-center w-16 h-16 rounded-full border-2 bg-background transition-all duration-500
                     ${
                       isActive
-                        ? "border-primary shadow-[0_0_20px_rgba(28,43,64,0.25)] scale-110"
+                        ? "border-primary shadow-[0_0_20px_rgba(29,78,216,0.3)] scale-110"
                         : "border-foreground/20 group-hover:border-foreground/50"
                     }
                   `}

@@ -59,14 +59,14 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mb-12 space-y-6">
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/40 hover:text-foreground transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+              className="group inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/70 hover:text-foreground transition-colors duration-300 font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
             >
               <ArrowLeft size={10} strokeWidth={2.5} />
               All posts
             </Link>
 
             <div className="space-y-4 pt-2">
-              <time className="block text-[10px] uppercase tracking-[0.3em] text-foreground/35 font-bold">
+              <time className="block text-[10px] uppercase tracking-[0.3em] text-foreground/70 font-bold">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-foreground leading-tight">
                 {post.title}
               </h1>
-              <p className="text-base text-foreground/55 leading-relaxed border-l-2 border-primary/40 pl-4 italic">
+              <p className="text-base text-foreground/75 leading-relaxed border-l-2 border-primary/40 pl-4 italic">
                 {post.summary}
               </p>
               {post.tags && post.tags.length > 0 && (
@@ -84,7 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] uppercase tracking-widest text-primary/70 font-bold border border-primary/25 px-2 py-0.5"
+                      className="text-[10px] uppercase tracking-widest text-primary font-bold border border-primary/25 px-2 py-0.5"
                     >
                       {tag}
                     </span>
