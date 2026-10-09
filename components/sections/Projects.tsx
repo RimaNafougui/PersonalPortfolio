@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import ProjectCard from "../ui/ProjectCard";
 import WordReveal from "@/components/ui/WordReveal";
@@ -17,15 +18,28 @@ interface Project {
 }
 
 interface ProjectsProp {
-  t: { title: string; items: Record<string, Project> };
+  t: { title: string; items: Record<string, Project>; more?: string; less?: string };
 }
 
 export default function Projects({ t }: ProjectsProp) {
   const projects = Object.values(t.items);
+  const FEATURED_COUNT = 3;
+  const featured = projects.slice(0, FEATURED_COUNT);
+  const more = projects.slice(FEATURED_COUNT);
+  const [showMore, setShowMore] = useState(false);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -56,23 +70,44 @@ export default function Projects({ t }: ProjectsProp) {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {projects.map((project, index) => (
+        {featured.map((project, index) => (
           <motion.div
             key={project.github || index}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5, ease: "easeOut" },
-              },
-            }}
+            variants={itemVariants}
             className="flex flex-col h-full"
           >
             <ProjectCard {...project} />
           </motion.div>
         ))}
       </motion.div>
+
+      {more.length > 0 && (
+        <div className="mt-8">
+          {showMore && (
+            <div
+              id="more-projects"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto mb-8"
+            >
+              {more.map((project, index) => (
+                <div key={project.github || index} className="flex flex-col h-full">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setShowMore((v) => !v)}
+              aria-expanded={showMore}
+              aria-controls="more-projects"
+              className="text-[11px] font-black uppercase tracking-[0.3em] text-foreground border border-foreground/30 px-8 py-3 hover:border-primary hover:text-primary transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              {showMore ? (t.less ?? "Show fewer") : (t.more ?? "More projects")}
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

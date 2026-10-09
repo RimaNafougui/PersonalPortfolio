@@ -7,6 +7,7 @@ import Projects from "@/components/sections/Projects";
 import Header from "@/components/layout/Header";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
+import Activities from "@/components/sections/Activities";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
@@ -35,6 +36,8 @@ export default function Home() {
         <About t={t.about} />
         <Separator />
         <Experience t={t.experience} language={language} />
+        <Separator />
+        <Activities t={t.activities} />
         <Separator />
         <Projects t={t.projects} />
         <Separator />
