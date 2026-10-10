@@ -1,5 +1,4 @@
 "use client";
-import { useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,9 +6,6 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { ArrowRight } from "lucide-react";
 import { Language } from "@/lib/translation";
 import ResumeDownload from "@/components/ui/ResumeDownload";
-import CursorFollower from "@/components/ui/CursorFollower";
-import TypingText from "@/components/ui/TypingText";
-import MagneticButton from "@/components/ui/MagneticButton";
 
 interface HeroProps {
   t: {
@@ -19,16 +15,12 @@ interface HeroProps {
     ctaProjects: string;
     ctaResume: string;
     scroll: string;
-    stats: Array<{ value: string; label: string }>;
   };
   language: Language;
-  ready?: boolean;
   label?: string;
 }
 
-export default function Hero({ t, language, ready = true, label = "Introduction" }: HeroProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-
+export default function Hero({ t, language, label = "Introduction" }: HeroProps) {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,12 +40,9 @@ export default function Hero({ t, language, ready = true, label = "Introduction"
 
   return (
     <section
-      ref={sectionRef}
       aria-label={label}
       className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
-      <CursorFollower containerRef={sectionRef} />
-
       {/* Decorative background glows — hidden from assistive tech */}
       <div aria-hidden="true" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] sm:w-[55vw] sm:h-[55vw] md:w-[38vw] md:h-[38vw] bg-foreground/8 rounded-full blur-[90px] -z-10" />
       <div aria-hidden="true" className="absolute top-1/4 right-[15%] w-[35vw] h-[35vw] sm:w-[22vw] sm:h-[22vw] md:w-[18vw] md:h-[18vw] bg-primary/10 rounded-full blur-[60px] -z-10" />
@@ -72,14 +61,14 @@ export default function Hero({ t, language, ready = true, label = "Introduction"
         className="flex flex-col items-center text-center max-w-4xl"
         variants={containerVariants}
         initial="hidden"
-        animate={ready ? "visible" : "hidden"}
+        animate="visible"
       >
         <motion.h1
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
           <span className="text-primary font-extrabold font-display block tracking-[-0.02em] min-h-[1em]">
-            <TypingText text="Rima Nafougui" ready={ready} delay={900} speed={75} />
+            Rima Nafougui
           </span>
         </motion.h1>
 
@@ -94,18 +83,14 @@ export default function Hero({ t, language, ready = true, label = "Introduction"
           variants={itemVariants}
           className="flex flex-wrap gap-4 mt-10 justify-center items-center"
         >
-          <MagneticButton>
-            <Link
+          <Link
               href="#projects"
               className="flex items-center gap-2 bg-primary text-background px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:shadow-xl transition-all duration-300 active:scale-95 text-sm sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {t.ctaProjects}
               <ArrowRight size={20} aria-hidden="true" />
             </Link>
-          </MagneticButton>
-          <MagneticButton>
-            <ResumeDownload language={language} />
-          </MagneticButton>
+          <ResumeDownload language={language} />
         </motion.div>
 
         <motion.div
@@ -143,19 +128,15 @@ export default function Hero({ t, language, ready = true, label = "Introduction"
       <motion.div
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 pointer-events-none"
+        animate={{ opacity: 0.6 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none"
       >
         <span className="text-[10px] uppercase tracking-[0.2em] font-black text-primary">
           {t.scroll}
         </span>
         <div className="w-[1px] h-12 bg-primary/30 relative overflow-hidden">
-          <motion.div
-            animate={{ y: [0, 48, 0] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 w-full h-1/2 bg-foreground"
-          />
+          <div className="absolute top-0 w-full h-1/2 bg-foreground" />
         </div>
       </motion.div>
     </section>

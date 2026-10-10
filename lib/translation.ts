@@ -16,7 +16,6 @@ export const translations = {
       "mobileNav": "Mobile navigation",
       "scrollTop": "Scroll to top",
       "careerMilestones": "Career milestones",
-      "keyFigures": "Key figures",
       "intro": "Introduction"
     },
     hero: {
@@ -26,20 +25,6 @@ export const translations = {
       "ctaProjects": "View Projects",
       "ctaResume": "Download Resume",
       "scroll": "Scroll",
-      "stats": [
-        {
-          "value": "15+",
-          "label": "Students Tutored"
-        },
-        {
-          "value": "137",
-          "label": "Automated Tests in RCapsule"
-        },
-        {
-          "value": "1,200+",
-          "label": "Papers Indexed in ArXiv RAG"
-        }
-      ]
     },
     about: {
       title: "About Me",
@@ -329,7 +314,6 @@ export const translations = {
       "mobileNav": "Navigation mobile",
       "scrollTop": "Retour en haut de la page",
       "careerMilestones": "Étapes du parcours",
-      "keyFigures": "Chiffres clés",
       "intro": "Introduction"
     },
     hero: {
@@ -339,20 +323,6 @@ export const translations = {
       "ctaProjects": "Voir mes projets",
       "ctaResume": "Télécharger le CV",
       "scroll": "Défiler",
-      "stats": [
-        {
-          "value": "15+",
-          "label": "Étudiants encadrés"
-        },
-        {
-          "value": "137",
-          "label": "Tests automatisés (RCapsule)"
-        },
-        {
-          "value": "1 200+",
-          "label": "Articles indexés (ArXiv RAG)"
-        }
-      ]
     },
     about: {
       title: "À Propos de Moi",

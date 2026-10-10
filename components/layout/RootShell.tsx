@@ -1,7 +1,6 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import ScrollProgress from "@/components/ui/ScrollProgress";
 import MotionConfigProvider from "@/components/ui/MotionConfigProvider";
 import { personJsonLd } from "@/lib/seo";
 import { translations, Language } from "@/lib/translation";
@@ -38,7 +37,6 @@ export default function RootShell({
         />
       </head>
       <body>
-        <ScrollProgress />
         {/* Skip to main content — visible on focus for keyboard users */}
         <a
           href="#main-content"
