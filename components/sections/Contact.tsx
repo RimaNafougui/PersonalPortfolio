@@ -1,91 +1,31 @@
 "use client";
-import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import WordReveal from "@/components/ui/WordReveal";
-import { sendMail } from "@/lib/send-mail";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { toast } from "sonner";
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name is too short" }),
-  email: z.email({ message: "Invalid email address" }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters" }),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
 
 interface ContactTranslation {
   title: string;
-  name: { label: string; placeholder: string };
-  email: { label: string; placeholder: string };
-  message: { label: string; placeholder: string };
-  submit: string;
-  reset: string;
+  intro: string;
+  email: string;
+  emailLabel: string;
+  linkedinLabel: string;
+  githubLabel: string;
 }
 
+const LINKS = {
+  linkedin: "https://www.linkedin.com/in/rima-nafougui/",
+  github: "https://github.com/RimaNafougui",
+};
+
 export default function Contact({ t }: { t: ContactTranslation }) {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-  });
-
-  const onSubmit = async (values: ContactFormData) => {
-    try {
-      const mailHtml = `
-        <div style="font-family: serif; max-width: 600px; color: #1a1a1a;">
-          <h2 style="color: #3a3a3a; border-bottom: 1px solid #d4d4d4; padding-bottom: 10px;">
-            New Portfolio Inquiry
-          </h2>
-          <p><strong>From:</strong> ${values.name} (${values.email})</p>
-          <div style="background-color: #f5f5f5; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #3a3a3a;">
-            <p style="margin: 0; font-style: italic;">"${values.message}"</p>
-          </div>
-          <p style="font-size: 10px; color: #8a8a8a; margin-top: 20px; text-transform: uppercase; tracking: 0.1em;">
-            Sent from rimanafougui.vercel.app
-          </p>
-        </div>
-      `;
-
-      const response = await sendMail({
-        email: values.email,
-        subject: `Inquiry from ${values.name}`,
-        text: `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`,
-        html: mailHtml,
-      });
-
-      if (response?.success) {
-        toast.success("Message Received", {
-          description: "I will respond to your inquiry shortly.",
-        });
-        reset();
-      } else {
-        toast.error("Submission Error", {
-          description: "Please verify your details and try again.",
-        });
-      }
-    } catch (error) {
-      toast.error("An error occurred during submission.");
-    }
-  };
-
-  const labelStyle =
-    "block text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-4";
-  const inputStyle =
-    "w-full bg-transparent py-3 text-lg text-foreground outline-none transition-colors duration-300 placeholder:text-foreground/60";
+  const linkStyle =
+    "inline-block px-8 py-3 border border-surface text-foreground rounded-full font-bold text-sm hover:bg-surface transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
 
   return (
     <section
       id="contact"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-background min-h-screen flex flex-col items-center border-t border-surface/20"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-background flex flex-col items-center border-t border-surface/20"
     >
-      <div className="mb-20 text-center space-y-4">
+      <div className="mb-12 text-center space-y-4">
         <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-foreground">
           <WordReveal>{t.title}</WordReveal>
         </h2>
@@ -99,103 +39,27 @@ export default function Contact({ t }: { t: ContactTranslation }) {
       </div>
 
       <motion.div
-        className="w-full max-w-3xl"
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
+        className="w-full max-w-xl text-center space-y-8"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="bg-background/30 border border-surface/30 p-6 sm:p-10 md:p-16 space-y-10 md:space-y-16"
+        <p className="text-lg text-muted leading-relaxed">{t.intro}</p>
+        <a
+          href={`mailto:${t.email}`}
+          className="block text-2xl sm:text-3xl font-serif italic text-primary underline underline-offset-8 break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 md:gap-y-16">
-            <div className="relative group border-b border-surface/40 transition-colors duration-300">
-              <label htmlFor="name" className={labelStyle}>
-                {t.name.label}
-              </label>
-              <input
-                id="name"
-                type="text"
-                autoComplete="name"
-                placeholder={t.name.placeholder}
-                aria-describedby={errors.name ? "name-error" : undefined}
-                aria-invalid={!!errors.name}
-                {...register("name")}
-                className={inputStyle}
-              />
-              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
-              {errors.name && (
-                <span id="name-error" role="alert" className="text-red-600 text-xs mt-2 block">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
-
-            <div className="relative group border-b border-surface/40 transition-colors duration-300">
-              <label htmlFor="email" className={labelStyle}>
-                {t.email.label}
-              </label>
-              <input
-                id="email"
-                type="email"
-                autoComplete="email"
-                placeholder={t.email.placeholder}
-                aria-describedby={errors.email ? "email-error" : undefined}
-                aria-invalid={!!errors.email}
-                {...register("email")}
-                className={inputStyle}
-              />
-              <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
-              {errors.email && (
-                <span id="email-error" role="alert" className="text-red-600 text-xs mt-2 block">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
-          </div>
-
-          <div className="relative group border-b border-surface/40 transition-colors duration-300">
-            <label htmlFor="message" className={labelStyle}>
-              {t.message.label}
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              placeholder={t.message.placeholder}
-              aria-describedby={errors.message ? "message-error" : undefined}
-              aria-invalid={!!errors.message}
-              {...register("message")}
-              className={`${inputStyle} resize-none`}
-            />
-            <span aria-hidden="true" className="absolute bottom-0 left-0 h-[2px] w-full bg-primary origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300" />
-            {errors.message && (
-              <span id="message-error" role="alert" className="text-red-600 text-xs mt-2 block">
-                {errors.message.message}
-              </span>
-            )}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 md:pt-8">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              aria-busy={isSubmitting}
-              aria-live="polite"
-              className="w-full sm:w-auto px-8 md:px-16 py-4 bg-primary text-background rounded-full font-bold text-base md:text-lg transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              {isSubmitting ? "Sending…" : t.submit}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => reset()}
-              className="w-full sm:w-auto px-8 md:px-16 py-4 border border-surface text-foreground rounded-full font-bold text-base md:text-lg hover:bg-surface transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              {t.reset}
-            </button>
-          </div>
-        </form>
+          {t.email}
+        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className={linkStyle}>
+            {t.linkedinLabel}
+          </a>
+          <a href={LINKS.github} target="_blank" rel="noopener noreferrer" className={linkStyle}>
+            {t.githubLabel}
+          </a>
+        </div>
       </motion.div>
     </section>
   );
