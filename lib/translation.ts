@@ -5,7 +5,8 @@ export const translations = {
       "experience": "Experience",
       "skills": "Skills",
       "contact": "Contact",
-      "blog": "Blog"
+      "blog": "Blog",
+      "activities": "Activities"
     },
     "ui": {
       "skip": "Skip to main content",
@@ -13,11 +14,11 @@ export const translations = {
       "intro": "Introduction"
     },
     "hero": {
-      "description": "Computer Science student at the University of Montreal who ships production software: full-stack web apps, AI retrieval pipelines and backend APIs, with tests and CI behind them. I like to understand how a system works before I build on it.",
+      "description": "First-year Computer Science student at the University of Montreal who ships production software: full-stack web apps, AI retrieval pipelines and backend APIs, with tests and CI behind them. I like to understand how a system works before I build on it.",
       "ctaResume": "Download Resume"
     },
     "about": {
-      "text": "I grew up speaking Arabic, then French, then English, and I am currently teaching myself Korean. I chose tech for the freedom to build things on my own terms. I finished a DEC in Computer Science Technology (Web and Mobile) at Collège Ahuntsic in May 2026 and now study Computer Science at the University of Montreal on an accelerated path (15 credits exempted), with a B.Sc. expected in December 2028."
+      "text": "I grew up speaking French and Arabic, and I am currently learning Mandarin. I chose tech for the freedom to build things on my own terms. I finished a DEC in Computer Science Technology (Web and Mobile) at Collège Ahuntsic in May 2026 and am now in my first year of Computer Science at the University of Montreal, on an accelerated path (15 credits exempted), with a B.Sc. expected in December 2028."
     },
     "skills": {
       "title": "Skills",
@@ -83,20 +84,6 @@ export const translations = {
       "title": "Experience",
       "items": [
         {
-          "position": "Calculum, Competitive Programming Club",
-          "company": "University of Montreal",
-          "duration": "September 2026 – Present",
-          "description": "Qualified for the 2026 ICPC North America Qualifier. Practicing algorithms in C++ and Python on Kattis, and in C++ on Codeforces.",
-          "reference": ""
-        },
-        {
-          "position": "Can-CWiC 2026",
-          "company": "Canadian Celebration of Women in Computing, University of Waterloo",
-          "duration": "November 20 – 21, 2026",
-          "description": "Selected to attend, with funding from the University of Montreal's computer science department (DIRO) through the Bengio-McMurray donation.",
-          "reference": ""
-        },
-        {
           "position": "Director of Technology (Volunteer)",
           "company": "Careforall.org",
           "duration": "March – August 2026",
@@ -136,6 +123,27 @@ export const translations = {
     },
     "footer": {
       "rights": "All rights reserved"
+    },
+    "activities": {
+      "title": "Activities & Hobbies",
+      "items": [
+        {
+          "position": "Calculum, Competitive Programming Club",
+          "company": "University of Montreal",
+          "duration": "September 2026 – Present",
+          "description": "Qualified for the 2026 ICPC North America Qualifier. Practicing algorithms in C++ and Python on Kattis, and in C++ on Codeforces.",
+          "reference": ""
+        },
+        {
+          "position": "Can-CWiC 2026",
+          "company": "Canadian Celebration of Women in Computing, University of Waterloo",
+          "duration": "November 20 – 21, 2026",
+          "description": "Selected to attend, with funding from the University of Montreal's computer science department (DIRO) through the Bengio-McMurray donation.",
+          "reference": ""
+        }
+      ],
+      "hobbiesTitle": "Hobbies",
+      "hobbies": "Fashion, and learning languages (currently Mandarin)."
     }
   },
   "fr": {
@@ -144,7 +152,8 @@ export const translations = {
       "experience": "Expériences",
       "skills": "Compétences",
       "contact": "Contactez-moi",
-      "blog": "Blog"
+      "blog": "Blog",
+      "activities": "Activités"
     },
     "ui": {
       "skip": "Aller au contenu principal",
@@ -152,11 +161,11 @@ export const translations = {
       "intro": "Introduction"
     },
     "hero": {
-      "description": "Étudiante en informatique à l'Université de Montréal qui livre des logiciels de production : applications web full-stack, pipelines de recherche IA et API backend, avec tests et CI. J'aime comprendre comment fonctionne un système avant de construire dessus.",
+      "description": "Étudiante de première année en informatique à l'Université de Montréal qui livre des logiciels de production : applications web full-stack, pipelines de recherche IA et API backend, avec tests et CI. J'aime comprendre comment fonctionne un système avant de construire dessus.",
       "ctaResume": "Télécharger le CV"
     },
     "about": {
-      "text": "J'ai grandi en parlant arabe, puis français, puis anglais, et j'apprends actuellement le coréen par moi-même. J'ai choisi la tech pour la liberté de construire des choses selon mes propres termes. J'ai terminé un DEC en techniques de l'informatique (Web et mobile) au Collège Ahuntsic en mai 2026 et j'étudie maintenant en informatique à l'Université de Montréal par un cheminement accéléré (15 crédits exemptés), avec un baccalauréat prévu en décembre 2028."
+      "text": "J'ai grandi en parlant français et arabe, et j'apprends actuellement le mandarin. J'ai choisi la tech pour la liberté de construire des choses selon mes propres termes. J'ai terminé un DEC en techniques de l'informatique (Web et mobile) au Collège Ahuntsic en mai 2026 et je suis maintenant en première année d'informatique à l'Université de Montréal, par un cheminement accéléré (15 crédits exemptés), avec un baccalauréat prévu en décembre 2028."
     },
     "skills": {
       "title": "Compétences",
@@ -222,20 +231,6 @@ export const translations = {
       "title": "Expériences",
       "items": [
         {
-          "position": "Calculum, Club de programmation compétitive",
-          "company": "Université de Montréal",
-          "duration": "Septembre 2026 – Présent",
-          "description": "Qualifiée pour les qualifications nord-américaines de l'ICPC 2026. Pratique des algorithmes en C++ et Python sur Kattis, et en C++ sur Codeforces.",
-          "reference": ""
-        },
-        {
-          "position": "Can-CWiC 2026",
-          "company": "Canadian Celebration of Women in Computing, Université de Waterloo",
-          "duration": "20 – 21 novembre 2026",
-          "description": "Sélectionnée pour y participer, avec un financement du département d'informatique de l'Université de Montréal (DIRO) grâce au don Bengio-McMurray.",
-          "reference": ""
-        },
-        {
           "position": "Directrice Technologie (bénévole)",
           "company": "Careforall.org",
           "duration": "Mars – Août 2026",
@@ -275,6 +270,27 @@ export const translations = {
     },
     "footer": {
       "rights": "Tous droits réservés"
+    },
+    "activities": {
+      "title": "Activités et loisirs",
+      "items": [
+        {
+          "position": "Calculum, Club de programmation compétitive",
+          "company": "Université de Montréal",
+          "duration": "Septembre 2026 – Présent",
+          "description": "Qualifiée pour les qualifications nord-américaines de l'ICPC 2026. Pratique des algorithmes en C++ et Python sur Kattis, et en C++ sur Codeforces.",
+          "reference": ""
+        },
+        {
+          "position": "Can-CWiC 2026",
+          "company": "Canadian Celebration of Women in Computing, Université de Waterloo",
+          "duration": "20 – 21 novembre 2026",
+          "description": "Sélectionnée pour y participer, avec un financement du département d'informatique de l'Université de Montréal (DIRO) grâce au don Bengio-McMurray.",
+          "reference": ""
+        }
+      ],
+      "hobbiesTitle": "Loisirs",
+      "hobbies": "La mode et l'apprentissage des langues (actuellement le mandarin)."
     }
   }
 };

@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
+import Activities from "@/components/sections/Activities";
 import Contact from "@/components/sections/Contact";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -24,6 +25,7 @@ export default function HomePage({ language }: { language: Language }) {
         <Projects t={t.projects} />
         <Experience t={t.experience} />
         <Skills t={t.skills} />
+        <Activities t={t.activities} />
         <Contact t={t.contact} />
       </main>
       <Footer t={t.footer} />

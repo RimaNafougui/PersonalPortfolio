@@ -20,8 +20,8 @@ export default function LanguageSwitcher({ language }: { language: Language }) {
             aria-current={language === code ? "true" : undefined}
             className={
               language === code
-                ? "font-bold text-foreground"
-                : "text-muted hover:text-primary"
+                ? "font-bold text-foreground underline decoration-primary decoration-2 underline-offset-8"
+                : "text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-colors hover:text-primary hover:decoration-primary"
             }
           >
             {code.toUpperCase()}
