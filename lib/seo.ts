@@ -73,6 +73,7 @@ export const metadataFr: Metadata = {
   openGraph: {
     ...metadataEn.openGraph,
     locale: "fr_CA",
+    images: [{ ...OG_IMAGE, alt: "Portfolio de Rima Nafougui, développeuse logiciel" }],
     title: "Rima Nafougui | Développeuse logiciel",
     description:
       "Étudiante en informatique et développeuse full-stack. Applications web, pipelines de recherche IA et API avec tests et CI.",

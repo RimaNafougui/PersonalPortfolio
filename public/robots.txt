@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rimanafougui.vercel.app/sitemap.xml
+Sitemap: https://rimanafougui.com/sitemap.xml
