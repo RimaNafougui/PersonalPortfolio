@@ -9,6 +9,16 @@ export const translations = {
       roadmap: "Roadmap",
       blog: "Blog",
     },
+    ui: {
+      "skip": "Skip to main content",
+      "toggleMenu": "Toggle navigation menu",
+      "mainNav": "Main navigation",
+      "mobileNav": "Mobile navigation",
+      "scrollTop": "Scroll to top",
+      "careerMilestones": "Career milestones",
+      "keyFigures": "Key figures",
+      "intro": "Introduction"
+    },
     hero: {
       "badge": "",
       "intro": "",
@@ -68,6 +78,13 @@ export const translations = {
       "title": "Projects",
       "more": "More projects",
       "less": "Show fewer",
+    "labels": {
+      "problem": "Problem",
+      "keyDecisions": "Key Decisions",
+      "sourceCode": "Source Code",
+      "viewSource": "View source on GitHub",
+      "selectedWorks": "selected works"
+    },
       "items": {
         "project1": {
           "title": "RCapsule: AI Wardrobe Platform",
@@ -188,6 +205,8 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved",
+      tagline: "Designing & building things for the web",
+      backToTop: "Back to top",
       badge: "",
     },
     experience: {
@@ -245,24 +264,12 @@ export const translations = {
       ]
     },
     contact: {
-      title: "Contact Me",
-      name: {
-        errorMessage: "Please enter a valid name",
-        label: "Full Name:",
-        placeholder: "Enter your full name",
-      },
-      email: {
-        errorMessage: "Please enter a valid email",
-        label: "Email:",
-        placeholder: "Enter your email",
-      },
-      message: {
-        errorMessage: "Please enter a message",
-        label: "Message: ",
-        placeholder: "Your message...",
-      },
-      submit: "Submit",
-      reset: "Reset",
+      "title": "Get in Touch",
+      "intro": "The quickest way to reach me is by email. You can also find me on LinkedIn and GitHub.",
+      "email": "nafouguirima@gmail.com",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub"
     },
     roadmap: {
       "title": "Technical Journey",
@@ -314,6 +321,16 @@ export const translations = {
       contact: "Contactez-moi",
       roadmap: "Parcours",
       blog: "Blog",
+    },
+    ui: {
+      "skip": "Aller au contenu principal",
+      "toggleMenu": "Ouvrir ou fermer le menu de navigation",
+      "mainNav": "Navigation principale",
+      "mobileNav": "Navigation mobile",
+      "scrollTop": "Retour en haut de la page",
+      "careerMilestones": "Étapes du parcours",
+      "keyFigures": "Chiffres clés",
+      "intro": "Introduction"
     },
     hero: {
       "badge": "",
@@ -374,6 +391,13 @@ export const translations = {
       "title": "Projets",
       "more": "Plus de projets",
       "less": "Afficher moins",
+    "labels": {
+      "problem": "Problème",
+      "keyDecisions": "Décisions clés",
+      "sourceCode": "Code source",
+      "viewSource": "Voir le code source sur GitHub",
+      "selectedWorks": "projets"
+    },
       "items": {
         "project1": {
           "title": "RCapsule : Plateforme de garde-robe IA",
@@ -494,6 +518,8 @@ export const translations = {
     },
     footer: {
       rights: "Tous droits réservés",
+      tagline: "Concevoir et construire pour le web",
+      backToTop: "Retour en haut",
       badge: "",
     },
     experience: {
@@ -551,24 +577,12 @@ export const translations = {
       ]
     },
     contact: {
-      title: "Contactez Moi",
-      name: {
-        errorMessage: "Veuillez entrer un nom valide",
-        label: "Nom Complet:",
-        placeholder: "Entrez votre nom complet",
-      },
-      email: {
-        errorMessage: "Veuillez entrer une adresse courriel valide",
-        label: "Adresse courriel:",
-        placeholder: "Entrez votre adresse courriel",
-      },
-      message: {
-        errorMessage: "Veuillez entrer un message",
-        label: "Message:",
-        placeholder: "Votre message...",
-      },
-      submit: "Soumettre",
-      reset: "Réinitialiser",
+      "title": "Me Joindre",
+      "intro": "Le moyen le plus rapide de me joindre est le courriel. Vous pouvez aussi me trouver sur LinkedIn et GitHub.",
+      "email": "nafouguirima@gmail.com",
+      "emailLabel": "Courriel",
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub"
     },
     roadmap: {
       "title": "Parcours Technique",

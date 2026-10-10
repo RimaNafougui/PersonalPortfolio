@@ -9,12 +9,12 @@ import { cn } from "@/lib/utils";
 interface Props {
   t: Translation;
   language: Language;
-  setLanguage: (lang: Language) => void;
 }
 
 const SECTION_IDS = ["about", "experience", "projects", "skills", "roadmap", "contact"];
 
-export default function Header({ t, language, setLanguage }: Props) {
+export default function Header({ t, language }: Props) {
+  const home = language === "fr" ? "/fr" : "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [scrolled, setScrolled] = useState(false);
@@ -71,7 +71,7 @@ export default function Header({ t, language, setLanguage }: Props) {
 
   return (
     <nav
-      aria-label="Main navigation"
+      aria-label={t.ui.mainNav}
       className={cn(
         "fixed top-0 w-full bg-background/80 backdrop-blur-lg z-[100] border-b border-surface/10 transition-shadow duration-300",
         scrolled && "shadow-[0_1px_16px_rgba(0,0,0,0.4)]"
@@ -80,7 +80,7 @@ export default function Header({ t, language, setLanguage }: Props) {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="group" onClick={() => setIsMenuOpen(false)}>
+          <Link href={home} className="group" onClick={() => setIsMenuOpen(false)}>
             <div className="flex items-center gap-2">
               <span className="text-4xl lg:text-5xl font-display font-extrabold text-foreground group-hover:text-primary transition-colors duration-500">
                 R.
@@ -122,19 +122,19 @@ export default function Header({ t, language, setLanguage }: Props) {
             })}
 
             <div className="h-4 w-px bg-surface/30 mx-1" />
-            <LanguageSwitcher language={language} setLanguage={setLanguage} />
+            <LanguageSwitcher language={language} />
           </div>
 
           {/* Mobile controls */}
           <div className="flex items-center lg:hidden gap-4">
-            <LanguageSwitcher language={language} setLanguage={setLanguage} />
+            <LanguageSwitcher language={language} />
             <button
               ref={menuButtonRef}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              aria-label="Toggle navigation menu"
+              aria-label={t.ui.toggleMenu}
             >
               {isMenuOpen ? (
                 <X size={24} strokeWidth={1.5} />
@@ -150,7 +150,7 @@ export default function Header({ t, language, setLanguage }: Props) {
       <div
         id="mobile-menu"
         role="region"
-        aria-label="Mobile navigation"
+        aria-label={t.ui.mobileNav}
         className={cn(
           "lg:hidden fixed inset-x-0 bg-background border-b border-surface/20 transition-all duration-500 ease-in-out",
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"

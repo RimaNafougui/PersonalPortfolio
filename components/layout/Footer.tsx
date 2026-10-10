@@ -7,6 +7,8 @@ interface FooterProps {
   t: {
     rights: string;
     badge: string;
+    tagline?: string;
+    backToTop?: string;
   };
 }
 
@@ -21,7 +23,7 @@ export default function Footer({ t }: FooterProps) {
             Rima Nafougui
           </p>
           <p className="text-xs text-muted font-medium italic">
-            Designing &amp; building things for the web
+            {t.tagline ?? "Designing & building things for the web"}
           </p>
           <p className="text-xs uppercase tracking-[0.2em] text-muted">
             {t.rights} &copy; {currentYear}
@@ -33,7 +35,7 @@ export default function Footer({ t }: FooterProps) {
             href="#main-content"
             className="text-xs uppercase tracking-[0.2em] font-bold text-muted hover:text-primary transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
-            ↑ Back to top
+            ↑ {t.backToTop ?? "Back to top"}
           </Link>
           <div className="flex gap-3">
             {[

@@ -1,5 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
@@ -9,18 +11,15 @@ import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Activities from "@/components/sections/Activities";
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
-import { translations, Language } from "@/lib/translation";
 import PageLoader from "@/components/ui/PageLoader";
-import { AnimatePresence } from "framer-motion";
 import { Milestone } from "@/components/sections/Roadmap";
+import { translations, Language } from "@/lib/translation";
 
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 const Contact = dynamic(() => import("@/components/sections/Contact"));
 const Roadmap = dynamic(() => import("@/components/sections/Roadmap"));
 
-export default function Home() {
-  const [language, setLanguage] = useState<Language>("en");
+export default function HomePage({ language }: { language: Language }) {
   const [loading, setLoading] = useState(true);
   const t = translations[language];
 
@@ -29,10 +28,10 @@ export default function Home() {
       <AnimatePresence>
         {loading && <PageLoader onDone={() => setLoading(false)} />}
       </AnimatePresence>
-      <Header t={t} language={language} setLanguage={setLanguage} />
+      <Header t={t} language={language} />
       <main id="main-content">
-        <Hero t={t.hero} language={language} ready={!loading} />
-        <Stats stats={t.hero.stats} />
+        <Hero t={t.hero} language={language} ready={!loading} label={t.ui.intro} />
+        <Stats stats={t.hero.stats} label={t.ui.keyFigures} />
         <About t={t.about} />
         <Separator />
         <Experience t={t.experience} language={language} />
@@ -47,6 +46,7 @@ export default function Home() {
           t={{
             title: t.roadmap.title,
             milestones: t.roadmap.milestones as unknown as Milestone[],
+            label: t.ui.careerMilestones,
           }}
         />
         <Separator />

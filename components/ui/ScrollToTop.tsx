@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ label = "Scroll to top" }: { label?: string }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           onClick={scrollToTop}
-          aria-label="Scroll to top"
+          aria-label={label}
           className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-[100] flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 bg-foreground text-background rounded-full border border-surface/30 shadow-2xl hover:bg-primary hover:scale-110 transition-all duration-300 active:scale-95 group"
         >
           <div className="absolute inset-0 rounded-full bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />

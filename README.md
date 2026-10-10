@@ -11,20 +11,20 @@ My personal portfolio, built with Next.js and Tailwind CSS. It presents my exper
 ## Features
 
 - Responsive design with smooth animations (Framer Motion)
-- English and French versions of all content, with a matching resume PDF for each
+- English at `/` and French at `/fr` (separate pages with the correct `lang` attribute and hreflang links), with a matching resume PDF for each
 - Featured projects with a collapsible "More projects" section
 - Experience, activities and a technical journey timeline
 - Markdown blog with syntax highlighting
-- Contact form (Nodemailer)
+- Simple contact section (email, LinkedIn, GitHub)
 - SEO: sitemap, Open Graph image, structured data
-- Error monitoring (Sentry), analytics and speed insights (Vercel)
+- Analytics and speed insights (Vercel)
 
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router), React 19, TypeScript
 - **Styling:** Tailwind CSS 4
 - **Content:** Markdown posts via gray-matter and react-markdown
-- **Monitoring:** Sentry, Vercel Analytics, Vercel Speed Insights
+- **Monitoring:** Vercel Analytics, Vercel Speed Insights
 - **Deployment:** Vercel
 
 ## Content
@@ -35,7 +35,7 @@ All site copy lives in `lib/translation.ts` (English and French side by side). S
 
 ### Prerequisites
 
-- Node.js 20+ and npm (or pnpm)
+- Node.js 20+ and npm
 
 ### Setup
 
@@ -46,7 +46,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. Copy your own values into `.env.local` for the contact form and Sentry.
+Open `http://localhost:3000` (English) or `http://localhost:3000/fr` (French). No environment variables are required.
 
 ### Production build
 

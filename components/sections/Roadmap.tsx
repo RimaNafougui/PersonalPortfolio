@@ -15,6 +15,7 @@ interface RoadmapProps {
   t: {
     title: string;
     milestones: Milestone[];
+    label?: string;
   };
 }
 
@@ -55,7 +56,7 @@ export default function Roadmap({ t }: RoadmapProps) {
         />
 
         <ol
-          aria-label="Career milestones"
+          aria-label={t.label ?? "Career milestones"}
           className="space-y-10 md:space-y-16 relative list-none"
         >
           {t.milestones.map((item, index) => {

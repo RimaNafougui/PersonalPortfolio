@@ -1,43 +1,34 @@
-"use client";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { Language } from "@/lib/translation";
 
-interface Props {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-}
+const LANGS: { code: Language; href: string; label: string }[] = [
+  { code: "en", href: "/", label: "English" },
+  { code: "fr", href: "/fr", label: "Français" },
+];
 
-export default function LanguageSwitcher({ language, setLanguage }: Props) {
-  const languages: Language[] = ["en", "fr"];
-
+export default function LanguageSwitcher({ language }: { language: Language }) {
   return (
     <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-surface/20">
-      <div className="absolute inset-y-1 left-1 w-[calc(50%-4px)] transition-transform duration-300 ease-out">
-        <motion.div
-          initial={false}
-          animate={{
-            x: language === "en" ? 0 : "100%",
-          }}
-          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-          className="h-full w-full bg-primary rounded-full shadow-sm"
-        />
-      </div>
-
-      {languages.map((lang) => (
-        <button
-          key={lang}
-          onClick={() => setLanguage(lang)}
-          className={`relative z-10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-300 w-12 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 focus-visible:ring-offset-background
-            ${
-              language === lang
-                ? "text-background"
+      {LANGS.map(({ code, href, label }) => {
+        const active = language === code;
+        return (
+          <Link
+            key={code}
+            href={href}
+            hrefLang={code}
+            lang={code}
+            aria-label={label}
+            aria-current={active ? "true" : undefined}
+            className={`relative z-10 px-4 py-1.5 text-center text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-300 w-12 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 focus-visible:ring-offset-background ${
+              active
+                ? "bg-primary text-background shadow-sm"
                 : "text-foreground/75 hover:text-foreground"
-            }
-          `}
-        >
-          {lang}
-        </button>
-      ))}
+            }`}
+          >
+            {code}
+          </Link>
+        );
+      })}
     </div>
   );
 }

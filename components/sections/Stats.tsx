@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 
 interface StatsProps {
   stats: Array<{ value: string; label: string }>;
+  label?: string;
 }
 
-export default function Stats({ stats }: StatsProps) {
+export default function Stats({ stats, label = "Key figures" }: StatsProps) {
   return (
     <section
-      aria-label="Key figures"
+      aria-label={label}
       className="w-full bg-primary border-y border-foreground/10 py-12 px-6 md:px-12 lg:px-24"
     >
       <motion.div

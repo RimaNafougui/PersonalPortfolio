@@ -19,6 +19,19 @@ type ProjectCardProps = {
   url: string | null;
   image?: string;
   type?: "frontend" | "backend";
+  labels?: {
+    problem: string;
+    keyDecisions: string;
+    sourceCode: string;
+    viewSource: string;
+  };
+};
+
+const DEFAULT_LABELS = {
+  problem: "Problem",
+  keyDecisions: "Key Decisions",
+  sourceCode: "Source Code",
+  viewSource: "View source on GitHub",
 };
 
 const TERMINAL_LINES = [
@@ -73,6 +86,7 @@ export default function ProjectCard({
   url,
   image,
   type = "frontend",
+  labels = DEFAULT_LABELS,
 }: ProjectCardProps) {
   const techList = technologies.split(",").map((t) => t.trim());
   const isBackend = type === "backend";
@@ -165,7 +179,7 @@ export default function ProjectCard({
           {/* Problem */}
           <div className="mb-4">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1.5">
-              Problem
+              {labels.problem}
             </p>
             <p className="text-sm text-foreground leading-relaxed font-semibold">
               {problem}
@@ -188,7 +202,7 @@ export default function ProjectCard({
         {/* ── Key Decisions ─────────────────────────────────────────────── */}
         <div className="px-6 py-4">
           <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-3">
-            Key Decisions
+            {labels.keyDecisions}
           </p>
           <div className="space-y-2.5">
             {keyDecisions.map((decision, i) => (
@@ -204,7 +218,7 @@ export default function ProjectCard({
         {/* ── Footer ────────────────────────────────────────────────────── */}
         <div className="px-6 py-4 flex justify-between items-center">
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted">
-            Source Code
+            {labels.sourceCode}
           </span>
           <Button
             variant="outline"
@@ -214,7 +228,7 @@ export default function ProjectCard({
               e.stopPropagation();
               window.open(github, "_blank");
             }}
-            aria-label="View source on GitHub"
+            aria-label={labels.viewSource}
           >
             <FontAwesomeIcon icon={faGithub} />
           </Button>

@@ -23,9 +23,10 @@ interface HeroProps {
   };
   language: Language;
   ready?: boolean;
+  label?: string;
 }
 
-export default function Hero({ t, language, ready = true }: HeroProps) {
+export default function Hero({ t, language, ready = true, label = "Introduction" }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   const containerVariants: Variants = {
@@ -48,7 +49,7 @@ export default function Hero({ t, language, ready = true }: HeroProps) {
   return (
     <section
       ref={sectionRef}
-      aria-label="Introduction"
+      aria-label={label}
       className="relative flex flex-col justify-center min-h-screen items-center px-6 py-20 md:px-12 lg:px-20 overflow-hidden"
     >
       <CursorFollower containerRef={sectionRef} />

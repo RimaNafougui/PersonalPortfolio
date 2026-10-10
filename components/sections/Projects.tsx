@@ -18,7 +18,19 @@ interface Project {
 }
 
 interface ProjectsProp {
-  t: { title: string; items: Record<string, Project>; more?: string; less?: string };
+  t: {
+    title: string;
+    items: Record<string, Project>;
+    more?: string;
+    less?: string;
+    labels?: {
+      problem: string;
+      keyDecisions: string;
+      sourceCode: string;
+      viewSource: string;
+      selectedWorks: string;
+    };
+  };
 }
 
 export default function Projects({ t }: ProjectsProp) {
@@ -59,7 +71,7 @@ export default function Projects({ t }: ProjectsProp) {
           viewport={{ once: true }}
         />
         <p className="text-center text-muted text-[10px] uppercase tracking-[0.3em] font-bold pt-2">
-          {projects.length} selected works
+          {projects.length} {t.labels?.selectedWorks ?? "selected works"}
         </p>
       </div>
 
@@ -76,7 +88,7 @@ export default function Projects({ t }: ProjectsProp) {
             variants={itemVariants}
             className="flex flex-col h-full"
           >
-            <ProjectCard {...project} />
+            <ProjectCard {...project} labels={t.labels} />
           </motion.div>
         ))}
       </motion.div>
@@ -90,7 +102,7 @@ export default function Projects({ t }: ProjectsProp) {
             >
               {more.map((project, index) => (
                 <div key={project.github || index} className="flex flex-col h-full">
-                  <ProjectCard {...project} />
+                  <ProjectCard {...project} labels={t.labels} />
                 </div>
               ))}
             </div>
