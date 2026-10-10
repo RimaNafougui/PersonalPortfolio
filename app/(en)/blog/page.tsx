@@ -19,7 +19,7 @@ export default function BlogPage() {
       <main id="main-content" className="pt-24 min-h-screen bg-background">
         <section className="py-24 px-6 md:px-12 lg:px-24">
           <div className="mb-16 space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif italic text-foreground">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground">
               Notes
             </h1>
             <div className="h-px w-24 bg-foreground/20" />
@@ -54,7 +54,7 @@ export default function BlogPage() {
                           day: "numeric",
                         })}
                       </time>
-                      <p className="text-xl sm:text-2xl md:text-3xl font-serif italic text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
+                      <p className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
                         {post.title}
                       </p>
                       <p className="text-sm text-foreground/75 leading-relaxed">
@@ -83,7 +83,6 @@ export default function BlogPage() {
       <Footer
         t={{
           rights: "All rights reserved",
-          badge: "Open to opportunities",
         }}
       />
     </>

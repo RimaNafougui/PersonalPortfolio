@@ -95,13 +95,13 @@ export default function OGImage() {
           Nafougui
         </div>
 
-        {/* Accent rule — Cobalt */}
+        {/* Accent rule — Navy */}
         <div
           style={{
             display: "flex",
             width: "72px",
             height: "3px",
-            background: "#1D4ED8",
+            background: "#1E3A8A",
             marginBottom: "32px",
           }}
         />

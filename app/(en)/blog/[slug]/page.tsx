@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
                   day: "numeric",
                 })}
               </time>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif italic text-foreground leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight">
                 {post.title}
               </h1>
               <p className="text-base text-foreground/75 leading-relaxed border-l-2 border-primary/40 pl-4 italic">
@@ -102,7 +102,6 @@ export default async function BlogPostPage({ params }: Props) {
       <Footer
         t={{
           rights: "All rights reserved",
-          badge: "Open to opportunities",
         }}
       />
     </>

@@ -1,13 +1,11 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import ScrollToTop from "@/components/ui/ScrollToTop";
-import MotionConfigProvider from "@/components/ui/MotionConfigProvider";
 import { personJsonLd } from "@/lib/seo";
 import { translations, Language } from "@/lib/translation";
 import "@/app/globals.css";
 
 const FONTS_URL =
-  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap";
+  "https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap";
 
 /**
  * The shared <html> shell. Each language has its own root layout so the
@@ -26,7 +24,7 @@ export default function RootShell({
     <html lang={lang}>
       {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>
-        {/* Cormorant Garamond + Jost from Google Fonts */}
+        {/* Jost from Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="style" href={FONTS_URL} />
@@ -45,11 +43,10 @@ export default function RootShell({
           {ui.skip}
         </a>
 
-        <MotionConfigProvider>{children}</MotionConfigProvider>
+        {children}
 
         <SpeedInsights />
         <Analytics />
-        <ScrollToTop label={ui.scrollTop} />
       </body>
     </html>
   );

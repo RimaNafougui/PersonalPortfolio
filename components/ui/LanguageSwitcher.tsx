@@ -8,27 +8,26 @@ const LANGS: { code: Language; href: string; label: string }[] = [
 
 export default function LanguageSwitcher({ language }: { language: Language }) {
   return (
-    <div className="relative flex items-center bg-foreground/5 p-1 rounded-full border border-surface/20">
-      {LANGS.map(({ code, href, label }) => {
-        const active = language === code;
-        return (
+    <span className="flex items-center gap-2">
+      {LANGS.map(({ code, href, label }, i) => (
+        <span key={code} className="flex items-center gap-2">
+          {i > 0 && <span aria-hidden="true" className="text-muted/50">/</span>}
           <Link
-            key={code}
             href={href}
             hrefLang={code}
             lang={code}
             aria-label={label}
-            aria-current={active ? "true" : undefined}
-            className={`relative z-10 px-4 py-1.5 text-center text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-300 w-12 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 focus-visible:ring-offset-background ${
-              active
-                ? "bg-primary text-background shadow-sm"
-                : "text-foreground/75 hover:text-foreground"
-            }`}
+            aria-current={language === code ? "true" : undefined}
+            className={
+              language === code
+                ? "font-bold text-foreground"
+                : "text-muted hover:text-primary"
+            }
           >
-            {code}
+            {code.toUpperCase()}
           </Link>
-        );
-      })}
-    </div>
+        </span>
+      ))}
+    </span>
   );
 }

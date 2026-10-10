@@ -2,10 +2,10 @@
 
 /* ─── Design Tokens — single source of truth ─────────────────────────────── */
 @theme {
-  /* ── Brand palette — Ink & Cobalt ──────────────────────────────────── */
+  /* ── Brand palette — Ink & Navy ──────────────────────────────────── */
   --color-background: #FFFFFF;  /* White       — clean page bg        */
   --color-foreground: #0F172A;  /* Ink         — near-black text      */
-  --color-primary:    #1D4ED8;  /* Cobalt      — blue accent          */
+  --color-primary:    #1E3A8A;  /* Navy        — accent               */
   --color-surface:    #F1F5F9;  /* Slate-100   — cards/borders        */
   --color-muted:      #475569;  /* Slate-600   — secondary text       */
 
@@ -25,7 +25,7 @@
   /* ── Typography ──────────────────────────────────────────────────── */
   --font-sans:    "Jost", system-ui, sans-serif;
   --font-display: "Jost", system-ui, sans-serif;
-  --font-serif:   "Cormorant Garamond", Georgia, serif;
+  --font-serif:   "Jost", system-ui, sans-serif;
   --font-mono:    "JetBrains Mono", "Fira Code", Consolas, monospace;
 
   /* ── Font size scale ─────────────────────────────────────────────── */
@@ -100,29 +100,6 @@ input:focus {
   outline: none;
 }
 
-/* ─── Glass surface ──────────────────────────────────────────────────────── */
-.glassBackground {
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-}
-
-/* ─── Toast styles ───────────────────────────────────────────────────────── */
-.primary-toast [data-title] {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-}
-
-.primary-toast [data-description] {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.7rem;
-  font-weight: 700;
-  opacity: 0.8;
-}
-
 /* ─── Blog prose styles (light linen background) ──────────────────────────── */
 .blog-prose {
   color: rgba(15, 23, 42, 0.82);
@@ -166,15 +143,15 @@ input:focus {
 }
 
 .blog-prose a {
-  color: #1D4ED8;
+  color: #1E3A8A;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(29, 78, 216, 0.35);
+  text-decoration-color: rgba(30, 58, 138, 0.35);
   transition: text-decoration-color 0.2s;
 }
 
 .blog-prose a:hover {
-  text-decoration-color: rgba(29, 78, 216, 0.9);
+  text-decoration-color: rgba(30, 58, 138, 0.9);
 }
 
 .blog-prose strong {
@@ -368,4 +345,19 @@ input:focus {
 
 .hljs-strong {
   font-weight: bold;
+}
+
+/* ─── Page entrance ──────────────────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+  html { scroll-behavior: auto; }
 }

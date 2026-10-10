@@ -7,10 +7,10 @@ const config = {
   theme: {
     extend: {
       colors: {
-        /* Brand tokens — Ink & Cobalt */
+        /* Brand tokens — Ink & Navy */
         background: "#FFFFFF",  /* White      — clean page bg      */
         foreground: "#0F172A",  /* Ink        — near-black text    */
-        primary:    "#1D4ED8",  /* Cobalt     — blue accent        */
+        primary:    "#1E3A8A",  /* Navy     — blue accent        */
         surface:    "#F1F5F9",  /* Slate-100  — cards/borders      */
         muted:      "#475569",  /* Slate-600  — secondary text     */
         /* Full stone scale */
@@ -31,7 +31,7 @@ const config = {
       fontFamily: {
         sans:    ["Jost", "system-ui", "sans-serif"],
         display: ["Jost", "system-ui", "sans-serif"],
-        serif:   ["Cormorant Garamond", "Georgia", "serif"],
+        serif:   ["Jost", "system-ui", "sans-serif"],
         mono:    ["JetBrains Mono", "Fira Code", "Consolas", "monospace"],
       },
       borderRadius: {
