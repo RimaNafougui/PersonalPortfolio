@@ -23,6 +23,7 @@ export default function TypingText({
 
   useEffect(() => {
     if (!ready) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCursorOn(true);
 
     const start = setTimeout(() => {
